@@ -1,0 +1,5150 @@
+{
+  "schema_version": "1.0",
+  "research_id": "res_20261004061331_5477274e",
+  "status": "completed",
+  "generated_at": "2026-10-04T06:13:31.533797Z",
+  "snapshot_id": "snap_20261004061331_24061b04",
+  "previous_snapshot_id": null,
+  "prospect": {
+    "entity_id": "ent_5a5bec82f46755ae",
+    "entity_key": "dom:sweetcrumb.com",
+    "kind": "prospect",
+    "company_name": "SweetCrumb Bakery",
+    "domain": "sweetcrumb.com",
+    "location": "Chicago",
+    "industry": "Bakery",
+    "input": {
+      "company_name": "SweetCrumb Bakery",
+      "domain": "sweetcrumb.com",
+      "location": "Chicago",
+      "industry": "Bakery",
+      "products_services": [
+        "wedding cakes"
+      ],
+      "known_competitors": [],
+      "icp": null
+    },
+    "profile": {
+      "title": "SweetCrumb Bakery",
+      "description": "SweetCrumb Bakery \u2014 wedding cakes bakery in Chicago",
+      "services": [
+        "Wedding cakes",
+        "Corporate catering",
+        "Custom birthday cakes"
+      ],
+      "products": [],
+      "emails": [
+        "hello@sweetcrumb.com",
+        "orders@sweetcrumb.com"
+      ],
+      "phones": [
+        "+13125550100"
+      ],
+      "social_profiles": {
+        "linkedin": "https://www.linkedin.com/company/sweetcrumb"
+      },
+      "technologies": [
+        "Google Tag Manager",
+        "Meta Pixel"
+      ],
+      "locations": [
+        "Chicago, IL"
+      ],
+      "ctas": [
+        "Contact us",
+        "Order now",
+        "Call"
+      ],
+      "offers": [
+        "Pricing Wedding cake from $299. Cupcakes $3.50 per person. Free delivery on orders over $100."
+      ],
+      "prices": [
+        "$299",
+        "$3.50 per person",
+        "$100"
+      ],
+      "business_model": [
+        "food_service"
+      ],
+      "field_evidence": {
+        "description": [
+          "ev_005c86c2fc754485"
+        ],
+        "emails": [
+          "ev_25d0f5cec22bf76a"
+        ],
+        "phones": [
+          "ev_79dcc56c459e5c92"
+        ],
+        "social_profiles": [
+          "ev_b0fc4f32cb9459da"
+        ],
+        "technologies": [
+          "ev_1539508ccc96c5e3"
+        ],
+        "locations": [
+          "ev_9c3b81040b9a63d1"
+        ],
+        "ctas": [
+          "ev_48e46a6ecb698b72"
+        ],
+        "offers": [
+          "ev_9e22fe6c9d84c112"
+        ],
+        "prices": [
+          "ev_66804a26bebb5c37"
+        ],
+        "services": [
+          "ev_2516001b2a13f87a"
+        ],
+        "business_model": [
+          "ev_786f0a2355d5f605"
+        ]
+      }
+    }
+  },
+  "competitors": [
+    {
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "entity_key": "dom:rivalbakes.com",
+      "kind": "competitor",
+      "company_name": "Rival Bakes",
+      "domain": "rivalbakes.com",
+      "location": "Chicago, IL",
+      "industry": null,
+      "relationship_type": "likely_competitor",
+      "relationship_confidence": 0.55,
+      "reason": "Business site ranking for 4 market query(ies): Bakery Chicago; SweetCrumb Bakery competitors; alternatives to SweetCrumb Bakery; wedding cakes Chicago",
+      "evidence_refs": [
+        "ev_752f14a3fcd33c36"
+      ],
+      "discovered_via": "search",
+      "profile": {
+        "title": "Rival Bakes",
+        "description": "Rival Bakes \u2014 wedding cakes bakery in Chicago",
+        "services": [
+          "Wedding cakes",
+          "Corporate catering",
+          "Custom birthday cakes"
+        ],
+        "products": [],
+        "emails": [
+          "hello@rivalbakes.com",
+          "orders@rivalbakes.com"
+        ],
+        "phones": [
+          "+13125550100"
+        ],
+        "social_profiles": {
+          "linkedin": "https://www.linkedin.com/company/rivalbakes"
+        },
+        "technologies": [
+          "Google Tag Manager",
+          "Meta Pixel"
+        ],
+        "locations": [
+          "Chicago, IL"
+        ],
+        "ctas": [
+          "Contact us",
+          "Order now",
+          "Call"
+        ],
+        "offers": [
+          "Rival Bakes Fresh wedding cakes in Chicago. 20% off wedding tastings this month About Services Contact us Prici",
+          "Pricing Wedding cake from $299. Cupcakes $3.50 per person. Free delivery on orders over $100."
+        ],
+        "prices": [
+          "$299",
+          "$3.50 per person",
+          "$100"
+        ],
+        "business_model": [
+          "food_service"
+        ],
+        "field_evidence": {
+          "description": [
+            "ev_072ce597ec7a51c8"
+          ],
+          "emails": [
+            "ev_115bcee78533ce62"
+          ],
+          "phones": [
+            "ev_4f3eaa577edafd95"
+          ],
+          "social_profiles": [
+            "ev_1fac2ca4caf606ef"
+          ],
+          "technologies": [
+            "ev_40adf884788bb3c9"
+          ],
+          "locations": [
+            "ev_3d8428c7d7053de6"
+          ],
+          "ctas": [
+            "ev_b629ef92352613a7"
+          ],
+          "offers": [
+            "ev_841e67ad52405759"
+          ],
+          "prices": [
+            "ev_2deb0ee5c185610b"
+          ],
+          "services": [
+            "ev_5a561330114731ec"
+          ],
+          "business_model": [
+            "ev_5852ae9daefdb22b"
+          ]
+        }
+      }
+    },
+    {
+      "entity_id": "ent_adb32b5aaefac085",
+      "entity_key": "dom:cakehouse.com",
+      "kind": "competitor",
+      "company_name": "Cake House",
+      "domain": "cakehouse.com",
+      "location": "Chicago, IL",
+      "industry": null,
+      "relationship_type": "likely_competitor",
+      "relationship_confidence": 0.55,
+      "reason": "Business site ranking for 4 market query(ies): Bakery Chicago; SweetCrumb Bakery competitors; alternatives to SweetCrumb Bakery; wedding cakes Chicago",
+      "evidence_refs": [
+        "ev_3894f4b32a8f3c72"
+      ],
+      "discovered_via": "search",
+      "profile": {
+        "title": "Cake House",
+        "description": "Cake House \u2014 wedding cakes bakery in Chicago",
+        "services": [
+          "Wedding cakes",
+          "Corporate catering",
+          "Custom birthday cakes"
+        ],
+        "products": [],
+        "emails": [
+          "hello@cakehouse.com",
+          "orders@cakehouse.com"
+        ],
+        "phones": [
+          "+13125550100"
+        ],
+        "social_profiles": {
+          "linkedin": "https://www.linkedin.com/company/cakehouse"
+        },
+        "technologies": [
+          "Google Tag Manager",
+          "Meta Pixel"
+        ],
+        "locations": [
+          "Chicago, IL"
+        ],
+        "ctas": [
+          "Contact us",
+          "Order now",
+          "Call"
+        ],
+        "offers": [
+          "Pricing Wedding cake from $299. Cupcakes $3.50 per person. Free delivery on orders over $100."
+        ],
+        "prices": [
+          "$299",
+          "$3.50 per person",
+          "$100"
+        ],
+        "business_model": [
+          "food_service"
+        ],
+        "field_evidence": {
+          "description": [
+            "ev_2bb46a352a37f0da"
+          ],
+          "emails": [
+            "ev_9d12ce39be53d0af"
+          ],
+          "phones": [
+            "ev_af155d04256c9497"
+          ],
+          "social_profiles": [
+            "ev_52e3fd75c07fbd40"
+          ],
+          "technologies": [
+            "ev_4bfb3ed06d59c2a5"
+          ],
+          "locations": [
+            "ev_1a640094c5927685"
+          ],
+          "ctas": [
+            "ev_48df60d8d8485792"
+          ],
+          "offers": [
+            "ev_a60f89d9d7d3da2e"
+          ],
+          "prices": [
+            "ev_f7266440dc76bef7"
+          ],
+          "services": [
+            "ev_e0edd6c50b28fb69"
+          ],
+          "business_model": [
+            "ev_9e32c88bf167e926"
+          ]
+        }
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_725ee64b281cdc31",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://sweetcrumb.com/",
+      "observation_type": "website.homepage",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.514883Z",
+      "expires_at": "2026-10-11T06:13:31.514883Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Homepage of sweetcrumb.com was retrieved (HTTP 200); title: \"SweetCrumb Bakery\"",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "title": "SweetCrumb Bakery",
+        "description": "SweetCrumb Bakery \u2014 wedding cakes bakery in Chicago",
+        "excerpt": "SweetCrumb Bakery Fresh wedding cakes in Chicago. About Services Contact us Pricing Order now Email Call in"
+      },
+      "content_hash": "9cd9c08479457181",
+      "confidence": 0.95,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_b8984daa407e714c",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://sweetcrumb.com/sitemap.xml",
+      "observation_type": "website.page_inventory",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.515549Z",
+      "expires_at": "2026-10-11T06:13:31.515549Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "7 same-site URLs observed on sweetcrumb.com via sitemap (2 commercial, 2 blog/news, 1 pricing, 0 careers)",
+      "metric": "page_count",
+      "value": 7,
+      "estimate": null,
+      "raw_reference": {
+        "inventory_source": "sitemap",
+        "counts": {
+          "homepage": 1,
+          "about": 1,
+          "contact": 1,
+          "service": 1,
+          "pricing": 1,
+          "blog": 2
+        }
+      },
+      "content_hash": null,
+      "confidence": 0.9,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_bc991f0da56410e7",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://sweetcrumb.com/pricing",
+      "observation_type": "website.page_inventory",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.515591Z",
+      "expires_at": "2026-10-11T06:13:31.515591Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "1 pricing page(s) listed on sweetcrumb.com, e.g. https://sweetcrumb.com/pricing",
+      "metric": "pricing_page_count",
+      "value": 1,
+      "estimate": null,
+      "raw_reference": {
+        "sample_urls": [
+          "https://sweetcrumb.com/pricing"
+        ],
+        "classification": "url_pattern"
+      },
+      "content_hash": null,
+      "confidence": 0.75,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_005c86c2fc754485",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://sweetcrumb.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.517315Z",
+      "expires_at": "2026-10-11T06:13:31.517315Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Site describes itself as: \"SweetCrumb Bakery \u2014 wedding cakes bakery in Chicago\"",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "description": "SweetCrumb Bakery \u2014 wedding cakes bakery in Chicago"
+      },
+      "content_hash": null,
+      "confidence": 0.9,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_25d0f5cec22bf76a",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://sweetcrumb.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.517638Z",
+      "expires_at": "2026-10-11T06:13:31.517638Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Public contact email(s) published: hello@sweetcrumb.com, orders@sweetcrumb.com",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "emails": [
+          "hello@sweetcrumb.com",
+          "orders@sweetcrumb.com"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.9,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_79dcc56c459e5c92",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://sweetcrumb.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.517669Z",
+      "expires_at": "2026-10-11T06:13:31.517669Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Public phone number(s) published: +13125550100",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "phones": [
+          "+13125550100"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.9,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_b0fc4f32cb9459da",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://sweetcrumb.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.517687Z",
+      "expires_at": "2026-10-11T06:13:31.517687Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Linked social profiles: linkedin",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "profiles": {
+          "linkedin": "https://www.linkedin.com/company/sweetcrumb"
+        }
+      },
+      "content_hash": null,
+      "confidence": 0.9,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_1539508ccc96c5e3",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://sweetcrumb.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.517916Z",
+      "expires_at": "2026-10-11T06:13:31.517916Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Technology signatures in homepage HTML: Google Tag Manager, Meta Pixel",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "technologies": [
+          "Google Tag Manager",
+          "Meta Pixel"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.85,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_9c3b81040b9a63d1",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://sweetcrumb.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.517932Z",
+      "expires_at": "2026-10-11T06:13:31.517932Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Structured-data address(es): Chicago, IL",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "locations": [
+          "Chicago, IL"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.88,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_48e46a6ecb698b72",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://sweetcrumb.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.517947Z",
+      "expires_at": "2026-10-11T06:13:31.517947Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Calls-to-action observed: Contact us, Order now, Call",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "ctas": [
+          "Contact us",
+          "Order now",
+          "Call"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.85,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_9e22fe6c9d84c112",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://sweetcrumb.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.517961Z",
+      "expires_at": "2026-10-11T06:13:31.517961Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Offer language observed: \"Pricing Wedding cake from $299. Cupcakes $3.50 per person. Free delivery on orders over $100.\"",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "offers": [
+          "Pricing Wedding cake from $299. Cupcakes $3.50 per person. Free delivery on orders over $100."
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.8,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_66804a26bebb5c37",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://sweetcrumb.com/pricing",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.517981Z",
+      "expires_at": "2026-10-11T06:13:31.517981Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "3 price point(s) published on https://sweetcrumb.com/pricing",
+      "metric": "published_price_points",
+      "value": 3,
+      "estimate": null,
+      "raw_reference": {
+        "prices": [
+          "$299",
+          "$3.50 per person",
+          "$100"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.88,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_2516001b2a13f87a",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://sweetcrumb.com/services",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.518006Z",
+      "expires_at": "2026-10-11T06:13:31.518006Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Service headings on https://sweetcrumb.com/services: Wedding cakes, Corporate catering, Custom birthday cakes",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "services": [
+          "Wedding cakes",
+          "Corporate catering",
+          "Custom birthday cakes"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.8,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_786f0a2355d5f605",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "website",
+      "source_type": "rule_classification",
+      "source_url": "https://sweetcrumb.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.518290Z",
+      "expires_at": "2026-10-11T06:13:31.518290Z",
+      "freshness": "fresh",
+      "claim_kind": "inference",
+      "claim": "Business model appears to include 'food_service' (indicators: order online, schema.org Bakery)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "label": "food_service",
+        "indicators": [
+          "order online",
+          "schema.org Bakery"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.65,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_69bf02e94802f459",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "content",
+      "source_type": "website",
+      "source_url": "https://sweetcrumb.com/blog/wedding-cakes-guide-0",
+      "observation_type": "content.inventory",
+      "observed_at": "2026-08-20T06:13:31Z",
+      "captured_at": "2026-10-04T06:13:31.520795Z",
+      "expires_at": "2026-10-11T06:13:31.520795Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Article \"Wedding Cakes guide 0\" published 2026-08-20 (source: feed)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "title": "Wedding Cakes guide 0",
+        "date_source": "feed"
+      },
+      "content_hash": null,
+      "confidence": 0.92,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_276683f6959d80f9",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "content",
+      "source_type": "website",
+      "source_url": "https://sweetcrumb.com/blog/wedding-cakes-guide-1",
+      "observation_type": "content.inventory",
+      "observed_at": "2026-03-18T06:13:31Z",
+      "captured_at": "2026-10-04T06:13:31.520954Z",
+      "expires_at": "2026-10-11T06:13:31.520954Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Article \"Wedding Cakes guide 1\" published 2026-03-18 (source: feed)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "title": "Wedding Cakes guide 1",
+        "date_source": "feed"
+      },
+      "content_hash": null,
+      "confidence": 0.92,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_e1d5d77c56fb1d8e",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "content",
+      "source_type": "website",
+      "source_url": "https://sweetcrumb.com/feed",
+      "observation_type": "content.inventory",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.521002Z",
+      "expires_at": "2026-10-11T06:13:31.521002Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "2 article(s) observed on sweetcrumb.com; 2 with a publication date; 0 / 1 / 1 published in the last 30 / 60 / 90 days",
+      "metric": "articles_last_60d",
+      "value": 1,
+      "estimate": null,
+      "raw_reference": {
+        "feed": "https://sweetcrumb.com/feed",
+        "dated": 2,
+        "windows": {
+          "30": 0,
+          "60": 1,
+          "90": 1
+        }
+      },
+      "content_hash": null,
+      "confidence": 0.9,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_752f14a3fcd33c36",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "competitor_discovery",
+      "source_type": "web_search",
+      "source_url": "https://rivalbakes.com/",
+      "observation_type": "competitors.candidates",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.521495Z",
+      "expires_at": "2026-10-11T06:13:31.521495Z",
+      "freshness": "fresh",
+      "claim_kind": "inference",
+      "claim": "Rival Bakes (rivalbakes.com) classified as likely_competitor of SweetCrumb Bakery (confidence 0.55)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "queries": [
+          "Bakery Chicago",
+          "SweetCrumb Bakery competitors",
+          "alternatives to SweetCrumb Bakery",
+          "wedding cakes Chicago"
+        ],
+        "title": "Rival Bakes | Wedding Cakes Chicago",
+        "snippet": "",
+        "reason": null
+      },
+      "content_hash": null,
+      "confidence": 0.55,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_3894f4b32a8f3c72",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "competitor_discovery",
+      "source_type": "web_search",
+      "source_url": "https://cakehouse.com/",
+      "observation_type": "competitors.candidates",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.521535Z",
+      "expires_at": "2026-10-11T06:13:31.521535Z",
+      "freshness": "fresh",
+      "claim_kind": "inference",
+      "claim": "Cake House (cakehouse.com) classified as likely_competitor of SweetCrumb Bakery (confidence 0.55)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "queries": [
+          "Bakery Chicago",
+          "SweetCrumb Bakery competitors",
+          "alternatives to SweetCrumb Bakery",
+          "wedding cakes Chicago"
+        ],
+        "title": "Cake House - Custom cakes",
+        "snippet": "",
+        "reason": null
+      },
+      "content_hash": null,
+      "confidence": 0.55,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_8627871b40820669",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/",
+      "observation_type": "website.homepage",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.522883Z",
+      "expires_at": "2026-10-11T06:13:31.522883Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Homepage of rivalbakes.com was retrieved (HTTP 200); title: \"Rival Bakes\"",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "title": "Rival Bakes",
+        "description": "Rival Bakes \u2014 wedding cakes bakery in Chicago",
+        "excerpt": "Rival Bakes Fresh wedding cakes in Chicago. 20% off wedding tastings this month About Services Contact us Pricing Order now Email Call in"
+      },
+      "content_hash": "ee6973eb62f9e6cf",
+      "confidence": 0.95,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_11583fa09b76182c",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/sitemap.xml",
+      "observation_type": "website.page_inventory",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.523494Z",
+      "expires_at": "2026-10-11T06:13:31.523494Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "17 same-site URLs observed on rivalbakes.com via sitemap (6 commercial, 7 blog/news, 1 pricing, 1 careers)",
+      "metric": "page_count",
+      "value": 17,
+      "estimate": null,
+      "raw_reference": {
+        "inventory_source": "sitemap",
+        "counts": {
+          "homepage": 1,
+          "about": 1,
+          "contact": 1,
+          "service": 1,
+          "pricing": 1,
+          "careers": 1,
+          "landing": 4,
+          "blog": 7
+        }
+      },
+      "content_hash": null,
+      "confidence": 0.9,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_338799c51d2e1254",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/pricing",
+      "observation_type": "website.page_inventory",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.523530Z",
+      "expires_at": "2026-10-11T06:13:31.523530Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "1 pricing page(s) listed on rivalbakes.com, e.g. https://rivalbakes.com/pricing",
+      "metric": "pricing_page_count",
+      "value": 1,
+      "estimate": null,
+      "raw_reference": {
+        "sample_urls": [
+          "https://rivalbakes.com/pricing"
+        ],
+        "classification": "url_pattern"
+      },
+      "content_hash": null,
+      "confidence": 0.75,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_7bc01089f06d6c51",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/careers",
+      "observation_type": "website.page_inventory",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.523549Z",
+      "expires_at": "2026-10-11T06:13:31.523549Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "1 careers page(s) listed on rivalbakes.com, e.g. https://rivalbakes.com/careers",
+      "metric": "careers_page_count",
+      "value": 1,
+      "estimate": null,
+      "raw_reference": {
+        "sample_urls": [
+          "https://rivalbakes.com/careers"
+        ],
+        "classification": "url_pattern"
+      },
+      "content_hash": null,
+      "confidence": 0.75,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_aa2ec5847e3581a6",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/offers/landing-0",
+      "observation_type": "website.page_inventory",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.523565Z",
+      "expires_at": "2026-10-11T06:13:31.523565Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "4 landing page(s) listed on rivalbakes.com, e.g. https://rivalbakes.com/offers/landing-0",
+      "metric": "landing_page_count",
+      "value": 4,
+      "estimate": null,
+      "raw_reference": {
+        "sample_urls": [
+          "https://rivalbakes.com/offers/landing-0",
+          "https://rivalbakes.com/offers/landing-1",
+          "https://rivalbakes.com/offers/landing-2",
+          "https://rivalbakes.com/offers/landing-3"
+        ],
+        "classification": "url_pattern"
+      },
+      "content_hash": null,
+      "confidence": 0.75,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_072ce597ec7a51c8",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.525595Z",
+      "expires_at": "2026-10-11T06:13:31.525595Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Site describes itself as: \"Rival Bakes \u2014 wedding cakes bakery in Chicago\"",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "description": "Rival Bakes \u2014 wedding cakes bakery in Chicago"
+      },
+      "content_hash": null,
+      "confidence": 0.9,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_115bcee78533ce62",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.525837Z",
+      "expires_at": "2026-10-11T06:13:31.525837Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Public contact email(s) published: hello@rivalbakes.com, orders@rivalbakes.com",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "emails": [
+          "hello@rivalbakes.com",
+          "orders@rivalbakes.com"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.9,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_4f3eaa577edafd95",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.525864Z",
+      "expires_at": "2026-10-11T06:13:31.525864Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Public phone number(s) published: +13125550100",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "phones": [
+          "+13125550100"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.9,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_1fac2ca4caf606ef",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.525882Z",
+      "expires_at": "2026-10-11T06:13:31.525882Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Linked social profiles: linkedin",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "profiles": {
+          "linkedin": "https://www.linkedin.com/company/rivalbakes"
+        }
+      },
+      "content_hash": null,
+      "confidence": 0.9,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_40adf884788bb3c9",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.526092Z",
+      "expires_at": "2026-10-11T06:13:31.526092Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Technology signatures in homepage HTML: Google Tag Manager, Meta Pixel",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "technologies": [
+          "Google Tag Manager",
+          "Meta Pixel"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.85,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_3d8428c7d7053de6",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.526106Z",
+      "expires_at": "2026-10-11T06:13:31.526106Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Structured-data address(es): Chicago, IL",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "locations": [
+          "Chicago, IL"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.88,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_b629ef92352613a7",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.526119Z",
+      "expires_at": "2026-10-11T06:13:31.526119Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Calls-to-action observed: Contact us, Order now, Call",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "ctas": [
+          "Contact us",
+          "Order now",
+          "Call"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.85,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_841e67ad52405759",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.526131Z",
+      "expires_at": "2026-10-11T06:13:31.526131Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Offer language observed: \"Rival Bakes Fresh wedding cakes in Chicago. 20% off wedding tastings this month About Services Contact us Prici\"",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "offers": [
+          "Rival Bakes Fresh wedding cakes in Chicago. 20% off wedding tastings this month About Services Contact us Prici",
+          "Pricing Wedding cake from $299. Cupcakes $3.50 per person. Free delivery on orders over $100."
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.8,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_2deb0ee5c185610b",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/pricing",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.526148Z",
+      "expires_at": "2026-10-11T06:13:31.526148Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "3 price point(s) published on https://rivalbakes.com/pricing",
+      "metric": "published_price_points",
+      "value": 3,
+      "estimate": null,
+      "raw_reference": {
+        "prices": [
+          "$299",
+          "$3.50 per person",
+          "$100"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.88,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_5a561330114731ec",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/services",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.526168Z",
+      "expires_at": "2026-10-11T06:13:31.526168Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Service headings on https://rivalbakes.com/services: Wedding cakes, Corporate catering, Custom birthday cakes",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "services": [
+          "Wedding cakes",
+          "Corporate catering",
+          "Custom birthday cakes"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.8,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_5852ae9daefdb22b",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "source_type": "rule_classification",
+      "source_url": "https://rivalbakes.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.526480Z",
+      "expires_at": "2026-10-11T06:13:31.526480Z",
+      "freshness": "fresh",
+      "claim_kind": "inference",
+      "claim": "Business model appears to include 'food_service' (indicators: order online, schema.org Bakery)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "label": "food_service",
+        "indicators": [
+          "order online",
+          "schema.org Bakery"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.65,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_ffd82a42be8e518a",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "content",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/blog/wedding-cakes-guide-0",
+      "observation_type": "content.inventory",
+      "observed_at": "2026-10-02T06:13:31Z",
+      "captured_at": "2026-10-04T06:13:31.527461Z",
+      "expires_at": "2026-10-11T06:13:31.527461Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Article \"Wedding Cakes guide 0\" published 2026-10-02 (source: feed)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "title": "Wedding Cakes guide 0",
+        "date_source": "feed"
+      },
+      "content_hash": null,
+      "confidence": 0.92,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_e2ea2dbfd691e08e",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "content",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/blog/wedding-cakes-guide-1",
+      "observation_type": "content.inventory",
+      "observed_at": "2026-09-26T06:13:31Z",
+      "captured_at": "2026-10-04T06:13:31.527515Z",
+      "expires_at": "2026-10-11T06:13:31.527515Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Article \"Wedding Cakes guide 1\" published 2026-09-26 (source: feed)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "title": "Wedding Cakes guide 1",
+        "date_source": "feed"
+      },
+      "content_hash": null,
+      "confidence": 0.92,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_ba364a528b4ca17b",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "content",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/blog/wedding-cakes-guide-2",
+      "observation_type": "content.inventory",
+      "observed_at": "2026-09-19T06:13:31Z",
+      "captured_at": "2026-10-04T06:13:31.527547Z",
+      "expires_at": "2026-10-11T06:13:31.527547Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Article \"Wedding Cakes guide 2\" published 2026-09-19 (source: feed)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "title": "Wedding Cakes guide 2",
+        "date_source": "feed"
+      },
+      "content_hash": null,
+      "confidence": 0.92,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_6d06451cd89aa9cc",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "content",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/blog/wedding-cakes-guide-3",
+      "observation_type": "content.inventory",
+      "observed_at": "2026-09-12T06:13:31Z",
+      "captured_at": "2026-10-04T06:13:31.527575Z",
+      "expires_at": "2026-10-11T06:13:31.527575Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Article \"Wedding Cakes guide 3\" published 2026-09-12 (source: feed)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "title": "Wedding Cakes guide 3",
+        "date_source": "feed"
+      },
+      "content_hash": null,
+      "confidence": 0.92,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_ef22346e85fc3677",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "content",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/blog/wedding-cakes-guide-4",
+      "observation_type": "content.inventory",
+      "observed_at": "2026-09-04T06:13:31Z",
+      "captured_at": "2026-10-04T06:13:31.527603Z",
+      "expires_at": "2026-10-11T06:13:31.527603Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Article \"Wedding Cakes guide 4\" published 2026-09-04 (source: feed)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "title": "Wedding Cakes guide 4",
+        "date_source": "feed"
+      },
+      "content_hash": null,
+      "confidence": 0.92,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_42b4b28b2c10d615",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "content",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/blog/wedding-cakes-guide-5",
+      "observation_type": "content.inventory",
+      "observed_at": "2026-08-24T06:13:31Z",
+      "captured_at": "2026-10-04T06:13:31.527629Z",
+      "expires_at": "2026-10-11T06:13:31.527629Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Article \"Wedding Cakes guide 5\" published 2026-08-24 (source: feed)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "title": "Wedding Cakes guide 5",
+        "date_source": "feed"
+      },
+      "content_hash": null,
+      "confidence": 0.92,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_c89d61dae99750a7",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "content",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/blog/wedding-cakes-guide-6",
+      "observation_type": "content.inventory",
+      "observed_at": "2026-08-10T06:13:31Z",
+      "captured_at": "2026-10-04T06:13:31.527655Z",
+      "expires_at": "2026-10-11T06:13:31.527655Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Article \"Wedding Cakes guide 6\" published 2026-08-10 (source: feed)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "title": "Wedding Cakes guide 6",
+        "date_source": "feed"
+      },
+      "content_hash": null,
+      "confidence": 0.92,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_799a5eca049ecc3a",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "content",
+      "source_type": "website",
+      "source_url": "https://rivalbakes.com/feed",
+      "observation_type": "content.inventory",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.527679Z",
+      "expires_at": "2026-10-11T06:13:31.527679Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "7 article(s) observed on rivalbakes.com; 7 with a publication date; 4 / 7 / 7 published in the last 30 / 60 / 90 days",
+      "metric": "articles_last_60d",
+      "value": 7,
+      "estimate": null,
+      "raw_reference": {
+        "feed": "https://rivalbakes.com/feed",
+        "dated": 7,
+        "windows": {
+          "30": 4,
+          "60": 7,
+          "90": 7
+        }
+      },
+      "content_hash": null,
+      "confidence": 0.9,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_86c4989a9bcdeb25",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/",
+      "observation_type": "website.homepage",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.528948Z",
+      "expires_at": "2026-10-11T06:13:31.528948Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Homepage of cakehouse.com was retrieved (HTTP 200); title: \"Cake House\"",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "title": "Cake House",
+        "description": "Cake House \u2014 wedding cakes bakery in Chicago",
+        "excerpt": "Cake House Fresh wedding cakes in Chicago. About Services Contact us Pricing Order now Email Call in"
+      },
+      "content_hash": "93d0536adbf5f735",
+      "confidence": 0.95,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_8e51db9d8e84f2f4",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/sitemap.xml",
+      "observation_type": "website.page_inventory",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.529542Z",
+      "expires_at": "2026-10-11T06:13:31.529542Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "13 same-site URLs observed on cakehouse.com via sitemap (5 commercial, 5 blog/news, 1 pricing, 0 careers)",
+      "metric": "page_count",
+      "value": 13,
+      "estimate": null,
+      "raw_reference": {
+        "inventory_source": "sitemap",
+        "counts": {
+          "homepage": 1,
+          "about": 1,
+          "contact": 1,
+          "service": 1,
+          "pricing": 1,
+          "landing": 3,
+          "blog": 5
+        }
+      },
+      "content_hash": null,
+      "confidence": 0.9,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_6bfd2507be68a3a0",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/pricing",
+      "observation_type": "website.page_inventory",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.529575Z",
+      "expires_at": "2026-10-11T06:13:31.529575Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "1 pricing page(s) listed on cakehouse.com, e.g. https://cakehouse.com/pricing",
+      "metric": "pricing_page_count",
+      "value": 1,
+      "estimate": null,
+      "raw_reference": {
+        "sample_urls": [
+          "https://cakehouse.com/pricing"
+        ],
+        "classification": "url_pattern"
+      },
+      "content_hash": null,
+      "confidence": 0.75,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_796a346a625b242e",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/offers/landing-0",
+      "observation_type": "website.page_inventory",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.529596Z",
+      "expires_at": "2026-10-11T06:13:31.529596Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "3 landing page(s) listed on cakehouse.com, e.g. https://cakehouse.com/offers/landing-0",
+      "metric": "landing_page_count",
+      "value": 3,
+      "estimate": null,
+      "raw_reference": {
+        "sample_urls": [
+          "https://cakehouse.com/offers/landing-0",
+          "https://cakehouse.com/offers/landing-1",
+          "https://cakehouse.com/offers/landing-2"
+        ],
+        "classification": "url_pattern"
+      },
+      "content_hash": null,
+      "confidence": 0.75,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_2bb46a352a37f0da",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.531294Z",
+      "expires_at": "2026-10-11T06:13:31.531294Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Site describes itself as: \"Cake House \u2014 wedding cakes bakery in Chicago\"",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "description": "Cake House \u2014 wedding cakes bakery in Chicago"
+      },
+      "content_hash": null,
+      "confidence": 0.9,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_9d12ce39be53d0af",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.531526Z",
+      "expires_at": "2026-10-11T06:13:31.531526Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Public contact email(s) published: hello@cakehouse.com, orders@cakehouse.com",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "emails": [
+          "hello@cakehouse.com",
+          "orders@cakehouse.com"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.9,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_af155d04256c9497",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.531551Z",
+      "expires_at": "2026-10-11T06:13:31.531551Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Public phone number(s) published: +13125550100",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "phones": [
+          "+13125550100"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.9,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_52e3fd75c07fbd40",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.531570Z",
+      "expires_at": "2026-10-11T06:13:31.531570Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Linked social profiles: linkedin",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "profiles": {
+          "linkedin": "https://www.linkedin.com/company/cakehouse"
+        }
+      },
+      "content_hash": null,
+      "confidence": 0.9,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_4bfb3ed06d59c2a5",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.531780Z",
+      "expires_at": "2026-10-11T06:13:31.531780Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Technology signatures in homepage HTML: Google Tag Manager, Meta Pixel",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "technologies": [
+          "Google Tag Manager",
+          "Meta Pixel"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.85,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_1a640094c5927685",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.531797Z",
+      "expires_at": "2026-10-11T06:13:31.531797Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Structured-data address(es): Chicago, IL",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "locations": [
+          "Chicago, IL"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.88,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_48df60d8d8485792",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.531809Z",
+      "expires_at": "2026-10-11T06:13:31.531809Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Calls-to-action observed: Contact us, Order now, Call",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "ctas": [
+          "Contact us",
+          "Order now",
+          "Call"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.85,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_a60f89d9d7d3da2e",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.531821Z",
+      "expires_at": "2026-10-11T06:13:31.531821Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Offer language observed: \"Pricing Wedding cake from $299. Cupcakes $3.50 per person. Free delivery on orders over $100.\"",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "offers": [
+          "Pricing Wedding cake from $299. Cupcakes $3.50 per person. Free delivery on orders over $100."
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.8,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_f7266440dc76bef7",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/pricing",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.531838Z",
+      "expires_at": "2026-10-11T06:13:31.531838Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "3 price point(s) published on https://cakehouse.com/pricing",
+      "metric": "published_price_points",
+      "value": 3,
+      "estimate": null,
+      "raw_reference": {
+        "prices": [
+          "$299",
+          "$3.50 per person",
+          "$100"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.88,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_e0edd6c50b28fb69",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "website",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/services",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.531858Z",
+      "expires_at": "2026-10-11T06:13:31.531858Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Service headings on https://cakehouse.com/services: Wedding cakes, Corporate catering, Custom birthday cakes",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "services": [
+          "Wedding cakes",
+          "Corporate catering",
+          "Custom birthday cakes"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.8,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_9e32c88bf167e926",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "website",
+      "source_type": "rule_classification",
+      "source_url": "https://cakehouse.com/",
+      "observation_type": "website.company_profile",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.532118Z",
+      "expires_at": "2026-10-11T06:13:31.532118Z",
+      "freshness": "fresh",
+      "claim_kind": "inference",
+      "claim": "Business model appears to include 'food_service' (indicators: order online, schema.org Bakery)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "label": "food_service",
+        "indicators": [
+          "order online",
+          "schema.org Bakery"
+        ]
+      },
+      "content_hash": null,
+      "confidence": 0.65,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_87e0ac37eba6a27f",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "content",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/blog/wedding-cakes-guide-0",
+      "observation_type": "content.inventory",
+      "observed_at": "2026-09-29T06:13:31Z",
+      "captured_at": "2026-10-04T06:13:31.532882Z",
+      "expires_at": "2026-10-11T06:13:31.532882Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Article \"Wedding Cakes guide 0\" published 2026-09-29 (source: feed)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "title": "Wedding Cakes guide 0",
+        "date_source": "feed"
+      },
+      "content_hash": null,
+      "confidence": 0.92,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_c605c751d44f79be",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "content",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/blog/wedding-cakes-guide-1",
+      "observation_type": "content.inventory",
+      "observed_at": "2026-09-22T06:13:31Z",
+      "captured_at": "2026-10-04T06:13:31.532938Z",
+      "expires_at": "2026-10-11T06:13:31.532938Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Article \"Wedding Cakes guide 1\" published 2026-09-22 (source: feed)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "title": "Wedding Cakes guide 1",
+        "date_source": "feed"
+      },
+      "content_hash": null,
+      "confidence": 0.92,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_84b46ab5b29f45a8",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "content",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/blog/wedding-cakes-guide-2",
+      "observation_type": "content.inventory",
+      "observed_at": "2026-09-15T06:13:31Z",
+      "captured_at": "2026-10-04T06:13:31.532973Z",
+      "expires_at": "2026-10-11T06:13:31.532973Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Article \"Wedding Cakes guide 2\" published 2026-09-15 (source: feed)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "title": "Wedding Cakes guide 2",
+        "date_source": "feed"
+      },
+      "content_hash": null,
+      "confidence": 0.92,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_d0c66b135e70505c",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "content",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/blog/wedding-cakes-guide-3",
+      "observation_type": "content.inventory",
+      "observed_at": "2026-09-01T06:13:31Z",
+      "captured_at": "2026-10-04T06:13:31.533002Z",
+      "expires_at": "2026-10-11T06:13:31.533002Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Article \"Wedding Cakes guide 3\" published 2026-09-01 (source: feed)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "title": "Wedding Cakes guide 3",
+        "date_source": "feed"
+      },
+      "content_hash": null,
+      "confidence": 0.92,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_19ee94d50fc270fa",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "content",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/blog/wedding-cakes-guide-4",
+      "observation_type": "content.inventory",
+      "observed_at": "2026-08-15T06:13:31Z",
+      "captured_at": "2026-10-04T06:13:31.533027Z",
+      "expires_at": "2026-10-11T06:13:31.533027Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "Article \"Wedding Cakes guide 4\" published 2026-08-15 (source: feed)",
+      "metric": null,
+      "value": null,
+      "estimate": null,
+      "raw_reference": {
+        "title": "Wedding Cakes guide 4",
+        "date_source": "feed"
+      },
+      "content_hash": null,
+      "confidence": 0.92,
+      "conflicts_with": []
+    },
+    {
+      "evidence_id": "ev_a6ff764d3d9ff877",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "content",
+      "source_type": "website",
+      "source_url": "https://cakehouse.com/feed",
+      "observation_type": "content.inventory",
+      "observed_at": null,
+      "captured_at": "2026-10-04T06:13:31.533058Z",
+      "expires_at": "2026-10-11T06:13:31.533058Z",
+      "freshness": "fresh",
+      "claim_kind": "fact",
+      "claim": "5 article(s) observed on cakehouse.com; 5 with a publication date; 3 / 5 / 5 published in the last 30 / 60 / 90 days",
+      "metric": "articles_last_60d",
+      "value": 5,
+      "estimate": null,
+      "raw_reference": {
+        "feed": "https://cakehouse.com/feed",
+        "dated": 5,
+        "windows": {
+          "30": 3,
+          "60": 5,
+          "90": 5
+        }
+      },
+      "content_hash": null,
+      "confidence": 0.9,
+      "conflicts_with": []
+    }
+  ],
+  "observations": [
+    {
+      "observation_id": "obs_1aaf95ad50175ab6",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "website",
+      "type": "website.homepage",
+      "captured_at": "2026-10-04T06:13:31.514972Z",
+      "claim_kind": "fact",
+      "metrics": {
+        "internal_link_count": 5,
+        "word_count": 17
+      },
+      "items": [
+        {
+          "url": "https://sweetcrumb.com/",
+          "title": "SweetCrumb Bakery",
+          "description": "SweetCrumb Bakery \u2014 wedding cakes bakery in Chicago",
+          "content_hash": "9cd9c08479457181"
+        }
+      ],
+      "evidence_refs": [
+        "ev_725ee64b281cdc31"
+      ]
+    },
+    {
+      "observation_id": "obs_b719713ea109d43f",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "website",
+      "type": "website.page_inventory",
+      "captured_at": "2026-10-04T06:13:31.515622Z",
+      "claim_kind": "fact",
+      "metrics": {
+        "page_count": 7,
+        "commercial_page_count": 2,
+        "pricing_page_count": 1,
+        "product_page_count": 0,
+        "service_page_count": 1,
+        "landing_page_count": 0,
+        "case_study_page_count": 0,
+        "blog_page_count": 2,
+        "careers_page_count": 0,
+        "contact_page_count": 1,
+        "location_page_count": 0,
+        "inventory_from_sitemap": 1
+      },
+      "items": [
+        {
+          "url": "https://sweetcrumb.com/",
+          "kind": "homepage",
+          "lastmod": "2026-10-03T00:00:00Z"
+        },
+        {
+          "url": "https://sweetcrumb.com/about",
+          "kind": "about",
+          "lastmod": "2026-03-18T00:00:00Z"
+        },
+        {
+          "url": "https://sweetcrumb.com/contact",
+          "kind": "contact",
+          "lastmod": "2026-03-18T00:00:00Z"
+        },
+        {
+          "url": "https://sweetcrumb.com/services",
+          "kind": "service",
+          "lastmod": "2026-08-15T00:00:00Z"
+        },
+        {
+          "url": "https://sweetcrumb.com/pricing",
+          "kind": "pricing",
+          "lastmod": "2026-09-14T00:00:00Z"
+        },
+        {
+          "url": "https://sweetcrumb.com/blog/wedding-cakes-guide-0",
+          "kind": "blog",
+          "lastmod": "2026-08-20T00:00:00Z"
+        },
+        {
+          "url": "https://sweetcrumb.com/blog/wedding-cakes-guide-1",
+          "kind": "blog",
+          "lastmod": "2026-03-18T00:00:00Z"
+        }
+      ],
+      "evidence_refs": [
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7"
+      ]
+    },
+    {
+      "observation_id": "obs_8a9bcc2f04c6607e",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "website",
+      "type": "website.company_profile",
+      "captured_at": "2026-10-04T06:13:31.518319Z",
+      "claim_kind": "fact",
+      "metrics": {
+        "pages_read": 5,
+        "email_count": 2,
+        "phone_count": 1,
+        "social_profile_count": 1,
+        "cta_count": 3,
+        "offer_mentions": 1,
+        "published_price_points": 3,
+        "location_count": 1
+      },
+      "items": [
+        {
+          "title": "SweetCrumb Bakery",
+          "description": "SweetCrumb Bakery \u2014 wedding cakes bakery in Chicago",
+          "services": [
+            "Wedding cakes",
+            "Corporate catering",
+            "Custom birthday cakes"
+          ],
+          "products": [],
+          "emails": [
+            "hello@sweetcrumb.com",
+            "orders@sweetcrumb.com"
+          ],
+          "phones": [
+            "+13125550100"
+          ],
+          "social_profiles": {
+            "linkedin": "https://www.linkedin.com/company/sweetcrumb"
+          },
+          "technologies": [
+            "Google Tag Manager",
+            "Meta Pixel"
+          ],
+          "locations": [
+            "Chicago, IL"
+          ],
+          "ctas": [
+            "Contact us",
+            "Order now",
+            "Call"
+          ],
+          "offers": [
+            "Pricing Wedding cake from $299. Cupcakes $3.50 per person. Free delivery on orders over $100."
+          ],
+          "prices": [
+            "$299",
+            "$3.50 per person",
+            "$100"
+          ],
+          "business_model": [
+            "food_service"
+          ],
+          "business_model_indicators": {
+            "food_service": [
+              "order online",
+              "schema.org Bakery"
+            ]
+          },
+          "pages_read": [
+            "https://sweetcrumb.com/",
+            "https://sweetcrumb.com/pricing",
+            "https://sweetcrumb.com/services",
+            "https://sweetcrumb.com/contact",
+            "https://sweetcrumb.com/about"
+          ],
+          "field_evidence": {
+            "description": [
+              "ev_005c86c2fc754485"
+            ],
+            "emails": [
+              "ev_25d0f5cec22bf76a"
+            ],
+            "phones": [
+              "ev_79dcc56c459e5c92"
+            ],
+            "social_profiles": [
+              "ev_b0fc4f32cb9459da"
+            ],
+            "technologies": [
+              "ev_1539508ccc96c5e3"
+            ],
+            "locations": [
+              "ev_9c3b81040b9a63d1"
+            ],
+            "ctas": [
+              "ev_48e46a6ecb698b72"
+            ],
+            "offers": [
+              "ev_9e22fe6c9d84c112"
+            ],
+            "prices": [
+              "ev_66804a26bebb5c37"
+            ],
+            "services": [
+              "ev_2516001b2a13f87a"
+            ],
+            "business_model": [
+              "ev_786f0a2355d5f605"
+            ]
+          }
+        }
+      ],
+      "evidence_refs": [
+        "ev_005c86c2fc754485",
+        "ev_25d0f5cec22bf76a",
+        "ev_79dcc56c459e5c92",
+        "ev_b0fc4f32cb9459da",
+        "ev_1539508ccc96c5e3",
+        "ev_9c3b81040b9a63d1",
+        "ev_48e46a6ecb698b72",
+        "ev_9e22fe6c9d84c112",
+        "ev_66804a26bebb5c37",
+        "ev_2516001b2a13f87a",
+        "ev_786f0a2355d5f605"
+      ]
+    },
+    {
+      "observation_id": "obs_374abb0f47eae2fd",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "content",
+      "type": "content.inventory",
+      "captured_at": "2026-10-04T06:13:31.521040Z",
+      "claim_kind": "fact",
+      "metrics": {
+        "article_count_observed": 2,
+        "dated_article_count": 2,
+        "articles_last_30d": 0,
+        "articles_last_60d": 1,
+        "articles_last_90d": 1,
+        "relevant_articles_last_60d": 1,
+        "articles_modified_last_60d": 1,
+        "from_feed": 1
+      },
+      "items": [
+        {
+          "url": "https://sweetcrumb.com/blog/wedding-cakes-guide-0",
+          "title": "Wedding Cakes guide 0",
+          "published_at": "2026-08-20T06:13:31Z",
+          "date_source": "feed",
+          "lastmod": "2026-08-20T00:00:00Z",
+          "topics": [
+            "wedding cakes"
+          ]
+        },
+        {
+          "url": "https://sweetcrumb.com/blog/wedding-cakes-guide-1",
+          "title": "Wedding Cakes guide 1",
+          "published_at": "2026-03-18T06:13:31Z",
+          "date_source": "feed",
+          "lastmod": "2026-03-18T00:00:00Z",
+          "topics": [
+            "wedding cakes"
+          ]
+        }
+      ],
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e",
+        "ev_69bf02e94802f459",
+        "ev_276683f6959d80f9"
+      ]
+    },
+    {
+      "observation_id": "obs_1ea9eff12b54ccdd",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "content",
+      "type": "content.topics",
+      "captured_at": "2026-10-04T06:13:31.521098Z",
+      "claim_kind": "fact",
+      "metrics": {},
+      "items": [
+        {
+          "topic": "wedding",
+          "article_count": 2,
+          "method": "title_keywords"
+        },
+        {
+          "topic": "cakes",
+          "article_count": 2,
+          "method": "title_keywords"
+        }
+      ],
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e"
+      ]
+    },
+    {
+      "observation_id": "obs_e814e850c8bed2d5",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "provider": "competitor_discovery",
+      "type": "competitors.candidates",
+      "captured_at": "2026-10-04T06:13:31.521562Z",
+      "claim_kind": "inference",
+      "metrics": {
+        "candidate_count": 2,
+        "user_provided": 0
+      },
+      "items": [
+        {
+          "company_name": "Rival Bakes",
+          "domain": "rivalbakes.com",
+          "relationship_type": "likely_competitor",
+          "relationship_confidence": 0.55,
+          "reason": "Business site ranking for 4 market query(ies): Bakery Chicago; SweetCrumb Bakery competitors; alternatives to SweetCrumb Bakery; wedding cakes Chicago",
+          "evidence_refs": [
+            "ev_752f14a3fcd33c36"
+          ],
+          "discovered_via": "search",
+          "mentions": 4
+        },
+        {
+          "company_name": "Cake House",
+          "domain": "cakehouse.com",
+          "relationship_type": "likely_competitor",
+          "relationship_confidence": 0.55,
+          "reason": "Business site ranking for 4 market query(ies): Bakery Chicago; SweetCrumb Bakery competitors; alternatives to SweetCrumb Bakery; wedding cakes Chicago",
+          "evidence_refs": [
+            "ev_3894f4b32a8f3c72"
+          ],
+          "discovered_via": "search",
+          "mentions": 4
+        }
+      ],
+      "evidence_refs": [
+        "ev_752f14a3fcd33c36",
+        "ev_3894f4b32a8f3c72"
+      ]
+    },
+    {
+      "observation_id": "obs_e0adcf4aba030193",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "type": "website.homepage",
+      "captured_at": "2026-10-04T06:13:31.522957Z",
+      "claim_kind": "fact",
+      "metrics": {
+        "internal_link_count": 5,
+        "word_count": 23
+      },
+      "items": [
+        {
+          "url": "https://rivalbakes.com/",
+          "title": "Rival Bakes",
+          "description": "Rival Bakes \u2014 wedding cakes bakery in Chicago",
+          "content_hash": "ee6973eb62f9e6cf"
+        }
+      ],
+      "evidence_refs": [
+        "ev_8627871b40820669"
+      ]
+    },
+    {
+      "observation_id": "obs_980160f56beaadc7",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "type": "website.page_inventory",
+      "captured_at": "2026-10-04T06:13:31.523589Z",
+      "claim_kind": "fact",
+      "metrics": {
+        "page_count": 17,
+        "commercial_page_count": 6,
+        "pricing_page_count": 1,
+        "product_page_count": 0,
+        "service_page_count": 1,
+        "landing_page_count": 4,
+        "case_study_page_count": 0,
+        "blog_page_count": 7,
+        "careers_page_count": 1,
+        "contact_page_count": 1,
+        "location_page_count": 0,
+        "inventory_from_sitemap": 1
+      },
+      "items": [
+        {
+          "url": "https://rivalbakes.com/",
+          "kind": "homepage",
+          "lastmod": "2026-10-03T00:00:00Z"
+        },
+        {
+          "url": "https://rivalbakes.com/about",
+          "kind": "about",
+          "lastmod": "2026-03-18T00:00:00Z"
+        },
+        {
+          "url": "https://rivalbakes.com/contact",
+          "kind": "contact",
+          "lastmod": "2026-03-18T00:00:00Z"
+        },
+        {
+          "url": "https://rivalbakes.com/services",
+          "kind": "service",
+          "lastmod": "2026-08-15T00:00:00Z"
+        },
+        {
+          "url": "https://rivalbakes.com/pricing",
+          "kind": "pricing",
+          "lastmod": "2026-09-14T00:00:00Z"
+        },
+        {
+          "url": "https://rivalbakes.com/careers",
+          "kind": "careers",
+          "lastmod": "2026-09-24T00:00:00Z"
+        },
+        {
+          "url": "https://rivalbakes.com/offers/landing-0",
+          "kind": "landing",
+          "lastmod": "2026-09-29T00:00:00Z"
+        },
+        {
+          "url": "https://rivalbakes.com/offers/landing-1",
+          "kind": "landing",
+          "lastmod": "2026-09-28T00:00:00Z"
+        },
+        {
+          "url": "https://rivalbakes.com/offers/landing-2",
+          "kind": "landing",
+          "lastmod": "2026-09-27T00:00:00Z"
+        },
+        {
+          "url": "https://rivalbakes.com/offers/landing-3",
+          "kind": "landing",
+          "lastmod": "2026-09-26T00:00:00Z"
+        },
+        {
+          "url": "https://rivalbakes.com/blog/wedding-cakes-guide-0",
+          "kind": "blog",
+          "lastmod": "2026-10-02T00:00:00Z"
+        },
+        {
+          "url": "https://rivalbakes.com/blog/wedding-cakes-guide-1",
+          "kind": "blog",
+          "lastmod": "2026-09-26T00:00:00Z"
+        },
+        {
+          "url": "https://rivalbakes.com/blog/wedding-cakes-guide-2",
+          "kind": "blog",
+          "lastmod": "2026-09-19T00:00:00Z"
+        },
+        {
+          "url": "https://rivalbakes.com/blog/wedding-cakes-guide-3",
+          "kind": "blog",
+          "lastmod": "2026-09-12T00:00:00Z"
+        },
+        {
+          "url": "https://rivalbakes.com/blog/wedding-cakes-guide-4",
+          "kind": "blog",
+          "lastmod": "2026-09-04T00:00:00Z"
+        },
+        {
+          "url": "https://rivalbakes.com/blog/wedding-cakes-guide-5",
+          "kind": "blog",
+          "lastmod": "2026-08-24T00:00:00Z"
+        },
+        {
+          "url": "https://rivalbakes.com/blog/wedding-cakes-guide-6",
+          "kind": "blog",
+          "lastmod": "2026-08-10T00:00:00Z"
+        }
+      ],
+      "evidence_refs": [
+        "ev_11583fa09b76182c",
+        "ev_338799c51d2e1254",
+        "ev_7bc01089f06d6c51",
+        "ev_aa2ec5847e3581a6"
+      ]
+    },
+    {
+      "observation_id": "obs_5cc05bf86df7cb28",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "website",
+      "type": "website.company_profile",
+      "captured_at": "2026-10-04T06:13:31.526507Z",
+      "claim_kind": "fact",
+      "metrics": {
+        "pages_read": 6,
+        "email_count": 2,
+        "phone_count": 1,
+        "social_profile_count": 1,
+        "cta_count": 3,
+        "offer_mentions": 2,
+        "published_price_points": 3,
+        "location_count": 1
+      },
+      "items": [
+        {
+          "title": "Rival Bakes",
+          "description": "Rival Bakes \u2014 wedding cakes bakery in Chicago",
+          "services": [
+            "Wedding cakes",
+            "Corporate catering",
+            "Custom birthday cakes"
+          ],
+          "products": [],
+          "emails": [
+            "hello@rivalbakes.com",
+            "orders@rivalbakes.com"
+          ],
+          "phones": [
+            "+13125550100"
+          ],
+          "social_profiles": {
+            "linkedin": "https://www.linkedin.com/company/rivalbakes"
+          },
+          "technologies": [
+            "Google Tag Manager",
+            "Meta Pixel"
+          ],
+          "locations": [
+            "Chicago, IL"
+          ],
+          "ctas": [
+            "Contact us",
+            "Order now",
+            "Call"
+          ],
+          "offers": [
+            "Rival Bakes Fresh wedding cakes in Chicago. 20% off wedding tastings this month About Services Contact us Prici",
+            "Pricing Wedding cake from $299. Cupcakes $3.50 per person. Free delivery on orders over $100."
+          ],
+          "prices": [
+            "$299",
+            "$3.50 per person",
+            "$100"
+          ],
+          "business_model": [
+            "food_service"
+          ],
+          "business_model_indicators": {
+            "food_service": [
+              "order online",
+              "schema.org Bakery"
+            ]
+          },
+          "pages_read": [
+            "https://rivalbakes.com/",
+            "https://rivalbakes.com/pricing",
+            "https://rivalbakes.com/services",
+            "https://rivalbakes.com/contact",
+            "https://rivalbakes.com/about",
+            "https://rivalbakes.com/careers"
+          ],
+          "field_evidence": {
+            "description": [
+              "ev_072ce597ec7a51c8"
+            ],
+            "emails": [
+              "ev_115bcee78533ce62"
+            ],
+            "phones": [
+              "ev_4f3eaa577edafd95"
+            ],
+            "social_profiles": [
+              "ev_1fac2ca4caf606ef"
+            ],
+            "technologies": [
+              "ev_40adf884788bb3c9"
+            ],
+            "locations": [
+              "ev_3d8428c7d7053de6"
+            ],
+            "ctas": [
+              "ev_b629ef92352613a7"
+            ],
+            "offers": [
+              "ev_841e67ad52405759"
+            ],
+            "prices": [
+              "ev_2deb0ee5c185610b"
+            ],
+            "services": [
+              "ev_5a561330114731ec"
+            ],
+            "business_model": [
+              "ev_5852ae9daefdb22b"
+            ]
+          }
+        }
+      ],
+      "evidence_refs": [
+        "ev_072ce597ec7a51c8",
+        "ev_115bcee78533ce62",
+        "ev_4f3eaa577edafd95",
+        "ev_1fac2ca4caf606ef",
+        "ev_40adf884788bb3c9",
+        "ev_3d8428c7d7053de6",
+        "ev_b629ef92352613a7",
+        "ev_841e67ad52405759",
+        "ev_2deb0ee5c185610b",
+        "ev_5a561330114731ec",
+        "ev_5852ae9daefdb22b"
+      ]
+    },
+    {
+      "observation_id": "obs_b317433bcc50f39a",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "content",
+      "type": "content.inventory",
+      "captured_at": "2026-10-04T06:13:31.527721Z",
+      "claim_kind": "fact",
+      "metrics": {
+        "article_count_observed": 7,
+        "dated_article_count": 7,
+        "articles_last_30d": 4,
+        "articles_last_60d": 7,
+        "articles_last_90d": 7,
+        "relevant_articles_last_60d": 7,
+        "articles_modified_last_60d": 7,
+        "from_feed": 1
+      },
+      "items": [
+        {
+          "url": "https://rivalbakes.com/blog/wedding-cakes-guide-0",
+          "title": "Wedding Cakes guide 0",
+          "published_at": "2026-10-02T06:13:31Z",
+          "date_source": "feed",
+          "lastmod": "2026-10-02T00:00:00Z",
+          "topics": [
+            "wedding cakes"
+          ]
+        },
+        {
+          "url": "https://rivalbakes.com/blog/wedding-cakes-guide-1",
+          "title": "Wedding Cakes guide 1",
+          "published_at": "2026-09-26T06:13:31Z",
+          "date_source": "feed",
+          "lastmod": "2026-09-26T00:00:00Z",
+          "topics": [
+            "wedding cakes"
+          ]
+        },
+        {
+          "url": "https://rivalbakes.com/blog/wedding-cakes-guide-2",
+          "title": "Wedding Cakes guide 2",
+          "published_at": "2026-09-19T06:13:31Z",
+          "date_source": "feed",
+          "lastmod": "2026-09-19T00:00:00Z",
+          "topics": [
+            "wedding cakes"
+          ]
+        },
+        {
+          "url": "https://rivalbakes.com/blog/wedding-cakes-guide-3",
+          "title": "Wedding Cakes guide 3",
+          "published_at": "2026-09-12T06:13:31Z",
+          "date_source": "feed",
+          "lastmod": "2026-09-12T00:00:00Z",
+          "topics": [
+            "wedding cakes"
+          ]
+        },
+        {
+          "url": "https://rivalbakes.com/blog/wedding-cakes-guide-4",
+          "title": "Wedding Cakes guide 4",
+          "published_at": "2026-09-04T06:13:31Z",
+          "date_source": "feed",
+          "lastmod": "2026-09-04T00:00:00Z",
+          "topics": [
+            "wedding cakes"
+          ]
+        },
+        {
+          "url": "https://rivalbakes.com/blog/wedding-cakes-guide-5",
+          "title": "Wedding Cakes guide 5",
+          "published_at": "2026-08-24T06:13:31Z",
+          "date_source": "feed",
+          "lastmod": "2026-08-24T00:00:00Z",
+          "topics": [
+            "wedding cakes"
+          ]
+        },
+        {
+          "url": "https://rivalbakes.com/blog/wedding-cakes-guide-6",
+          "title": "Wedding Cakes guide 6",
+          "published_at": "2026-08-10T06:13:31Z",
+          "date_source": "feed",
+          "lastmod": "2026-08-10T00:00:00Z",
+          "topics": [
+            "wedding cakes"
+          ]
+        }
+      ],
+      "evidence_refs": [
+        "ev_799a5eca049ecc3a",
+        "ev_ffd82a42be8e518a",
+        "ev_e2ea2dbfd691e08e",
+        "ev_ba364a528b4ca17b",
+        "ev_6d06451cd89aa9cc",
+        "ev_ef22346e85fc3677",
+        "ev_42b4b28b2c10d615",
+        "ev_c89d61dae99750a7"
+      ]
+    },
+    {
+      "observation_id": "obs_4b52d2e09856f334",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "provider": "content",
+      "type": "content.topics",
+      "captured_at": "2026-10-04T06:13:31.527745Z",
+      "claim_kind": "fact",
+      "metrics": {},
+      "items": [
+        {
+          "topic": "wedding",
+          "article_count": 7,
+          "method": "title_keywords"
+        },
+        {
+          "topic": "cakes",
+          "article_count": 7,
+          "method": "title_keywords"
+        }
+      ],
+      "evidence_refs": [
+        "ev_799a5eca049ecc3a"
+      ]
+    },
+    {
+      "observation_id": "obs_b11d029da3a702cd",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "website",
+      "type": "website.homepage",
+      "captured_at": "2026-10-04T06:13:31.529014Z",
+      "claim_kind": "fact",
+      "metrics": {
+        "internal_link_count": 5,
+        "word_count": 17
+      },
+      "items": [
+        {
+          "url": "https://cakehouse.com/",
+          "title": "Cake House",
+          "description": "Cake House \u2014 wedding cakes bakery in Chicago",
+          "content_hash": "93d0536adbf5f735"
+        }
+      ],
+      "evidence_refs": [
+        "ev_86c4989a9bcdeb25"
+      ]
+    },
+    {
+      "observation_id": "obs_fb273567677d8f62",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "website",
+      "type": "website.page_inventory",
+      "captured_at": "2026-10-04T06:13:31.529619Z",
+      "claim_kind": "fact",
+      "metrics": {
+        "page_count": 13,
+        "commercial_page_count": 5,
+        "pricing_page_count": 1,
+        "product_page_count": 0,
+        "service_page_count": 1,
+        "landing_page_count": 3,
+        "case_study_page_count": 0,
+        "blog_page_count": 5,
+        "careers_page_count": 0,
+        "contact_page_count": 1,
+        "location_page_count": 0,
+        "inventory_from_sitemap": 1
+      },
+      "items": [
+        {
+          "url": "https://cakehouse.com/",
+          "kind": "homepage",
+          "lastmod": "2026-10-03T00:00:00Z"
+        },
+        {
+          "url": "https://cakehouse.com/about",
+          "kind": "about",
+          "lastmod": "2026-03-18T00:00:00Z"
+        },
+        {
+          "url": "https://cakehouse.com/contact",
+          "kind": "contact",
+          "lastmod": "2026-03-18T00:00:00Z"
+        },
+        {
+          "url": "https://cakehouse.com/services",
+          "kind": "service",
+          "lastmod": "2026-08-15T00:00:00Z"
+        },
+        {
+          "url": "https://cakehouse.com/pricing",
+          "kind": "pricing",
+          "lastmod": "2026-09-14T00:00:00Z"
+        },
+        {
+          "url": "https://cakehouse.com/offers/landing-0",
+          "kind": "landing",
+          "lastmod": "2026-09-29T00:00:00Z"
+        },
+        {
+          "url": "https://cakehouse.com/offers/landing-1",
+          "kind": "landing",
+          "lastmod": "2026-09-28T00:00:00Z"
+        },
+        {
+          "url": "https://cakehouse.com/offers/landing-2",
+          "kind": "landing",
+          "lastmod": "2026-09-27T00:00:00Z"
+        },
+        {
+          "url": "https://cakehouse.com/blog/wedding-cakes-guide-0",
+          "kind": "blog",
+          "lastmod": "2026-09-29T00:00:00Z"
+        },
+        {
+          "url": "https://cakehouse.com/blog/wedding-cakes-guide-1",
+          "kind": "blog",
+          "lastmod": "2026-09-22T00:00:00Z"
+        },
+        {
+          "url": "https://cakehouse.com/blog/wedding-cakes-guide-2",
+          "kind": "blog",
+          "lastmod": "2026-09-15T00:00:00Z"
+        },
+        {
+          "url": "https://cakehouse.com/blog/wedding-cakes-guide-3",
+          "kind": "blog",
+          "lastmod": "2026-09-01T00:00:00Z"
+        },
+        {
+          "url": "https://cakehouse.com/blog/wedding-cakes-guide-4",
+          "kind": "blog",
+          "lastmod": "2026-08-15T00:00:00Z"
+        }
+      ],
+      "evidence_refs": [
+        "ev_8e51db9d8e84f2f4",
+        "ev_6bfd2507be68a3a0",
+        "ev_796a346a625b242e"
+      ]
+    },
+    {
+      "observation_id": "obs_e62659b311d9b334",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "website",
+      "type": "website.company_profile",
+      "captured_at": "2026-10-04T06:13:31.532145Z",
+      "claim_kind": "fact",
+      "metrics": {
+        "pages_read": 5,
+        "email_count": 2,
+        "phone_count": 1,
+        "social_profile_count": 1,
+        "cta_count": 3,
+        "offer_mentions": 1,
+        "published_price_points": 3,
+        "location_count": 1
+      },
+      "items": [
+        {
+          "title": "Cake House",
+          "description": "Cake House \u2014 wedding cakes bakery in Chicago",
+          "services": [
+            "Wedding cakes",
+            "Corporate catering",
+            "Custom birthday cakes"
+          ],
+          "products": [],
+          "emails": [
+            "hello@cakehouse.com",
+            "orders@cakehouse.com"
+          ],
+          "phones": [
+            "+13125550100"
+          ],
+          "social_profiles": {
+            "linkedin": "https://www.linkedin.com/company/cakehouse"
+          },
+          "technologies": [
+            "Google Tag Manager",
+            "Meta Pixel"
+          ],
+          "locations": [
+            "Chicago, IL"
+          ],
+          "ctas": [
+            "Contact us",
+            "Order now",
+            "Call"
+          ],
+          "offers": [
+            "Pricing Wedding cake from $299. Cupcakes $3.50 per person. Free delivery on orders over $100."
+          ],
+          "prices": [
+            "$299",
+            "$3.50 per person",
+            "$100"
+          ],
+          "business_model": [
+            "food_service"
+          ],
+          "business_model_indicators": {
+            "food_service": [
+              "order online",
+              "schema.org Bakery"
+            ]
+          },
+          "pages_read": [
+            "https://cakehouse.com/",
+            "https://cakehouse.com/pricing",
+            "https://cakehouse.com/services",
+            "https://cakehouse.com/contact",
+            "https://cakehouse.com/about"
+          ],
+          "field_evidence": {
+            "description": [
+              "ev_2bb46a352a37f0da"
+            ],
+            "emails": [
+              "ev_9d12ce39be53d0af"
+            ],
+            "phones": [
+              "ev_af155d04256c9497"
+            ],
+            "social_profiles": [
+              "ev_52e3fd75c07fbd40"
+            ],
+            "technologies": [
+              "ev_4bfb3ed06d59c2a5"
+            ],
+            "locations": [
+              "ev_1a640094c5927685"
+            ],
+            "ctas": [
+              "ev_48df60d8d8485792"
+            ],
+            "offers": [
+              "ev_a60f89d9d7d3da2e"
+            ],
+            "prices": [
+              "ev_f7266440dc76bef7"
+            ],
+            "services": [
+              "ev_e0edd6c50b28fb69"
+            ],
+            "business_model": [
+              "ev_9e32c88bf167e926"
+            ]
+          }
+        }
+      ],
+      "evidence_refs": [
+        "ev_2bb46a352a37f0da",
+        "ev_9d12ce39be53d0af",
+        "ev_af155d04256c9497",
+        "ev_52e3fd75c07fbd40",
+        "ev_4bfb3ed06d59c2a5",
+        "ev_1a640094c5927685",
+        "ev_48df60d8d8485792",
+        "ev_a60f89d9d7d3da2e",
+        "ev_f7266440dc76bef7",
+        "ev_e0edd6c50b28fb69",
+        "ev_9e32c88bf167e926"
+      ]
+    },
+    {
+      "observation_id": "obs_abf00b3e0dd7fd4f",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "content",
+      "type": "content.inventory",
+      "captured_at": "2026-10-04T06:13:31.533129Z",
+      "claim_kind": "fact",
+      "metrics": {
+        "article_count_observed": 5,
+        "dated_article_count": 5,
+        "articles_last_30d": 3,
+        "articles_last_60d": 5,
+        "articles_last_90d": 5,
+        "relevant_articles_last_60d": 5,
+        "articles_modified_last_60d": 5,
+        "from_feed": 1
+      },
+      "items": [
+        {
+          "url": "https://cakehouse.com/blog/wedding-cakes-guide-0",
+          "title": "Wedding Cakes guide 0",
+          "published_at": "2026-09-29T06:13:31Z",
+          "date_source": "feed",
+          "lastmod": "2026-09-29T00:00:00Z",
+          "topics": [
+            "wedding cakes"
+          ]
+        },
+        {
+          "url": "https://cakehouse.com/blog/wedding-cakes-guide-1",
+          "title": "Wedding Cakes guide 1",
+          "published_at": "2026-09-22T06:13:31Z",
+          "date_source": "feed",
+          "lastmod": "2026-09-22T00:00:00Z",
+          "topics": [
+            "wedding cakes"
+          ]
+        },
+        {
+          "url": "https://cakehouse.com/blog/wedding-cakes-guide-2",
+          "title": "Wedding Cakes guide 2",
+          "published_at": "2026-09-15T06:13:31Z",
+          "date_source": "feed",
+          "lastmod": "2026-09-15T00:00:00Z",
+          "topics": [
+            "wedding cakes"
+          ]
+        },
+        {
+          "url": "https://cakehouse.com/blog/wedding-cakes-guide-3",
+          "title": "Wedding Cakes guide 3",
+          "published_at": "2026-09-01T06:13:31Z",
+          "date_source": "feed",
+          "lastmod": "2026-09-01T00:00:00Z",
+          "topics": [
+            "wedding cakes"
+          ]
+        },
+        {
+          "url": "https://cakehouse.com/blog/wedding-cakes-guide-4",
+          "title": "Wedding Cakes guide 4",
+          "published_at": "2026-08-15T06:13:31Z",
+          "date_source": "feed",
+          "lastmod": "2026-08-15T00:00:00Z",
+          "topics": [
+            "wedding cakes"
+          ]
+        }
+      ],
+      "evidence_refs": [
+        "ev_a6ff764d3d9ff877",
+        "ev_87e0ac37eba6a27f",
+        "ev_c605c751d44f79be",
+        "ev_84b46ab5b29f45a8",
+        "ev_d0c66b135e70505c",
+        "ev_19ee94d50fc270fa"
+      ]
+    },
+    {
+      "observation_id": "obs_a4743e7e1982d439",
+      "entity_id": "ent_adb32b5aaefac085",
+      "provider": "content",
+      "type": "content.topics",
+      "captured_at": "2026-10-04T06:13:31.533150Z",
+      "claim_kind": "fact",
+      "metrics": {},
+      "items": [
+        {
+          "topic": "wedding",
+          "article_count": 5,
+          "method": "title_keywords"
+        },
+        {
+          "topic": "cakes",
+          "article_count": 5,
+          "method": "title_keywords"
+        }
+      ],
+      "evidence_refs": [
+        "ev_a6ff764d3d9ff877"
+      ]
+    }
+  ],
+  "signals": [
+    {
+      "signal_id": "sig_b048204cbcdf5652",
+      "type": "CONTENT_ACTIVITY_OBSERVED",
+      "subject_id": "ent_5a5bec82f46755ae",
+      "observed_at": "2026-10-04T06:13:31.535097Z",
+      "strength": 0.27,
+      "confidence": 0.855,
+      "claim_kind": "inference",
+      "summary": "1 article(s) published in the last 60 days by SweetCrumb Bakery",
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e"
+      ],
+      "comparison_refs": [],
+      "change_refs": []
+    },
+    {
+      "signal_id": "sig_c3712c7e687b60c2",
+      "type": "COMMERCIAL_INTENT",
+      "subject_id": "ent_5a5bec82f46755ae",
+      "observed_at": "2026-10-04T06:13:31.535097Z",
+      "strength": 0.9000000000000001,
+      "confidence": 0.722,
+      "claim_kind": "inference",
+      "summary": "Commercial intent on sweetcrumb.com: 1 pricing page(s), 3 published price point(s), 1 offer mention(s)",
+      "evidence_refs": [
+        "ev_bc991f0da56410e7",
+        "ev_005c86c2fc754485",
+        "ev_25d0f5cec22bf76a"
+      ],
+      "comparison_refs": [],
+      "change_refs": []
+    },
+    {
+      "signal_id": "sig_eaee49e83785e708",
+      "type": "CONTENT_ACTIVITY_OBSERVED",
+      "subject_id": "ent_a7e42e197f25bd6f",
+      "observed_at": "2026-10-04T06:13:31.535097Z",
+      "strength": 0.811,
+      "confidence": 0.855,
+      "claim_kind": "inference",
+      "summary": "7 article(s) published in the last 60 days by Rival Bakes",
+      "evidence_refs": [
+        "ev_799a5eca049ecc3a"
+      ],
+      "comparison_refs": [],
+      "change_refs": []
+    },
+    {
+      "signal_id": "sig_23cfe7e80f498ba2",
+      "type": "COMMERCIAL_INTENT",
+      "subject_id": "ent_a7e42e197f25bd6f",
+      "observed_at": "2026-10-04T06:13:31.535097Z",
+      "strength": 0.9000000000000001,
+      "confidence": 0.722,
+      "claim_kind": "inference",
+      "summary": "Commercial intent on rivalbakes.com: 1 pricing page(s), 3 published price point(s), 2 offer mention(s)",
+      "evidence_refs": [
+        "ev_338799c51d2e1254",
+        "ev_072ce597ec7a51c8",
+        "ev_115bcee78533ce62"
+      ],
+      "comparison_refs": [],
+      "change_refs": []
+    },
+    {
+      "signal_id": "sig_6e24ee5b23d1f3bf",
+      "type": "HIRING",
+      "subject_id": "ent_a7e42e197f25bd6f",
+      "observed_at": "2026-10-04T06:13:31.535097Z",
+      "strength": 0.35,
+      "confidence": 0.525,
+      "claim_kind": "inference",
+      "summary": "Careers page present on rivalbakes.com (hiring capability observed; open-role volume unknown)",
+      "evidence_refs": [
+        "ev_7bc01089f06d6c51"
+      ],
+      "comparison_refs": [],
+      "change_refs": []
+    },
+    {
+      "signal_id": "sig_b64c5400fd98e5a4",
+      "type": "CONTENT_ACTIVITY_OBSERVED",
+      "subject_id": "ent_adb32b5aaefac085",
+      "observed_at": "2026-10-04T06:13:31.535097Z",
+      "strength": 0.699,
+      "confidence": 0.855,
+      "claim_kind": "inference",
+      "summary": "5 article(s) published in the last 60 days by Cake House",
+      "evidence_refs": [
+        "ev_a6ff764d3d9ff877"
+      ],
+      "comparison_refs": [],
+      "change_refs": []
+    },
+    {
+      "signal_id": "sig_12bd4735458e82ea",
+      "type": "COMMERCIAL_INTENT",
+      "subject_id": "ent_adb32b5aaefac085",
+      "observed_at": "2026-10-04T06:13:31.535097Z",
+      "strength": 0.9000000000000001,
+      "confidence": 0.722,
+      "claim_kind": "inference",
+      "summary": "Commercial intent on cakehouse.com: 1 pricing page(s), 3 published price point(s), 1 offer mention(s)",
+      "evidence_refs": [
+        "ev_6bfd2507be68a3a0",
+        "ev_2bb46a352a37f0da",
+        "ev_9d12ce39be53d0af"
+      ],
+      "comparison_refs": [],
+      "change_refs": []
+    },
+    {
+      "signal_id": "sig_a9100f5cea192868",
+      "type": "CONTENT_GAP",
+      "subject_id": "ent_5a5bec82f46755ae",
+      "observed_at": "2026-10-04T06:13:31.535097Z",
+      "strength": 0.8571428571428571,
+      "confidence": 0.9,
+      "claim_kind": "inference",
+      "summary": "content_production_60d: prospect 1 vs Rival Bakes 7",
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e",
+        "ev_799a5eca049ecc3a"
+      ],
+      "comparison_refs": [
+        "cmp_a71de613ede4bceb"
+      ],
+      "change_refs": []
+    },
+    {
+      "signal_id": "sig_2f3f184efccbb1a9",
+      "type": "CONTENT_GAP",
+      "subject_id": "ent_5a5bec82f46755ae",
+      "observed_at": "2026-10-04T06:13:31.535097Z",
+      "strength": 0.8,
+      "confidence": 0.9,
+      "claim_kind": "inference",
+      "summary": "content_production_60d: prospect 1 vs Cake House 5",
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e",
+        "ev_a6ff764d3d9ff877"
+      ],
+      "comparison_refs": [
+        "cmp_199beb215ed09e5b"
+      ],
+      "change_refs": []
+    },
+    {
+      "signal_id": "sig_b26b0da09e16a370",
+      "type": "COMPETITOR_PRESSURE",
+      "subject_id": "ent_a7e42e197f25bd6f",
+      "observed_at": "2026-10-04T06:13:31.535097Z",
+      "strength": 1.0,
+      "confidence": 0.75,
+      "claim_kind": "inference",
+      "summary": "Rival Bakes is more active than the prospect on 6 dimension(s): content_production_60d, commercial_content, landing_page_activity, offers, hiring, relevant_content_60d",
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e",
+        "ev_799a5eca049ecc3a",
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7",
+        "ev_11583fa09b76182c",
+        "ev_338799c51d2e1254",
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7"
+      ],
+      "comparison_refs": [
+        "cmp_a71de613ede4bceb",
+        "cmp_bdbeb54c08505c30",
+        "cmp_5d7c305645988336",
+        "cmp_db016159d66cd667",
+        "cmp_36b3e78335951875",
+        "cmp_519bc902ad554d42"
+      ],
+      "change_refs": []
+    },
+    {
+      "signal_id": "sig_27bd7b8cda967f45",
+      "type": "COMPETITOR_PRESSURE",
+      "subject_id": "ent_adb32b5aaefac085",
+      "observed_at": "2026-10-04T06:13:31.535097Z",
+      "strength": 1.0,
+      "confidence": 0.74,
+      "claim_kind": "inference",
+      "summary": "Cake House is more active than the prospect on 5 dimension(s): content_production_60d, commercial_content, landing_page_activity, offers, relevant_content_60d",
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e",
+        "ev_a6ff764d3d9ff877",
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7",
+        "ev_8e51db9d8e84f2f4",
+        "ev_6bfd2507be68a3a0",
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7"
+      ],
+      "comparison_refs": [
+        "cmp_199beb215ed09e5b",
+        "cmp_81f41baab455272f",
+        "cmp_8dc058bb043b6efe",
+        "cmp_d650d3e6b3d1b73d",
+        "cmp_902a784f45e76ce5"
+      ],
+      "change_refs": []
+    }
+  ],
+  "advertising_intelligence": {
+    "meta": [
+      {
+        "entity_id": "ent_5a5bec82f46755ae",
+        "provider": "meta_ads",
+        "status": "unavailable",
+        "metrics": {},
+        "observation_refs": [],
+        "limitations": [
+          "Meta provider: NOT CONFIGURED \u2014 no Meta advertising data was collected."
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_NOT_CONFIGURED",
+            "message": "Meta Ad Library API not configured (set META_ACCESS_TOKEN)"
+          }
+        ]
+      },
+      {
+        "entity_id": "ent_a7e42e197f25bd6f",
+        "provider": "meta_ads",
+        "status": "unavailable",
+        "metrics": {},
+        "observation_refs": [],
+        "limitations": [
+          "Meta provider: NOT CONFIGURED \u2014 no Meta advertising data was collected."
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_NOT_CONFIGURED",
+            "message": "Meta Ad Library API not configured (set META_ACCESS_TOKEN)"
+          }
+        ]
+      },
+      {
+        "entity_id": "ent_adb32b5aaefac085",
+        "provider": "meta_ads",
+        "status": "unavailable",
+        "metrics": {},
+        "observation_refs": [],
+        "limitations": [
+          "Meta provider: NOT CONFIGURED \u2014 no Meta advertising data was collected."
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_NOT_CONFIGURED",
+            "message": "Meta Ad Library API not configured (set META_ACCESS_TOKEN)"
+          }
+        ]
+      }
+    ],
+    "google": [
+      {
+        "entity_id": "ent_5a5bec82f46755ae",
+        "provider": "google_ads",
+        "status": "unavailable",
+        "metrics": {},
+        "observation_refs": [],
+        "limitations": [
+          "Google provider: NOT CONFIGURED \u2014 no Google advertising data was collected."
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_NOT_CONFIGURED",
+            "message": "Google Ads Transparency has no official API; set SERPAPI_API_KEY to enable the third-party adapter"
+          }
+        ]
+      },
+      {
+        "entity_id": "ent_a7e42e197f25bd6f",
+        "provider": "google_ads",
+        "status": "unavailable",
+        "metrics": {},
+        "observation_refs": [],
+        "limitations": [
+          "Google provider: NOT CONFIGURED \u2014 no Google advertising data was collected."
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_NOT_CONFIGURED",
+            "message": "Google Ads Transparency has no official API; set SERPAPI_API_KEY to enable the third-party adapter"
+          }
+        ]
+      },
+      {
+        "entity_id": "ent_adb32b5aaefac085",
+        "provider": "google_ads",
+        "status": "unavailable",
+        "metrics": {},
+        "observation_refs": [],
+        "limitations": [
+          "Google provider: NOT CONFIGURED \u2014 no Google advertising data was collected."
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_NOT_CONFIGURED",
+            "message": "Google Ads Transparency has no official API; set SERPAPI_API_KEY to enable the third-party adapter"
+          }
+        ]
+      }
+    ]
+  },
+  "content_intelligence": {
+    "website": [
+      {
+        "entity_id": "ent_5a5bec82f46755ae",
+        "provider": "website",
+        "status": "success",
+        "metrics": {
+          "internal_link_count": 5,
+          "word_count": 17,
+          "page_count": 7,
+          "commercial_page_count": 2,
+          "pricing_page_count": 1,
+          "product_page_count": 0,
+          "service_page_count": 1,
+          "landing_page_count": 0,
+          "case_study_page_count": 0,
+          "blog_page_count": 2,
+          "careers_page_count": 0,
+          "contact_page_count": 1,
+          "location_page_count": 0,
+          "inventory_from_sitemap": 1,
+          "pages_read": 5,
+          "email_count": 2,
+          "phone_count": 1,
+          "social_profile_count": 1,
+          "cta_count": 3,
+          "offer_mentions": 1,
+          "published_price_points": 3,
+          "location_count": 1
+        },
+        "observation_refs": [
+          "obs_1aaf95ad50175ab6",
+          "obs_b719713ea109d43f",
+          "obs_8a9bcc2f04c6607e"
+        ],
+        "limitations": [
+          "Static HTML only: content rendered exclusively by client-side JavaScript is not observed."
+        ],
+        "errors": []
+      },
+      {
+        "entity_id": "ent_a7e42e197f25bd6f",
+        "provider": "website",
+        "status": "success",
+        "metrics": {
+          "internal_link_count": 5,
+          "word_count": 23,
+          "page_count": 17,
+          "commercial_page_count": 6,
+          "pricing_page_count": 1,
+          "product_page_count": 0,
+          "service_page_count": 1,
+          "landing_page_count": 4,
+          "case_study_page_count": 0,
+          "blog_page_count": 7,
+          "careers_page_count": 1,
+          "contact_page_count": 1,
+          "location_page_count": 0,
+          "inventory_from_sitemap": 1,
+          "pages_read": 6,
+          "email_count": 2,
+          "phone_count": 1,
+          "social_profile_count": 1,
+          "cta_count": 3,
+          "offer_mentions": 2,
+          "published_price_points": 3,
+          "location_count": 1
+        },
+        "observation_refs": [
+          "obs_e0adcf4aba030193",
+          "obs_980160f56beaadc7",
+          "obs_5cc05bf86df7cb28"
+        ],
+        "limitations": [
+          "Static HTML only: content rendered exclusively by client-side JavaScript is not observed."
+        ],
+        "errors": []
+      },
+      {
+        "entity_id": "ent_adb32b5aaefac085",
+        "provider": "website",
+        "status": "success",
+        "metrics": {
+          "internal_link_count": 5,
+          "word_count": 17,
+          "page_count": 13,
+          "commercial_page_count": 5,
+          "pricing_page_count": 1,
+          "product_page_count": 0,
+          "service_page_count": 1,
+          "landing_page_count": 3,
+          "case_study_page_count": 0,
+          "blog_page_count": 5,
+          "careers_page_count": 0,
+          "contact_page_count": 1,
+          "location_page_count": 0,
+          "inventory_from_sitemap": 1,
+          "pages_read": 5,
+          "email_count": 2,
+          "phone_count": 1,
+          "social_profile_count": 1,
+          "cta_count": 3,
+          "offer_mentions": 1,
+          "published_price_points": 3,
+          "location_count": 1
+        },
+        "observation_refs": [
+          "obs_b11d029da3a702cd",
+          "obs_fb273567677d8f62",
+          "obs_e62659b311d9b334"
+        ],
+        "limitations": [
+          "Static HTML only: content rendered exclusively by client-side JavaScript is not observed."
+        ],
+        "errors": []
+      }
+    ],
+    "content": [
+      {
+        "entity_id": "ent_5a5bec82f46755ae",
+        "provider": "content",
+        "status": "success",
+        "metrics": {
+          "article_count_observed": 2,
+          "dated_article_count": 2,
+          "articles_last_30d": 0,
+          "articles_last_60d": 1,
+          "articles_last_90d": 1,
+          "relevant_articles_last_60d": 1,
+          "articles_modified_last_60d": 1,
+          "from_feed": 1
+        },
+        "observation_refs": [
+          "obs_374abb0f47eae2fd",
+          "obs_1ea9eff12b54ccdd"
+        ],
+        "limitations": [],
+        "errors": []
+      },
+      {
+        "entity_id": "ent_a7e42e197f25bd6f",
+        "provider": "content",
+        "status": "success",
+        "metrics": {
+          "article_count_observed": 7,
+          "dated_article_count": 7,
+          "articles_last_30d": 4,
+          "articles_last_60d": 7,
+          "articles_last_90d": 7,
+          "relevant_articles_last_60d": 7,
+          "articles_modified_last_60d": 7,
+          "from_feed": 1
+        },
+        "observation_refs": [
+          "obs_b317433bcc50f39a",
+          "obs_4b52d2e09856f334"
+        ],
+        "limitations": [],
+        "errors": []
+      },
+      {
+        "entity_id": "ent_adb32b5aaefac085",
+        "provider": "content",
+        "status": "success",
+        "metrics": {
+          "article_count_observed": 5,
+          "dated_article_count": 5,
+          "articles_last_30d": 3,
+          "articles_last_60d": 5,
+          "articles_last_90d": 5,
+          "relevant_articles_last_60d": 5,
+          "articles_modified_last_60d": 5,
+          "from_feed": 1
+        },
+        "observation_refs": [
+          "obs_abf00b3e0dd7fd4f",
+          "obs_a4743e7e1982d439"
+        ],
+        "limitations": [],
+        "errors": []
+      }
+    ]
+  },
+  "social_intelligence": {
+    "linkedin": [
+      {
+        "entity_id": "ent_5a5bec82f46755ae",
+        "provider": "linkedin",
+        "status": "unsupported",
+        "metrics": {},
+        "observation_refs": [],
+        "limitations": [
+          "LinkedIn provider: UNSUPPORTED. Company activity, hiring posts, job changes and announcements are not collected.",
+          "Reason: LinkedIn prohibits scraping/automation; official APIs only cover pages the caller administers."
+        ],
+        "errors": [
+          {
+            "code": "UNSUPPORTED_SOURCE",
+            "message": "LinkedIn provider: UNSUPPORTED \u2014 no legitimate programmatic source for third-party company activity"
+          }
+        ]
+      },
+      {
+        "entity_id": "ent_a7e42e197f25bd6f",
+        "provider": "linkedin",
+        "status": "unsupported",
+        "metrics": {},
+        "observation_refs": [],
+        "limitations": [
+          "LinkedIn provider: UNSUPPORTED. Company activity, hiring posts, job changes and announcements are not collected.",
+          "Reason: LinkedIn prohibits scraping/automation; official APIs only cover pages the caller administers."
+        ],
+        "errors": [
+          {
+            "code": "UNSUPPORTED_SOURCE",
+            "message": "LinkedIn provider: UNSUPPORTED \u2014 no legitimate programmatic source for third-party company activity"
+          }
+        ]
+      },
+      {
+        "entity_id": "ent_adb32b5aaefac085",
+        "provider": "linkedin",
+        "status": "unsupported",
+        "metrics": {},
+        "observation_refs": [],
+        "limitations": [
+          "LinkedIn provider: UNSUPPORTED. Company activity, hiring posts, job changes and announcements are not collected.",
+          "Reason: LinkedIn prohibits scraping/automation; official APIs only cover pages the caller administers."
+        ],
+        "errors": [
+          {
+            "code": "UNSUPPORTED_SOURCE",
+            "message": "LinkedIn provider: UNSUPPORTED \u2014 no legitimate programmatic source for third-party company activity"
+          }
+        ]
+      }
+    ],
+    "twitter": [
+      {
+        "entity_id": "ent_5a5bec82f46755ae",
+        "provider": "twitter",
+        "status": "unavailable",
+        "metrics": {},
+        "observation_refs": [],
+        "limitations": [
+          "X/Twitter provider: NOT CONFIGURED \u2014 no X data was collected."
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_NOT_CONFIGURED",
+            "message": "X API not configured (set X_BEARER_TOKEN)"
+          }
+        ]
+      },
+      {
+        "entity_id": "ent_a7e42e197f25bd6f",
+        "provider": "twitter",
+        "status": "unavailable",
+        "metrics": {},
+        "observation_refs": [],
+        "limitations": [
+          "X/Twitter provider: NOT CONFIGURED \u2014 no X data was collected."
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_NOT_CONFIGURED",
+            "message": "X API not configured (set X_BEARER_TOKEN)"
+          }
+        ]
+      },
+      {
+        "entity_id": "ent_adb32b5aaefac085",
+        "provider": "twitter",
+        "status": "unavailable",
+        "metrics": {},
+        "observation_refs": [],
+        "limitations": [
+          "X/Twitter provider: NOT CONFIGURED \u2014 no X data was collected."
+        ],
+        "errors": [
+          {
+            "code": "PROVIDER_NOT_CONFIGURED",
+            "message": "X API not configured (set X_BEARER_TOKEN)"
+          }
+        ]
+      }
+    ]
+  },
+  "comparisons": [
+    {
+      "comparison_id": "cmp_88453007ea340d86",
+      "dimension": "meta_creative_activity",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_a7e42e197f25bd6f",
+      "prospect_observed": null,
+      "competitor_observed": null,
+      "unit": "active_creatives",
+      "topic": null,
+      "window": "at_capture",
+      "interpretation": "insufficient_evidence",
+      "confidence": 0.0,
+      "evidence_refs": [],
+      "note": "No trustworthy observation for prospect (unavailable) and Rival Bakes (unavailable); no gap or parity is inferred."
+    },
+    {
+      "comparison_id": "cmp_b9dd58656a7cbf15",
+      "dimension": "google_ad_activity",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_a7e42e197f25bd6f",
+      "prospect_observed": null,
+      "competitor_observed": null,
+      "unit": "listed_creatives",
+      "topic": null,
+      "window": "transparency_center_listing",
+      "interpretation": "insufficient_evidence",
+      "confidence": 0.0,
+      "evidence_refs": [],
+      "note": "No trustworthy observation for prospect (unavailable) and Rival Bakes (unavailable); no gap or parity is inferred."
+    },
+    {
+      "comparison_id": "cmp_a71de613ede4bceb",
+      "dimension": "content_production_60d",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_a7e42e197f25bd6f",
+      "prospect_observed": 1.0,
+      "competitor_observed": 7.0,
+      "unit": "articles",
+      "topic": null,
+      "window": "last_60_days",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e",
+        "ev_799a5eca049ecc3a"
+      ],
+      "note": null
+    },
+    {
+      "comparison_id": "cmp_bdbeb54c08505c30",
+      "dimension": "commercial_content",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_a7e42e197f25bd6f",
+      "prospect_observed": 2.0,
+      "competitor_observed": 6.0,
+      "unit": "pages",
+      "topic": null,
+      "window": "at_capture",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.787,
+      "evidence_refs": [
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7",
+        "ev_11583fa09b76182c",
+        "ev_338799c51d2e1254"
+      ],
+      "note": null
+    },
+    {
+      "comparison_id": "cmp_5d7c305645988336",
+      "dimension": "landing_page_activity",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_a7e42e197f25bd6f",
+      "prospect_observed": 0.0,
+      "competitor_observed": 4.0,
+      "unit": "pages",
+      "topic": null,
+      "window": "at_capture",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.75,
+      "evidence_refs": [
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7",
+        "ev_aa2ec5847e3581a6"
+      ],
+      "note": null
+    },
+    {
+      "comparison_id": "cmp_db016159d66cd667",
+      "dimension": "offers",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_a7e42e197f25bd6f",
+      "prospect_observed": 2.0,
+      "competitor_observed": 7.0,
+      "unit": "offer_signals",
+      "topic": null,
+      "window": "at_capture",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.846,
+      "evidence_refs": [
+        "ev_005c86c2fc754485",
+        "ev_25d0f5cec22bf76a",
+        "ev_072ce597ec7a51c8",
+        "ev_115bcee78533ce62"
+      ],
+      "note": null
+    },
+    {
+      "comparison_id": "cmp_36b3e78335951875",
+      "dimension": "hiring",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_a7e42e197f25bd6f",
+      "prospect_observed": 0.0,
+      "competitor_observed": 1.0,
+      "unit": "careers_page_present",
+      "topic": null,
+      "window": "at_capture",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.75,
+      "evidence_refs": [
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7",
+        "ev_7bc01089f06d6c51"
+      ],
+      "note": null
+    },
+    {
+      "comparison_id": "cmp_7e64a24f7ce5f93f",
+      "dimension": "social_activity_30d",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_a7e42e197f25bd6f",
+      "prospect_observed": null,
+      "competitor_observed": null,
+      "unit": "x_posts",
+      "topic": null,
+      "window": "last_30_days",
+      "interpretation": "insufficient_evidence",
+      "confidence": 0.0,
+      "evidence_refs": [],
+      "note": "No trustworthy observation for prospect (unavailable) and Rival Bakes (unavailable); no gap or parity is inferred."
+    },
+    {
+      "comparison_id": "cmp_01c8c701173c9953",
+      "dimension": "seo_content_coverage",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_a7e42e197f25bd6f",
+      "prospect_observed": 7.0,
+      "competitor_observed": 17.0,
+      "unit": "indexable_pages_in_sitemap",
+      "topic": null,
+      "window": "at_capture",
+      "interpretation": "parity",
+      "confidence": 0.63,
+      "evidence_refs": [
+        "ev_b8984daa407e714c",
+        "ev_11583fa09b76182c"
+      ],
+      "note": null
+    },
+    {
+      "comparison_id": "cmp_a4173ef645d311f5",
+      "dimension": "expansion",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_a7e42e197f25bd6f",
+      "prospect_observed": 0.0,
+      "competitor_observed": 0.0,
+      "unit": "location_pages",
+      "topic": null,
+      "window": "at_capture",
+      "interpretation": "parity",
+      "confidence": 0.551,
+      "evidence_refs": [
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7",
+        "ev_11583fa09b76182c",
+        "ev_338799c51d2e1254"
+      ],
+      "note": null
+    },
+    {
+      "comparison_id": "cmp_519bc902ad554d42",
+      "dimension": "relevant_content_60d",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_a7e42e197f25bd6f",
+      "prospect_observed": 1.0,
+      "competitor_observed": 7.0,
+      "unit": "topic_articles",
+      "topic": "wedding cakes",
+      "window": "last_60_days",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.913,
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e",
+        "ev_69bf02e94802f459",
+        "ev_799a5eca049ecc3a",
+        "ev_ffd82a42be8e518a"
+      ],
+      "note": null
+    },
+    {
+      "comparison_id": "cmp_ea7eb7c2634b8a72",
+      "dimension": "relevant_ad_creatives",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_a7e42e197f25bd6f",
+      "prospect_observed": null,
+      "competitor_observed": null,
+      "unit": "topic_ad_creatives",
+      "topic": "wedding cakes",
+      "window": "at_capture",
+      "interpretation": "insufficient_evidence",
+      "confidence": 0.0,
+      "evidence_refs": [],
+      "note": "No trustworthy observation for prospect (unavailable) and Rival Bakes (unavailable); no gap or parity is inferred."
+    },
+    {
+      "comparison_id": "cmp_a15a6ed173c66769",
+      "dimension": "meta_creative_activity",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_adb32b5aaefac085",
+      "prospect_observed": null,
+      "competitor_observed": null,
+      "unit": "active_creatives",
+      "topic": null,
+      "window": "at_capture",
+      "interpretation": "insufficient_evidence",
+      "confidence": 0.0,
+      "evidence_refs": [],
+      "note": "No trustworthy observation for prospect (unavailable) and Cake House (unavailable); no gap or parity is inferred."
+    },
+    {
+      "comparison_id": "cmp_82329103f059eed6",
+      "dimension": "google_ad_activity",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_adb32b5aaefac085",
+      "prospect_observed": null,
+      "competitor_observed": null,
+      "unit": "listed_creatives",
+      "topic": null,
+      "window": "transparency_center_listing",
+      "interpretation": "insufficient_evidence",
+      "confidence": 0.0,
+      "evidence_refs": [],
+      "note": "No trustworthy observation for prospect (unavailable) and Cake House (unavailable); no gap or parity is inferred."
+    },
+    {
+      "comparison_id": "cmp_199beb215ed09e5b",
+      "dimension": "content_production_60d",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_adb32b5aaefac085",
+      "prospect_observed": 1.0,
+      "competitor_observed": 5.0,
+      "unit": "articles",
+      "topic": null,
+      "window": "last_60_days",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e",
+        "ev_a6ff764d3d9ff877"
+      ],
+      "note": null
+    },
+    {
+      "comparison_id": "cmp_81f41baab455272f",
+      "dimension": "commercial_content",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_adb32b5aaefac085",
+      "prospect_observed": 2.0,
+      "competitor_observed": 5.0,
+      "unit": "pages",
+      "topic": null,
+      "window": "at_capture",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.74,
+      "evidence_refs": [
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7",
+        "ev_8e51db9d8e84f2f4",
+        "ev_6bfd2507be68a3a0"
+      ],
+      "note": null
+    },
+    {
+      "comparison_id": "cmp_8dc058bb043b6efe",
+      "dimension": "landing_page_activity",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_adb32b5aaefac085",
+      "prospect_observed": 0.0,
+      "competitor_observed": 3.0,
+      "unit": "pages",
+      "topic": null,
+      "window": "at_capture",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.75,
+      "evidence_refs": [
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7",
+        "ev_796a346a625b242e"
+      ],
+      "note": null
+    },
+    {
+      "comparison_id": "cmp_d650d3e6b3d1b73d",
+      "dimension": "offers",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_adb32b5aaefac085",
+      "prospect_observed": 2.0,
+      "competitor_observed": 5.0,
+      "unit": "offer_signals",
+      "topic": null,
+      "window": "at_capture",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.783,
+      "evidence_refs": [
+        "ev_005c86c2fc754485",
+        "ev_25d0f5cec22bf76a",
+        "ev_2bb46a352a37f0da",
+        "ev_9d12ce39be53d0af"
+      ],
+      "note": null
+    },
+    {
+      "comparison_id": "cmp_0d0d6c4402c1dfa4",
+      "dimension": "hiring",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_adb32b5aaefac085",
+      "prospect_observed": 0.0,
+      "competitor_observed": 0.0,
+      "unit": "careers_page_present",
+      "topic": null,
+      "window": "at_capture",
+      "interpretation": "parity",
+      "confidence": 0.56,
+      "evidence_refs": [
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7",
+        "ev_8e51db9d8e84f2f4",
+        "ev_6bfd2507be68a3a0"
+      ],
+      "note": null
+    },
+    {
+      "comparison_id": "cmp_cf6b035b879fd880",
+      "dimension": "social_activity_30d",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_adb32b5aaefac085",
+      "prospect_observed": null,
+      "competitor_observed": null,
+      "unit": "x_posts",
+      "topic": null,
+      "window": "last_30_days",
+      "interpretation": "insufficient_evidence",
+      "confidence": 0.0,
+      "evidence_refs": [],
+      "note": "No trustworthy observation for prospect (unavailable) and Cake House (unavailable); no gap or parity is inferred."
+    },
+    {
+      "comparison_id": "cmp_0be18d5112bd62e7",
+      "dimension": "seo_content_coverage",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_adb32b5aaefac085",
+      "prospect_observed": 7.0,
+      "competitor_observed": 13.0,
+      "unit": "indexable_pages_in_sitemap",
+      "topic": null,
+      "window": "at_capture",
+      "interpretation": "parity",
+      "confidence": 0.63,
+      "evidence_refs": [
+        "ev_b8984daa407e714c",
+        "ev_8e51db9d8e84f2f4"
+      ],
+      "note": null
+    },
+    {
+      "comparison_id": "cmp_ecf81580a5df4258",
+      "dimension": "expansion",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_adb32b5aaefac085",
+      "prospect_observed": 0.0,
+      "competitor_observed": 0.0,
+      "unit": "location_pages",
+      "topic": null,
+      "window": "at_capture",
+      "interpretation": "parity",
+      "confidence": 0.56,
+      "evidence_refs": [
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7",
+        "ev_8e51db9d8e84f2f4",
+        "ev_6bfd2507be68a3a0"
+      ],
+      "note": null
+    },
+    {
+      "comparison_id": "cmp_902a784f45e76ce5",
+      "dimension": "relevant_content_60d",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_adb32b5aaefac085",
+      "prospect_observed": 1.0,
+      "competitor_observed": 5.0,
+      "unit": "topic_articles",
+      "topic": "wedding cakes",
+      "window": "last_60_days",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.913,
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e",
+        "ev_69bf02e94802f459",
+        "ev_a6ff764d3d9ff877",
+        "ev_87e0ac37eba6a27f"
+      ],
+      "note": null
+    },
+    {
+      "comparison_id": "cmp_28c82478e738d3ef",
+      "dimension": "relevant_ad_creatives",
+      "prospect_id": "ent_5a5bec82f46755ae",
+      "competitor_id": "ent_adb32b5aaefac085",
+      "prospect_observed": null,
+      "competitor_observed": null,
+      "unit": "topic_ad_creatives",
+      "topic": "wedding cakes",
+      "window": "at_capture",
+      "interpretation": "insufficient_evidence",
+      "confidence": 0.0,
+      "evidence_refs": [],
+      "note": "No trustworthy observation for prospect (unavailable) and Cake House (unavailable); no gap or parity is inferred."
+    }
+  ],
+  "changes": [],
+  "opportunities": [
+    {
+      "opportunity_id": "opp_c96a09bd8dfb9d2c",
+      "type": "CONTENT_GAP",
+      "title": "Competitors publish more content around wedding cakes",
+      "confidence": 0.9,
+      "severity": "high",
+      "claim_kind": "inference",
+      "what_was_observed": "Rival Bakes: 7 topic_articles about wedding cakes vs prospect 1 (relevant_content_60d, last_60_days); Cake House: 5 topic_articles about wedding cakes vs prospect 1 (relevant_content_60d, last_60_days); Rival Bakes: 7 articles vs prospect 1 (content_production_60d, last_60_days); Cake House: 5 articles vs prospect 1 (content_production_60d, last_60_days)",
+      "who": [
+        "Rival Bakes",
+        "Cake House"
+      ],
+      "prospect_state": "1 articles, 1 topic_articles",
+      "why_it_matters": "Competitors publishing more recent content may be capturing organic search and AI-answer visibility.",
+      "reasoning_summary": "2 competitor(s) exceed the prospect beyond the minimum delta on content_production_60d, relevant_content_60d.",
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e",
+        "ev_69bf02e94802f459",
+        "ev_799a5eca049ecc3a",
+        "ev_ffd82a42be8e518a",
+        "ev_a6ff764d3d9ff877",
+        "ev_87e0ac37eba6a27f"
+      ],
+      "signal_refs": [
+        "sig_b26b0da09e16a370",
+        "sig_27bd7b8cda967f45",
+        "sig_a9100f5cea192868",
+        "sig_b26b0da09e16a370",
+        "sig_2f3f184efccbb1a9",
+        "sig_27bd7b8cda967f45"
+      ],
+      "comparison_refs": [
+        "cmp_519bc902ad554d42",
+        "cmp_902a784f45e76ce5",
+        "cmp_a71de613ede4bceb",
+        "cmp_199beb215ed09e5b"
+      ],
+      "change_refs": [],
+      "limitations": []
+    },
+    {
+      "opportunity_id": "opp_d18cf0329ae118be",
+      "type": "LANDING_PAGE_GAP",
+      "title": "Competitors maintain more commercial / landing pages",
+      "confidence": 0.74,
+      "severity": "medium",
+      "claim_kind": "inference",
+      "what_was_observed": "Rival Bakes: 6 pages vs prospect 2 (commercial_content, at_capture); Cake House: 5 pages vs prospect 2 (commercial_content, at_capture); Rival Bakes: 4 pages vs prospect 0 (landing_page_activity, at_capture); Cake House: 3 pages vs prospect 0 (landing_page_activity, at_capture)",
+      "who": [
+        "Rival Bakes",
+        "Cake House"
+      ],
+      "prospect_state": "0 pages, 2 pages",
+      "why_it_matters": "More commercial pages means more conversion surfaces for specific offers and search intents.",
+      "reasoning_summary": "2 competitor(s) exceed the prospect beyond the minimum delta on commercial_content, landing_page_activity.",
+      "evidence_refs": [
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7",
+        "ev_11583fa09b76182c",
+        "ev_338799c51d2e1254",
+        "ev_8e51db9d8e84f2f4",
+        "ev_6bfd2507be68a3a0",
+        "ev_aa2ec5847e3581a6",
+        "ev_796a346a625b242e"
+      ],
+      "signal_refs": [
+        "sig_b26b0da09e16a370",
+        "sig_27bd7b8cda967f45",
+        "sig_b26b0da09e16a370",
+        "sig_27bd7b8cda967f45"
+      ],
+      "comparison_refs": [
+        "cmp_bdbeb54c08505c30",
+        "cmp_81f41baab455272f",
+        "cmp_5d7c305645988336",
+        "cmp_8dc058bb043b6efe"
+      ],
+      "change_refs": [],
+      "limitations": []
+    },
+    {
+      "opportunity_id": "opp_74eef267cd462475",
+      "type": "OFFER_GAP",
+      "title": "Competitors present more offers / pricing signals",
+      "confidence": 0.783,
+      "severity": "high",
+      "claim_kind": "inference",
+      "what_was_observed": "Rival Bakes: 7 offer_signals vs prospect 2 (offers, at_capture); Cake House: 5 offer_signals vs prospect 2 (offers, at_capture)",
+      "who": [
+        "Rival Bakes",
+        "Cake House"
+      ],
+      "prospect_state": "2 offer_signals",
+      "why_it_matters": "Visible offers and pricing reduce buyer friction; fewer of them may cost the prospect conversions.",
+      "reasoning_summary": "2 competitor(s) exceed the prospect beyond the minimum delta on offers.",
+      "evidence_refs": [
+        "ev_005c86c2fc754485",
+        "ev_25d0f5cec22bf76a",
+        "ev_072ce597ec7a51c8",
+        "ev_115bcee78533ce62",
+        "ev_2bb46a352a37f0da",
+        "ev_9d12ce39be53d0af"
+      ],
+      "signal_refs": [
+        "sig_b26b0da09e16a370",
+        "sig_27bd7b8cda967f45"
+      ],
+      "comparison_refs": [
+        "cmp_db016159d66cd667",
+        "cmp_d650d3e6b3d1b73d"
+      ],
+      "change_refs": [],
+      "limitations": []
+    }
+  ],
+  "opportunity_score": {
+    "score": 72,
+    "model_version": "score-1.0",
+    "components": [
+      {
+        "key": "competitive_pressure",
+        "value": 75.5,
+        "weight": 0.22,
+        "effective_weight": 0.3056,
+        "computed": true,
+        "rationale": "11 of 16 decided comparisons show a competitor more active (confidence-weighted).",
+        "inputs": {
+          "decided": 16,
+          "competitor_more_active": 11
+        }
+      },
+      {
+        "key": "commercial_intent",
+        "value": 80.0,
+        "weight": 0.14,
+        "effective_weight": 0.1944,
+        "computed": true,
+        "rationale": "4/5 commercial indicators present on the prospect site.",
+        "inputs": {
+          "pricing_page": true,
+          "published_prices": true,
+          "offers": true,
+          "ctas": true,
+          "landing_pages": false
+        }
+      },
+      {
+        "key": "prospect_activity",
+        "value": 12.5,
+        "weight": 0.12,
+        "effective_weight": 0.1667,
+        "computed": true,
+        "rationale": "Mean of observable prospect activity channels: content_60d.",
+        "inputs": {
+          "content_60d": 12.5
+        }
+      },
+      {
+        "key": "evidence_quality",
+        "value": 87.5,
+        "weight": 0.12,
+        "effective_weight": 0.1667,
+        "computed": true,
+        "rationale": "16 fresh fact(s); mean confidence; -0 for evidence conflicts.",
+        "inputs": {
+          "fresh_facts": 16,
+          "conflicts": 0
+        }
+      },
+      {
+        "key": "icp_fit",
+        "value": null,
+        "weight": 0.1,
+        "effective_weight": 0.0,
+        "computed": false,
+        "rationale": "No ICP criteria supplied by the caller.",
+        "inputs": {}
+      },
+      {
+        "key": "recent_changes",
+        "value": null,
+        "weight": 0.1,
+        "effective_weight": 0.0,
+        "computed": false,
+        "rationale": "First snapshot for this prospect: change history not yet available.",
+        "inputs": {}
+      },
+      {
+        "key": "market_timing",
+        "value": null,
+        "weight": 0.08,
+        "effective_weight": 0.0,
+        "computed": false,
+        "rationale": "First snapshot for this prospect: market movement not yet observable.",
+        "inputs": {}
+      },
+      {
+        "key": "research_confidence",
+        "value": 100.0,
+        "weight": 0.07,
+        "effective_weight": 0.0972,
+        "computed": true,
+        "rationale": "7/7 configured provider runs succeeded (12 unsupported/not-configured runs excluded).",
+        "inputs": {
+          "runs": 7,
+          "excluded": 12
+        }
+      },
+      {
+        "key": "contactability",
+        "value": 100.0,
+        "weight": 0.05,
+        "effective_weight": 0.0694,
+        "computed": true,
+        "rationale": "Public email (40) + phone (30) + contact page (30) on the prospect site.",
+        "inputs": {
+          "email": true,
+          "phone": true
+        }
+      }
+    ],
+    "explanation": [
+      "Score 72/100 from 6 of 9 components (model score-1.0).",
+      "Not computed: icp_fit, recent_changes, market_timing \u2014 their weight was redistributed.",
+      "Strongest: research_confidence (100); weakest: prospect_activity (12.5).",
+      "Deterministic: identical inputs always produce the identical score."
+    ],
+    "previous_score": null
+  },
+  "sales_angles": [
+    {
+      "angle_id": "ang_3bb7191052cbe7f6",
+      "angle": "Content visibility gap",
+      "summary": "Competitors have published more recent content than SweetCrumb Bakery: Rival Bakes: 7 topic_articles about wedding cakes vs prospect 1 (relevant_content_60d, last_60_days); Cake House: 5 topic_articles about wedding cakes vs prospect 1 (relevant_content_60d, last_60_days); Rival Bakes: 7 articles vs prospect 1 (content_production_60d, last_60_days); Cake House: 5 artic. Consistent publishing could close this gap.",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e",
+        "ev_69bf02e94802f459",
+        "ev_799a5eca049ecc3a",
+        "ev_ffd82a42be8e518a",
+        "ev_a6ff764d3d9ff877",
+        "ev_87e0ac37eba6a27f"
+      ],
+      "opportunity_refs": [
+        "opp_c96a09bd8dfb9d2c"
+      ],
+      "limitations": [
+        "This engine does not send outreach; ZTech decides whether this becomes a pitch."
+      ],
+      "do_not_claim": [
+        "Any advertising spend, budget, impressions, clicks or ROI figure (not observable).",
+        "That the prospect is losing customers or revenue (not observed).",
+        "Anything about LinkedIn activity (provider unsupported).",
+        "That competitors rank higher in search \u2014 rankings were not measured."
+      ]
+    },
+    {
+      "angle_id": "ang_ad380ab28a29dbe9",
+      "angle": "More conversion surfaces at competitors",
+      "summary": "Competitors maintain more commercial/landing pages than SweetCrumb Bakery: Rival Bakes: 6 pages vs prospect 2 (commercial_content, at_capture); Cake House: 5 pages vs prospect 2 (commercial_content, at_capture); Rival Bakes: 4 pages vs prospect 0 (landing_page_activity, at_capture); Cake House: 3 pages vs prospect 0 (landing_page_activity, at_capture).",
+      "confidence": 0.74,
+      "evidence_refs": [
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7",
+        "ev_11583fa09b76182c",
+        "ev_338799c51d2e1254",
+        "ev_8e51db9d8e84f2f4",
+        "ev_6bfd2507be68a3a0",
+        "ev_aa2ec5847e3581a6",
+        "ev_796a346a625b242e"
+      ],
+      "opportunity_refs": [
+        "opp_d18cf0329ae118be"
+      ],
+      "limitations": [
+        "This engine does not send outreach; ZTech decides whether this becomes a pitch."
+      ],
+      "do_not_claim": [
+        "Any advertising spend, budget, impressions, clicks or ROI figure (not observable).",
+        "That the prospect is losing customers or revenue (not observed).",
+        "Anything about LinkedIn activity (provider unsupported)."
+      ]
+    },
+    {
+      "angle_id": "ang_0b6f3ff33de9b6bf",
+      "angle": "Offer and pricing visibility",
+      "summary": "Competitors present more visible offers or new offers (Rival Bakes, Cake House): Rival Bakes: 7 offer_signals vs prospect 2 (offers, at_capture); Cake House: 5 offer_signals vs prospect 2 (offers, at_capture).",
+      "confidence": 0.783,
+      "evidence_refs": [
+        "ev_005c86c2fc754485",
+        "ev_25d0f5cec22bf76a",
+        "ev_072ce597ec7a51c8",
+        "ev_115bcee78533ce62",
+        "ev_2bb46a352a37f0da",
+        "ev_9d12ce39be53d0af"
+      ],
+      "opportunity_refs": [
+        "opp_74eef267cd462475"
+      ],
+      "limitations": [
+        "This engine does not send outreach; ZTech decides whether this becomes a pitch."
+      ],
+      "do_not_claim": [
+        "Any advertising spend, budget, impressions, clicks or ROI figure (not observable).",
+        "That the prospect is losing customers or revenue (not observed).",
+        "Anything about LinkedIn activity (provider unsupported)."
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "event_id": "evt_9c8b52c3cde3e97f",
+      "event_type": "ARTICLE_PUBLISHED",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "occurred_at": "2026-03-18T06:13:31Z",
+      "title": "Article published by SweetCrumb Bakery",
+      "summary": "Wedding Cakes guide 1",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_3d1d9b05d6bdaccc",
+      "event_type": "ARTICLE_PUBLISHED",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "occurred_at": "2026-08-10T06:13:31Z",
+      "title": "Article published by Rival Bakes",
+      "summary": "Wedding Cakes guide 6",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_4280b37481b67f73",
+      "event_type": "ARTICLE_PUBLISHED",
+      "entity_id": "ent_adb32b5aaefac085",
+      "occurred_at": "2026-08-15T06:13:31Z",
+      "title": "Article published by Cake House",
+      "summary": "Wedding Cakes guide 4",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_3eb27003e52d9358",
+      "event_type": "ARTICLE_PUBLISHED",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "occurred_at": "2026-08-20T06:13:31Z",
+      "title": "Article published by SweetCrumb Bakery",
+      "summary": "Wedding Cakes guide 0",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_b1031c19b640c38b",
+      "event_type": "ARTICLE_PUBLISHED",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "occurred_at": "2026-08-24T06:13:31Z",
+      "title": "Article published by Rival Bakes",
+      "summary": "Wedding Cakes guide 5",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_8ffb4a910f63cab4",
+      "event_type": "ARTICLE_PUBLISHED",
+      "entity_id": "ent_adb32b5aaefac085",
+      "occurred_at": "2026-09-01T06:13:31Z",
+      "title": "Article published by Cake House",
+      "summary": "Wedding Cakes guide 3",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_38420fec7abb3ee3",
+      "event_type": "ARTICLE_PUBLISHED",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "occurred_at": "2026-09-04T06:13:31Z",
+      "title": "Article published by Rival Bakes",
+      "summary": "Wedding Cakes guide 4",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_765a560a7593484c",
+      "event_type": "ARTICLE_PUBLISHED",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "occurred_at": "2026-09-12T06:13:31Z",
+      "title": "Article published by Rival Bakes",
+      "summary": "Wedding Cakes guide 3",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_2a5d206316587359",
+      "event_type": "ARTICLE_PUBLISHED",
+      "entity_id": "ent_adb32b5aaefac085",
+      "occurred_at": "2026-09-15T06:13:31Z",
+      "title": "Article published by Cake House",
+      "summary": "Wedding Cakes guide 2",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_c99e674b7acda51e",
+      "event_type": "ARTICLE_PUBLISHED",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "occurred_at": "2026-09-19T06:13:31Z",
+      "title": "Article published by Rival Bakes",
+      "summary": "Wedding Cakes guide 2",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_a3cfe25985ed86a0",
+      "event_type": "ARTICLE_PUBLISHED",
+      "entity_id": "ent_adb32b5aaefac085",
+      "occurred_at": "2026-09-22T06:13:31Z",
+      "title": "Article published by Cake House",
+      "summary": "Wedding Cakes guide 1",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_da79ca59f91b2d2a",
+      "event_type": "ARTICLE_PUBLISHED",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "occurred_at": "2026-09-26T06:13:31Z",
+      "title": "Article published by Rival Bakes",
+      "summary": "Wedding Cakes guide 1",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_f07be83253950e3d",
+      "event_type": "ARTICLE_PUBLISHED",
+      "entity_id": "ent_adb32b5aaefac085",
+      "occurred_at": "2026-09-29T06:13:31Z",
+      "title": "Article published by Cake House",
+      "summary": "Wedding Cakes guide 0",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_1b4b4db6cca7f231",
+      "event_type": "ARTICLE_PUBLISHED",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "occurred_at": "2026-10-02T06:13:31Z",
+      "title": "Article published by Rival Bakes",
+      "summary": "Wedding Cakes guide 0",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_7dd9f34b7bc03a47",
+      "event_type": "COMPANY_RESOLVED",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "occurred_at": "2026-10-04T06:13:31.512895Z",
+      "title": "Company resolved",
+      "summary": "SweetCrumb Bakery resolved to sweetcrumb.com",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_65a53fe0ffcf0c43",
+      "event_type": "COMPETITOR_DISCOVERED",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "occurred_at": "2026-10-04T06:13:31.512895Z",
+      "title": "Competitor: Rival Bakes",
+      "summary": "likely_competitor (0.55) \u2014 Business site ranking for 4 market query(ies): Bakery Chicago; SweetCrumb Bakery competitors; alternatives to SweetCrumb Bakery; wedding cakes Chicago",
+      "claim_kind": "inference",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": [
+        "ev_752f14a3fcd33c36"
+      ]
+    },
+    {
+      "event_id": "evt_7dec413e6b489f54",
+      "event_type": "COMPETITOR_DISCOVERED",
+      "entity_id": "ent_adb32b5aaefac085",
+      "occurred_at": "2026-10-04T06:13:31.512895Z",
+      "title": "Competitor: Cake House",
+      "summary": "likely_competitor (0.55) \u2014 Business site ranking for 4 market query(ies): Bakery Chicago; SweetCrumb Bakery competitors; alternatives to SweetCrumb Bakery; wedding cakes Chicago",
+      "claim_kind": "inference",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": [
+        "ev_3894f4b32a8f3c72"
+      ]
+    },
+    {
+      "event_id": "evt_62408204c0e008d2",
+      "event_type": "RESEARCH_STARTED",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "occurred_at": "2026-10-04T06:13:31.512895Z",
+      "title": "Research started",
+      "summary": "Opportunity research started for SweetCrumb Bakery",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_239bc110aadb82cc",
+      "event_type": "PROVIDER_UNAVAILABLE",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "occurred_at": "2026-10-04T06:13:31.521649Z",
+      "title": "meta_ads: unavailable",
+      "summary": "Meta Ad Library API not configured (set META_ACCESS_TOKEN)",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_24586a35f42cc1a4",
+      "event_type": "PROVIDER_UNAVAILABLE",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "occurred_at": "2026-10-04T06:13:31.521694Z",
+      "title": "google_ads: unavailable",
+      "summary": "Google Ads Transparency has no official API; set SERPAPI_API_KEY to enable the third-party adapter",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_f6d1342802982e88",
+      "event_type": "PROVIDER_UNAVAILABLE",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "occurred_at": "2026-10-04T06:13:31.521741Z",
+      "title": "twitter: unavailable",
+      "summary": "X API not configured (set X_BEARER_TOKEN)",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_c1689f2904619c45",
+      "event_type": "PROVIDER_UNAVAILABLE",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "occurred_at": "2026-10-04T06:13:31.533276Z",
+      "title": "meta_ads: unavailable",
+      "summary": "Meta Ad Library API not configured (set META_ACCESS_TOKEN)",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_a41bc0f6c75d2d84",
+      "event_type": "PROVIDER_UNAVAILABLE",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "occurred_at": "2026-10-04T06:13:31.533326Z",
+      "title": "google_ads: unavailable",
+      "summary": "Google Ads Transparency has no official API; set SERPAPI_API_KEY to enable the third-party adapter",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_aca4c7506612d66f",
+      "event_type": "PROVIDER_UNAVAILABLE",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "occurred_at": "2026-10-04T06:13:31.533364Z",
+      "title": "twitter: unavailable",
+      "summary": "X API not configured (set X_BEARER_TOKEN)",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_c860e244935ee490",
+      "event_type": "PROVIDER_UNAVAILABLE",
+      "entity_id": "ent_adb32b5aaefac085",
+      "occurred_at": "2026-10-04T06:13:31.533473Z",
+      "title": "meta_ads: unavailable",
+      "summary": "Meta Ad Library API not configured (set META_ACCESS_TOKEN)",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_82ddb5da843d86d2",
+      "event_type": "PROVIDER_UNAVAILABLE",
+      "entity_id": "ent_adb32b5aaefac085",
+      "occurred_at": "2026-10-04T06:13:31.533506Z",
+      "title": "google_ads: unavailable",
+      "summary": "Google Ads Transparency has no official API; set SERPAPI_API_KEY to enable the third-party adapter",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_ace42bb8572b8335",
+      "event_type": "PROVIDER_UNAVAILABLE",
+      "entity_id": "ent_adb32b5aaefac085",
+      "occurred_at": "2026-10-04T06:13:31.533541Z",
+      "title": "twitter: unavailable",
+      "summary": "X API not configured (set X_BEARER_TOKEN)",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_991adf6a49ca9c19",
+      "event_type": "CONTENT_GAP_DETECTED",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "occurred_at": "2026-10-04T06:13:31.533797Z",
+      "title": "Content gap detected",
+      "summary": "content_production_60d: prospect 1 vs Rival Bakes 7",
+      "claim_kind": "inference",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e",
+        "ev_799a5eca049ecc3a"
+      ]
+    },
+    {
+      "event_id": "evt_161dac19e687419b",
+      "event_type": "CONTENT_GAP_DETECTED",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "occurred_at": "2026-10-04T06:13:31.533797Z",
+      "title": "Content gap detected",
+      "summary": "content_production_60d: prospect 1 vs Cake House 5",
+      "claim_kind": "inference",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e",
+        "ev_a6ff764d3d9ff877"
+      ]
+    },
+    {
+      "event_id": "evt_486caa02b78f327e",
+      "event_type": "OPPORTUNITY_IDENTIFIED",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "occurred_at": "2026-10-04T06:13:31.533797Z",
+      "title": "Competitors publish more content around wedding cakes",
+      "summary": "CONTENT_GAP (high, confidence 0.90)",
+      "claim_kind": "inference",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e",
+        "ev_69bf02e94802f459",
+        "ev_799a5eca049ecc3a",
+        "ev_ffd82a42be8e518a",
+        "ev_a6ff764d3d9ff877",
+        "ev_87e0ac37eba6a27f"
+      ]
+    },
+    {
+      "event_id": "evt_3d1a1390d24c99b0",
+      "event_type": "OPPORTUNITY_IDENTIFIED",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "occurred_at": "2026-10-04T06:13:31.533797Z",
+      "title": "Competitors maintain more commercial / landing pages",
+      "summary": "LANDING_PAGE_GAP (medium, confidence 0.74)",
+      "claim_kind": "inference",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": [
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7",
+        "ev_11583fa09b76182c",
+        "ev_338799c51d2e1254",
+        "ev_8e51db9d8e84f2f4",
+        "ev_6bfd2507be68a3a0"
+      ]
+    },
+    {
+      "event_id": "evt_c000cd3a3c2051a9",
+      "event_type": "OPPORTUNITY_IDENTIFIED",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "occurred_at": "2026-10-04T06:13:31.533797Z",
+      "title": "Competitors present more offers / pricing signals",
+      "summary": "OFFER_GAP (high, confidence 0.78)",
+      "claim_kind": "inference",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": [
+        "ev_005c86c2fc754485",
+        "ev_25d0f5cec22bf76a",
+        "ev_072ce597ec7a51c8",
+        "ev_115bcee78533ce62",
+        "ev_2bb46a352a37f0da",
+        "ev_9d12ce39be53d0af"
+      ]
+    },
+    {
+      "event_id": "evt_008a33335b33e10f",
+      "event_type": "RESEARCH_COMPLETED",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "occurred_at": "2026-10-04T06:13:31.533797Z",
+      "title": "Research completed",
+      "summary": "All configured providers completed.",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    },
+    {
+      "event_id": "evt_5b4bf1ca3c70c551",
+      "event_type": "SIGNAL_DETECTED",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "occurred_at": "2026-10-04T06:13:31.533797Z",
+      "title": "Signal: COMMERCIAL_INTENT",
+      "summary": "Commercial intent on sweetcrumb.com: 1 pricing page(s), 3 published price point(s), 1 offer mention(s)",
+      "claim_kind": "inference",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": [
+        "ev_bc991f0da56410e7",
+        "ev_005c86c2fc754485",
+        "ev_25d0f5cec22bf76a"
+      ]
+    },
+    {
+      "event_id": "evt_a1b6d515062ba499",
+      "event_type": "SIGNAL_DETECTED",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "occurred_at": "2026-10-04T06:13:31.533797Z",
+      "title": "Signal: COMMERCIAL_INTENT",
+      "summary": "Commercial intent on rivalbakes.com: 1 pricing page(s), 3 published price point(s), 2 offer mention(s)",
+      "claim_kind": "inference",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": [
+        "ev_338799c51d2e1254",
+        "ev_072ce597ec7a51c8",
+        "ev_115bcee78533ce62"
+      ]
+    },
+    {
+      "event_id": "evt_56645a4b25d0260a",
+      "event_type": "SIGNAL_DETECTED",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "occurred_at": "2026-10-04T06:13:31.533797Z",
+      "title": "Signal: HIRING",
+      "summary": "Careers page present on rivalbakes.com (hiring capability observed; open-role volume unknown)",
+      "claim_kind": "inference",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": [
+        "ev_7bc01089f06d6c51"
+      ]
+    },
+    {
+      "event_id": "evt_f4666c14b3b65bc7",
+      "event_type": "SIGNAL_DETECTED",
+      "entity_id": "ent_adb32b5aaefac085",
+      "occurred_at": "2026-10-04T06:13:31.533797Z",
+      "title": "Signal: COMMERCIAL_INTENT",
+      "summary": "Commercial intent on cakehouse.com: 1 pricing page(s), 3 published price point(s), 1 offer mention(s)",
+      "claim_kind": "inference",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": [
+        "ev_6bfd2507be68a3a0",
+        "ev_2bb46a352a37f0da",
+        "ev_9d12ce39be53d0af"
+      ]
+    },
+    {
+      "event_id": "evt_553c6b1f5fb6e95b",
+      "event_type": "SIGNAL_DETECTED",
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "occurred_at": "2026-10-04T06:13:31.533797Z",
+      "title": "Signal: COMPETITOR_PRESSURE",
+      "summary": "Rival Bakes is more active than the prospect on 6 dimension(s): content_production_60d, commercial_content, landing_page_activity, offers, hiring, relevant_content_60d",
+      "claim_kind": "inference",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e",
+        "ev_799a5eca049ecc3a",
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7",
+        "ev_11583fa09b76182c",
+        "ev_338799c51d2e1254"
+      ]
+    },
+    {
+      "event_id": "evt_6e44fb812c4ee692",
+      "event_type": "SIGNAL_DETECTED",
+      "entity_id": "ent_adb32b5aaefac085",
+      "occurred_at": "2026-10-04T06:13:31.533797Z",
+      "title": "Signal: COMPETITOR_PRESSURE",
+      "summary": "Cake House is more active than the prospect on 5 dimension(s): content_production_60d, commercial_content, landing_page_activity, offers, relevant_content_60d",
+      "claim_kind": "inference",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e",
+        "ev_a6ff764d3d9ff877",
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7",
+        "ev_8e51db9d8e84f2f4",
+        "ev_6bfd2507be68a3a0"
+      ]
+    },
+    {
+      "event_id": "evt_f7a2a37e6aad6a60",
+      "event_type": "SNAPSHOT_CAPTURED",
+      "entity_id": "ent_5a5bec82f46755ae",
+      "occurred_at": "2026-10-04T06:13:31.533797Z",
+      "title": "Snapshot captured",
+      "summary": "snap_20261004061331_24061b04",
+      "claim_kind": "fact",
+      "research_id": "res_20261004061331_5477274e",
+      "evidence_refs": []
+    }
+  ],
+  "conflicts": [],
+  "limitations": [
+    "[website] Static HTML only: content rendered exclusively by client-side JavaScript is not observed.",
+    "[meta_ads] Meta provider: NOT CONFIGURED \u2014 no Meta advertising data was collected.",
+    "[google_ads] Google provider: NOT CONFIGURED \u2014 no Google advertising data was collected.",
+    "[twitter] X/Twitter provider: NOT CONFIGURED \u2014 no X data was collected.",
+    "[linkedin] LinkedIn provider: UNSUPPORTED. Company activity, hiring posts, job changes and announcements are not collected.",
+    "[linkedin] Reason: LinkedIn prohibits scraping/automation; official APIs only cover pages the caller administers.",
+    "First snapshot for this prospect: change detection, momentum and timing need a later re-run."
+  ],
+  "provider_status": {
+    "ent_5a5bec82f46755ae": {
+      "website": "success",
+      "content": "success",
+      "meta_ads": "unavailable",
+      "google_ads": "unavailable",
+      "twitter": "unavailable",
+      "linkedin": "unsupported",
+      "competitor_discovery": "success"
+    },
+    "ent_a7e42e197f25bd6f": {
+      "website": "success",
+      "content": "success",
+      "meta_ads": "unavailable",
+      "google_ads": "unavailable",
+      "twitter": "unavailable",
+      "linkedin": "unsupported"
+    },
+    "ent_adb32b5aaefac085": {
+      "website": "success",
+      "content": "success",
+      "meta_ads": "unavailable",
+      "google_ads": "unavailable",
+      "twitter": "unavailable",
+      "linkedin": "unsupported"
+    }
+  },
+  "telemetry": {
+    "started_at": "2026-10-04T06:13:31.512895Z",
+    "completed_at": "2026-10-04T06:13:31.533797Z",
+    "duration_ms": 20,
+    "providers": [
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "website",
+        "entity_id": "ent_5a5bec82f46755ae",
+        "started_at": "2026-10-04T06:13:31.513268Z",
+        "completed_at": "2026-10-04T06:13:31.518337Z",
+        "duration_ms": 5,
+        "status": "success",
+        "items_observed": 9,
+        "evidence_created": 14,
+        "error_code": null,
+        "retry_count": 0
+      },
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "content",
+        "entity_id": "ent_5a5bec82f46755ae",
+        "started_at": "2026-10-04T06:13:31.518456Z",
+        "completed_at": "2026-10-04T06:13:31.521110Z",
+        "duration_ms": 2,
+        "status": "success",
+        "items_observed": 4,
+        "evidence_created": 3,
+        "error_code": null,
+        "retry_count": 0
+      },
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "meta_ads",
+        "entity_id": "ent_5a5bec82f46755ae",
+        "started_at": "2026-10-04T06:13:31.521633Z",
+        "completed_at": "2026-10-04T06:13:31.521649Z",
+        "duration_ms": 0,
+        "status": "unavailable",
+        "items_observed": 0,
+        "evidence_created": 0,
+        "error_code": "PROVIDER_NOT_CONFIGURED",
+        "retry_count": 0
+      },
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "google_ads",
+        "entity_id": "ent_5a5bec82f46755ae",
+        "started_at": "2026-10-04T06:13:31.521685Z",
+        "completed_at": "2026-10-04T06:13:31.521694Z",
+        "duration_ms": 0,
+        "status": "unavailable",
+        "items_observed": 0,
+        "evidence_created": 0,
+        "error_code": "PROVIDER_NOT_CONFIGURED",
+        "retry_count": 0
+      },
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "twitter",
+        "entity_id": "ent_5a5bec82f46755ae",
+        "started_at": "2026-10-04T06:13:31.521733Z",
+        "completed_at": "2026-10-04T06:13:31.521741Z",
+        "duration_ms": 0,
+        "status": "unavailable",
+        "items_observed": 0,
+        "evidence_created": 0,
+        "error_code": "PROVIDER_NOT_CONFIGURED",
+        "retry_count": 0
+      },
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "linkedin",
+        "entity_id": "ent_5a5bec82f46755ae",
+        "started_at": "2026-10-04T06:13:31.521767Z",
+        "completed_at": "2026-10-04T06:13:31.521775Z",
+        "duration_ms": 0,
+        "status": "unsupported",
+        "items_observed": 0,
+        "evidence_created": 0,
+        "error_code": "UNSUPPORTED_SOURCE",
+        "retry_count": 0
+      },
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "competitor_discovery",
+        "entity_id": "ent_5a5bec82f46755ae",
+        "started_at": "2026-10-04T06:13:31.521230Z",
+        "completed_at": "2026-10-04T06:13:31.521574Z",
+        "duration_ms": 0,
+        "status": "success",
+        "items_observed": 2,
+        "evidence_created": 2,
+        "error_code": null,
+        "retry_count": 0
+      },
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "website",
+        "entity_id": "ent_a7e42e197f25bd6f",
+        "started_at": "2026-10-04T06:13:31.521949Z",
+        "completed_at": "2026-10-04T06:13:31.526526Z",
+        "duration_ms": 4,
+        "status": "success",
+        "items_observed": 19,
+        "evidence_created": 16,
+        "error_code": null,
+        "retry_count": 0
+      },
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "content",
+        "entity_id": "ent_a7e42e197f25bd6f",
+        "started_at": "2026-10-04T06:13:31.526697Z",
+        "completed_at": "2026-10-04T06:13:31.527988Z",
+        "duration_ms": 1,
+        "status": "success",
+        "items_observed": 9,
+        "evidence_created": 8,
+        "error_code": null,
+        "retry_count": 0
+      },
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "meta_ads",
+        "entity_id": "ent_a7e42e197f25bd6f",
+        "started_at": "2026-10-04T06:13:31.533259Z",
+        "completed_at": "2026-10-04T06:13:31.533276Z",
+        "duration_ms": 0,
+        "status": "unavailable",
+        "items_observed": 0,
+        "evidence_created": 0,
+        "error_code": "PROVIDER_NOT_CONFIGURED",
+        "retry_count": 0
+      },
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "google_ads",
+        "entity_id": "ent_a7e42e197f25bd6f",
+        "started_at": "2026-10-04T06:13:31.533317Z",
+        "completed_at": "2026-10-04T06:13:31.533326Z",
+        "duration_ms": 0,
+        "status": "unavailable",
+        "items_observed": 0,
+        "evidence_created": 0,
+        "error_code": "PROVIDER_NOT_CONFIGURED",
+        "retry_count": 0
+      },
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "twitter",
+        "entity_id": "ent_a7e42e197f25bd6f",
+        "started_at": "2026-10-04T06:13:31.533357Z",
+        "completed_at": "2026-10-04T06:13:31.533364Z",
+        "duration_ms": 0,
+        "status": "unavailable",
+        "items_observed": 0,
+        "evidence_created": 0,
+        "error_code": "PROVIDER_NOT_CONFIGURED",
+        "retry_count": 0
+      },
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "linkedin",
+        "entity_id": "ent_a7e42e197f25bd6f",
+        "started_at": "2026-10-04T06:13:31.533424Z",
+        "completed_at": "2026-10-04T06:13:31.533434Z",
+        "duration_ms": 0,
+        "status": "unsupported",
+        "items_observed": 0,
+        "evidence_created": 0,
+        "error_code": "UNSUPPORTED_SOURCE",
+        "retry_count": 0
+      },
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "website",
+        "entity_id": "ent_adb32b5aaefac085",
+        "started_at": "2026-10-04T06:13:31.528089Z",
+        "completed_at": "2026-10-04T06:13:31.532159Z",
+        "duration_ms": 4,
+        "status": "success",
+        "items_observed": 15,
+        "evidence_created": 15,
+        "error_code": null,
+        "retry_count": 0
+      },
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "content",
+        "entity_id": "ent_adb32b5aaefac085",
+        "started_at": "2026-10-04T06:13:31.532225Z",
+        "completed_at": "2026-10-04T06:13:31.533158Z",
+        "duration_ms": 0,
+        "status": "success",
+        "items_observed": 7,
+        "evidence_created": 6,
+        "error_code": null,
+        "retry_count": 0
+      },
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "meta_ads",
+        "entity_id": "ent_adb32b5aaefac085",
+        "started_at": "2026-10-04T06:13:31.533466Z",
+        "completed_at": "2026-10-04T06:13:31.533473Z",
+        "duration_ms": 0,
+        "status": "unavailable",
+        "items_observed": 0,
+        "evidence_created": 0,
+        "error_code": "PROVIDER_NOT_CONFIGURED",
+        "retry_count": 0
+      },
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "google_ads",
+        "entity_id": "ent_adb32b5aaefac085",
+        "started_at": "2026-10-04T06:13:31.533500Z",
+        "completed_at": "2026-10-04T06:13:31.533506Z",
+        "duration_ms": 0,
+        "status": "unavailable",
+        "items_observed": 0,
+        "evidence_created": 0,
+        "error_code": "PROVIDER_NOT_CONFIGURED",
+        "retry_count": 0
+      },
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "twitter",
+        "entity_id": "ent_adb32b5aaefac085",
+        "started_at": "2026-10-04T06:13:31.533534Z",
+        "completed_at": "2026-10-04T06:13:31.533541Z",
+        "duration_ms": 0,
+        "status": "unavailable",
+        "items_observed": 0,
+        "evidence_created": 0,
+        "error_code": "PROVIDER_NOT_CONFIGURED",
+        "retry_count": 0
+      },
+      {
+        "research_id": "res_20261004061331_5477274e",
+        "provider": "linkedin",
+        "entity_id": "ent_adb32b5aaefac085",
+        "started_at": "2026-10-04T06:13:31.533564Z",
+        "completed_at": "2026-10-04T06:13:31.533570Z",
+        "duration_ms": 0,
+        "status": "unsupported",
+        "items_observed": 0,
+        "evidence_created": 0,
+        "error_code": "UNSUPPORTED_SOURCE",
+        "retry_count": 0
+      }
+    ]
+  }
+}

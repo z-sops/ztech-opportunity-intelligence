@@ -1,0 +1,48 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "max_competitors": {
+      "default": 3,
+      "maximum": 5,
+      "minimum": 0,
+      "title": "Max Competitors",
+      "type": "integer"
+    },
+    "discover_competitors": {
+      "default": true,
+      "title": "Discover Competitors",
+      "type": "boolean"
+    },
+    "providers": {
+      "anyOf": [
+        {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Optional allow-list of provider names to run (default: all).",
+      "title": "Providers"
+    },
+    "idempotency_key": {
+      "anyOf": [
+        {
+          "maxLength": 128,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Idempotency Key"
+    }
+  },
+  "title": "ResearchOptions",
+  "type": "object"
+}

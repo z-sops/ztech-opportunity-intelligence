@@ -1,0 +1,14 @@
+{
+  "prospect": {
+    "company_name": "SweetCrumb Bakery",
+    "domain": "sweetcrumb.com",
+    "location": "Chicago",
+    "industry": "Bakery",
+    "products_services": [
+      "wedding cakes"
+    ]
+  },
+  "options": {
+    "max_competitors": 3
+  }
+}

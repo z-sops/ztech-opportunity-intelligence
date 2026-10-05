@@ -1,0 +1,402 @@
+{
+  "schema_version": "1.0",
+  "research_id": "res_20261004061331_5477274e",
+  "status": "completed",
+  "generated_at": "2026-10-04T06:13:31.533797Z",
+  "prospect": {
+    "entity_id": "ent_5a5bec82f46755ae",
+    "company_name": "SweetCrumb Bakery",
+    "domain": "sweetcrumb.com",
+    "profile": {
+      "title": "SweetCrumb Bakery",
+      "description": "SweetCrumb Bakery \u2014 wedding cakes bakery in Chicago",
+      "services": [
+        "Wedding cakes",
+        "Corporate catering",
+        "Custom birthday cakes"
+      ],
+      "products": [],
+      "emails": [
+        "hello@sweetcrumb.com",
+        "orders@sweetcrumb.com"
+      ],
+      "phones": [
+        "+13125550100"
+      ],
+      "social_profiles": {
+        "linkedin": "https://www.linkedin.com/company/sweetcrumb"
+      },
+      "technologies": [
+        "Google Tag Manager",
+        "Meta Pixel"
+      ],
+      "locations": [
+        "Chicago, IL"
+      ],
+      "ctas": [
+        "Contact us",
+        "Order now",
+        "Call"
+      ],
+      "offers": [
+        "Pricing Wedding cake from $299. Cupcakes $3.50 per person. Free delivery on orders over $100."
+      ],
+      "prices": [
+        "$299",
+        "$3.50 per person",
+        "$100"
+      ],
+      "business_model": [
+        "food_service"
+      ]
+    }
+  },
+  "competitors": [
+    {
+      "entity_id": "ent_a7e42e197f25bd6f",
+      "company_name": "Rival Bakes",
+      "domain": "rivalbakes.com",
+      "relationship_type": "likely_competitor",
+      "relationship_confidence": 0.55,
+      "reason": "Business site ranking for 4 market query(ies): Bakery Chicago; SweetCrumb Bakery competitors; alternatives to SweetCrumb Bakery; wedding cakes Chicago"
+    },
+    {
+      "entity_id": "ent_adb32b5aaefac085",
+      "company_name": "Cake House",
+      "domain": "cakehouse.com",
+      "relationship_type": "likely_competitor",
+      "relationship_confidence": 0.55,
+      "reason": "Business site ranking for 4 market query(ies): Bakery Chicago; SweetCrumb Bakery competitors; alternatives to SweetCrumb Bakery; wedding cakes Chicago"
+    }
+  ],
+  "opportunity_score": {
+    "score": 72,
+    "previous_score": null,
+    "explanation": [
+      "Score 72/100 from 6 of 9 components (model score-1.0).",
+      "Not computed: icp_fit, recent_changes, market_timing \u2014 their weight was redistributed.",
+      "Strongest: research_confidence (100); weakest: prospect_activity (12.5).",
+      "Deterministic: identical inputs always produce the identical score."
+    ]
+  },
+  "opportunities": [
+    {
+      "opportunity_id": "opp_c96a09bd8dfb9d2c",
+      "type": "CONTENT_GAP",
+      "title": "Competitors publish more content around wedding cakes",
+      "severity": "high",
+      "confidence": 0.9,
+      "what_was_observed": "Rival Bakes: 7 topic_articles about wedding cakes vs prospect 1 (relevant_content_60d, last_60_days); Cake House: 5 topic_articles about wedding cakes vs prospect 1 (relevant_content_60d, last_60_days); Rival Bakes: 7 articles vs prospect 1 (content_production_60d, last_60_days); Cake House: 5 articles vs prospect 1 (content_production_60d, last_60_days)",
+      "who": [
+        "Rival Bakes",
+        "Cake House"
+      ],
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e",
+        "ev_69bf02e94802f459",
+        "ev_799a5eca049ecc3a",
+        "ev_ffd82a42be8e518a",
+        "ev_a6ff764d3d9ff877"
+      ]
+    },
+    {
+      "opportunity_id": "opp_d18cf0329ae118be",
+      "type": "LANDING_PAGE_GAP",
+      "title": "Competitors maintain more commercial / landing pages",
+      "severity": "medium",
+      "confidence": 0.74,
+      "what_was_observed": "Rival Bakes: 6 pages vs prospect 2 (commercial_content, at_capture); Cake House: 5 pages vs prospect 2 (commercial_content, at_capture); Rival Bakes: 4 pages vs prospect 0 (landing_page_activity, at_capture); Cake House: 3 pages vs prospect 0 (landing_page_activity, at_capture)",
+      "who": [
+        "Rival Bakes",
+        "Cake House"
+      ],
+      "evidence_refs": [
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7",
+        "ev_11583fa09b76182c",
+        "ev_338799c51d2e1254",
+        "ev_8e51db9d8e84f2f4"
+      ]
+    },
+    {
+      "opportunity_id": "opp_74eef267cd462475",
+      "type": "OFFER_GAP",
+      "title": "Competitors present more offers / pricing signals",
+      "severity": "high",
+      "confidence": 0.783,
+      "what_was_observed": "Rival Bakes: 7 offer_signals vs prospect 2 (offers, at_capture); Cake House: 5 offer_signals vs prospect 2 (offers, at_capture)",
+      "who": [
+        "Rival Bakes",
+        "Cake House"
+      ],
+      "evidence_refs": [
+        "ev_005c86c2fc754485",
+        "ev_25d0f5cec22bf76a",
+        "ev_072ce597ec7a51c8",
+        "ev_115bcee78533ce62",
+        "ev_2bb46a352a37f0da"
+      ]
+    }
+  ],
+  "sales_angles": [
+    {
+      "angle": "Content visibility gap",
+      "summary": "Competitors have published more recent content than SweetCrumb Bakery: Rival Bakes: 7 topic_articles about wedding cakes vs prospect 1 (relevant_content_60d, last_60_days); Cake House: 5 topic_articles about wedding cakes vs prospect 1 (relevant_content_60d, last_60_days); Rival Bakes: 7 articles vs prospect 1 (content_production_60d, last_60_days); Cake House: 5 artic. Consistent publishing could close this gap.",
+      "confidence": 0.9,
+      "do_not_claim": [
+        "Any advertising spend, budget, impressions, clicks or ROI figure (not observable).",
+        "That the prospect is losing customers or revenue (not observed).",
+        "Anything about LinkedIn activity (provider unsupported).",
+        "That competitors rank higher in search \u2014 rankings were not measured."
+      ],
+      "evidence_refs": [
+        "ev_e1d5d77c56fb1d8e",
+        "ev_69bf02e94802f459",
+        "ev_799a5eca049ecc3a",
+        "ev_ffd82a42be8e518a",
+        "ev_a6ff764d3d9ff877"
+      ]
+    },
+    {
+      "angle": "More conversion surfaces at competitors",
+      "summary": "Competitors maintain more commercial/landing pages than SweetCrumb Bakery: Rival Bakes: 6 pages vs prospect 2 (commercial_content, at_capture); Cake House: 5 pages vs prospect 2 (commercial_content, at_capture); Rival Bakes: 4 pages vs prospect 0 (landing_page_activity, at_capture); Cake House: 3 pages vs prospect 0 (landing_page_activity, at_capture).",
+      "confidence": 0.74,
+      "do_not_claim": [
+        "Any advertising spend, budget, impressions, clicks or ROI figure (not observable).",
+        "That the prospect is losing customers or revenue (not observed).",
+        "Anything about LinkedIn activity (provider unsupported)."
+      ],
+      "evidence_refs": [
+        "ev_b8984daa407e714c",
+        "ev_bc991f0da56410e7",
+        "ev_11583fa09b76182c",
+        "ev_338799c51d2e1254",
+        "ev_8e51db9d8e84f2f4"
+      ]
+    },
+    {
+      "angle": "Offer and pricing visibility",
+      "summary": "Competitors present more visible offers or new offers (Rival Bakes, Cake House): Rival Bakes: 7 offer_signals vs prospect 2 (offers, at_capture); Cake House: 5 offer_signals vs prospect 2 (offers, at_capture).",
+      "confidence": 0.783,
+      "do_not_claim": [
+        "Any advertising spend, budget, impressions, clicks or ROI figure (not observable).",
+        "That the prospect is losing customers or revenue (not observed).",
+        "Anything about LinkedIn activity (provider unsupported)."
+      ],
+      "evidence_refs": [
+        "ev_005c86c2fc754485",
+        "ev_25d0f5cec22bf76a",
+        "ev_072ce597ec7a51c8",
+        "ev_115bcee78533ce62",
+        "ev_2bb46a352a37f0da"
+      ]
+    }
+  ],
+  "key_comparisons": [
+    {
+      "dimension": "content_production_60d",
+      "competitor": "Rival Bakes",
+      "prospect": 1.0,
+      "competitor_value": 7.0,
+      "unit": "articles",
+      "window": "last_60_days",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.9
+    },
+    {
+      "dimension": "commercial_content",
+      "competitor": "Rival Bakes",
+      "prospect": 2.0,
+      "competitor_value": 6.0,
+      "unit": "pages",
+      "window": "at_capture",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.787
+    },
+    {
+      "dimension": "landing_page_activity",
+      "competitor": "Rival Bakes",
+      "prospect": 0.0,
+      "competitor_value": 4.0,
+      "unit": "pages",
+      "window": "at_capture",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.75
+    },
+    {
+      "dimension": "offers",
+      "competitor": "Rival Bakes",
+      "prospect": 2.0,
+      "competitor_value": 7.0,
+      "unit": "offer_signals",
+      "window": "at_capture",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.846
+    },
+    {
+      "dimension": "hiring",
+      "competitor": "Rival Bakes",
+      "prospect": 0.0,
+      "competitor_value": 1.0,
+      "unit": "careers_page_present",
+      "window": "at_capture",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.75
+    },
+    {
+      "dimension": "seo_content_coverage",
+      "competitor": "Rival Bakes",
+      "prospect": 7.0,
+      "competitor_value": 17.0,
+      "unit": "indexable_pages_in_sitemap",
+      "window": "at_capture",
+      "interpretation": "parity",
+      "confidence": 0.63
+    },
+    {
+      "dimension": "expansion",
+      "competitor": "Rival Bakes",
+      "prospect": 0.0,
+      "competitor_value": 0.0,
+      "unit": "location_pages",
+      "window": "at_capture",
+      "interpretation": "parity",
+      "confidence": 0.551
+    },
+    {
+      "dimension": "relevant_content_60d",
+      "competitor": "Rival Bakes",
+      "prospect": 1.0,
+      "competitor_value": 7.0,
+      "unit": "topic_articles",
+      "window": "last_60_days",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.913
+    },
+    {
+      "dimension": "content_production_60d",
+      "competitor": "Cake House",
+      "prospect": 1.0,
+      "competitor_value": 5.0,
+      "unit": "articles",
+      "window": "last_60_days",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.9
+    },
+    {
+      "dimension": "commercial_content",
+      "competitor": "Cake House",
+      "prospect": 2.0,
+      "competitor_value": 5.0,
+      "unit": "pages",
+      "window": "at_capture",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.74
+    },
+    {
+      "dimension": "landing_page_activity",
+      "competitor": "Cake House",
+      "prospect": 0.0,
+      "competitor_value": 3.0,
+      "unit": "pages",
+      "window": "at_capture",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.75
+    },
+    {
+      "dimension": "offers",
+      "competitor": "Cake House",
+      "prospect": 2.0,
+      "competitor_value": 5.0,
+      "unit": "offer_signals",
+      "window": "at_capture",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.783
+    },
+    {
+      "dimension": "hiring",
+      "competitor": "Cake House",
+      "prospect": 0.0,
+      "competitor_value": 0.0,
+      "unit": "careers_page_present",
+      "window": "at_capture",
+      "interpretation": "parity",
+      "confidence": 0.56
+    },
+    {
+      "dimension": "seo_content_coverage",
+      "competitor": "Cake House",
+      "prospect": 7.0,
+      "competitor_value": 13.0,
+      "unit": "indexable_pages_in_sitemap",
+      "window": "at_capture",
+      "interpretation": "parity",
+      "confidence": 0.63
+    },
+    {
+      "dimension": "expansion",
+      "competitor": "Cake House",
+      "prospect": 0.0,
+      "competitor_value": 0.0,
+      "unit": "location_pages",
+      "window": "at_capture",
+      "interpretation": "parity",
+      "confidence": 0.56
+    },
+    {
+      "dimension": "relevant_content_60d",
+      "competitor": "Cake House",
+      "prospect": 1.0,
+      "competitor_value": 5.0,
+      "unit": "topic_articles",
+      "window": "last_60_days",
+      "interpretation": "competitor_more_active",
+      "confidence": 0.913
+    }
+  ],
+  "changes_since_previous": 0,
+  "provider_status": {
+    "SweetCrumb Bakery": {
+      "website": "success",
+      "content": "success",
+      "meta_ads": "unavailable",
+      "google_ads": "unavailable",
+      "twitter": "unavailable",
+      "linkedin": "unsupported",
+      "competitor_discovery": "success"
+    },
+    "Rival Bakes": {
+      "website": "success",
+      "content": "success",
+      "meta_ads": "unavailable",
+      "google_ads": "unavailable",
+      "twitter": "unavailable",
+      "linkedin": "unsupported"
+    },
+    "Cake House": {
+      "website": "success",
+      "content": "success",
+      "meta_ads": "unavailable",
+      "google_ads": "unavailable",
+      "twitter": "unavailable",
+      "linkedin": "unsupported"
+    }
+  },
+  "counts": {
+    "evidence": 64,
+    "signals": 11,
+    "comparisons": 24,
+    "timeline_events": 40,
+    "conflicts": 0
+  },
+  "limitations": [
+    "[website] Static HTML only: content rendered exclusively by client-side JavaScript is not observed.",
+    "[meta_ads] Meta provider: NOT CONFIGURED \u2014 no Meta advertising data was collected.",
+    "[google_ads] Google provider: NOT CONFIGURED \u2014 no Google advertising data was collected.",
+    "[twitter] X/Twitter provider: NOT CONFIGURED \u2014 no X data was collected.",
+    "[linkedin] LinkedIn provider: UNSUPPORTED. Company activity, hiring posts, job changes and announcements are not collected.",
+    "[linkedin] Reason: LinkedIn prohibits scraping/automation; official APIs only cover pages the caller administers.",
+    "First snapshot for this prospect: change detection, momentum and timing need a later re-run."
+  ],
+  "note": "Summary view. Call get_opportunity_report(research_id) for the full canonical report."
+}

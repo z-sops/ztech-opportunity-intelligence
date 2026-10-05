@@ -1,0 +1,8 @@
+{
+  "name": "ztech-oi-node-client-test",
+  "private": true,
+  "type": "module",
+  "description": "Contract test: ZTech (Node/Electron main process) -> MCP stdio -> Python engine",
+  "scripts": { "test": "node mcp_client_test.mjs" },
+  "dependencies": { "@modelcontextprotocol/sdk": "^1.17.0" }
+}

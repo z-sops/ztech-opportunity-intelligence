@@ -1,0 +1,145 @@
+{
+  "$defs": {
+    "CompetitorHint": {
+      "additionalProperties": false,
+      "properties": {
+        "company_name": {
+          "maxLength": 120,
+          "minLength": 1,
+          "title": "Company Name",
+          "type": "string"
+        },
+        "domain": {
+          "anyOf": [
+            {
+              "maxLength": 253,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Domain"
+        }
+      },
+      "required": [
+        "company_name"
+      ],
+      "title": "CompetitorHint",
+      "type": "object"
+    },
+    "ICPCriteria": {
+      "additionalProperties": false,
+      "description": "Optional ideal-customer-profile used only for the icp_fit score component.",
+      "properties": {
+        "industries": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Industries",
+          "type": "array"
+        },
+        "locations": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Locations",
+          "type": "array"
+        },
+        "keywords": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 30,
+          "title": "Keywords",
+          "type": "array"
+        }
+      },
+      "title": "ICPCriteria",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "company_name": {
+      "maxLength": 120,
+      "minLength": 1,
+      "title": "Company Name",
+      "type": "string"
+    },
+    "domain": {
+      "anyOf": [
+        {
+          "maxLength": 253,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Domain"
+    },
+    "location": {
+      "anyOf": [
+        {
+          "maxLength": 120,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Location"
+    },
+    "industry": {
+      "anyOf": [
+        {
+          "maxLength": 120,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Industry"
+    },
+    "products_services": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 10,
+      "title": "Products Services",
+      "type": "array"
+    },
+    "known_competitors": {
+      "items": {
+        "$ref": "#/$defs/CompetitorHint"
+      },
+      "maxItems": 10,
+      "title": "Known Competitors",
+      "type": "array"
+    },
+    "icp": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/ICPCriteria"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "company_name"
+  ],
+  "title": "ProspectInput",
+  "type": "object"
+}

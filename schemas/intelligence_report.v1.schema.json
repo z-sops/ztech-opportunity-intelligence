@@ -1,0 +1,1942 @@
+{
+  "$defs": {
+    "Change": {
+      "additionalProperties": false,
+      "properties": {
+        "change_id": {
+          "title": "Change Id",
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/ChangeType"
+        },
+        "channel": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "website | content | meta_ads | google_ads | twitter",
+          "title": "Channel"
+        },
+        "entity_id": {
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "entity_name": {
+          "title": "Entity Name",
+          "type": "string"
+        },
+        "previous_snapshot_id": {
+          "title": "Previous Snapshot Id",
+          "type": "string"
+        },
+        "current_snapshot_id": {
+          "title": "Current Snapshot Id",
+          "type": "string"
+        },
+        "before": {
+          "default": null,
+          "title": "Before"
+        },
+        "after": {
+          "default": null,
+          "title": "After"
+        },
+        "detail": {
+          "title": "Detail",
+          "type": "string"
+        },
+        "claim_kind": {
+          "$ref": "#/$defs/ClaimKind"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "change_id",
+        "type",
+        "entity_id",
+        "entity_name",
+        "previous_snapshot_id",
+        "current_snapshot_id",
+        "detail",
+        "claim_kind",
+        "confidence"
+      ],
+      "title": "Change",
+      "type": "object"
+    },
+    "ChangeType": {
+      "enum": [
+        "NEW_PAGE",
+        "REMOVED_PAGE",
+        "NEW_ARTICLE",
+        "NEW_OFFER",
+        "NEW_AD_CREATIVE",
+        "REMOVED_AD_CREATIVE",
+        "AD_ACTIVITY_INCREASED",
+        "AD_ACTIVITY_DECREASED",
+        "CONTENT_ACTIVITY_INCREASED",
+        "CONTENT_ACTIVITY_DECREASED",
+        "NEW_COMPETITOR",
+        "COMPETITOR_NOT_SEEN",
+        "PROVIDER_AVAILABILITY_CHANGED",
+        "PAGE_INVENTORY_CHANGED",
+        "CTA_CHANGED",
+        "SERVICES_CHANGED",
+        "SOCIAL_ACTIVITY_INCREASED",
+        "SOCIAL_ACTIVITY_DECREASED"
+      ],
+      "title": "ChangeType",
+      "type": "string"
+    },
+    "ChannelSummary": {
+      "additionalProperties": false,
+      "description": "Per-entity, per-provider summary used in the report's *_intelligence sections.",
+      "properties": {
+        "entity_id": {
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "provider": {
+          "title": "Provider",
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/$defs/ProviderStatus"
+        },
+        "metrics": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Metrics",
+          "type": "object"
+        },
+        "observation_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Observation Refs",
+          "type": "array"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        },
+        "errors": {
+          "items": {
+            "$ref": "#/$defs/ProviderErrorInfo"
+          },
+          "title": "Errors",
+          "type": "array"
+        }
+      },
+      "required": [
+        "entity_id",
+        "provider",
+        "status"
+      ],
+      "title": "ChannelSummary",
+      "type": "object"
+    },
+    "ClaimKind": {
+      "description": "ZTech epistemic categories. The engine produces only the first three.\n\nDECISION and ACTION belong to ZTech (human approval / outreach) and are\nnever produced here.",
+      "enum": [
+        "fact",
+        "estimate",
+        "inference"
+      ],
+      "title": "ClaimKind",
+      "type": "string"
+    },
+    "CompanyProfile": {
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Title"
+        },
+        "description": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Description"
+        },
+        "services": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Services",
+          "type": "array"
+        },
+        "products": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Products",
+          "type": "array"
+        },
+        "emails": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Emails",
+          "type": "array"
+        },
+        "phones": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Phones",
+          "type": "array"
+        },
+        "social_profiles": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "title": "Social Profiles",
+          "type": "object"
+        },
+        "technologies": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Technologies",
+          "type": "array"
+        },
+        "locations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Locations",
+          "type": "array"
+        },
+        "ctas": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Ctas",
+          "type": "array"
+        },
+        "offers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Offers",
+          "type": "array"
+        },
+        "prices": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Prices",
+          "type": "array"
+        },
+        "business_model": {
+          "description": "INFERENCE: business-model labels derived from observed site signals.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Business Model",
+          "type": "array"
+        },
+        "field_evidence": {
+          "additionalProperties": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "description": "Provenance: profile field -> evidence ids.",
+          "title": "Field Evidence",
+          "type": "object"
+        }
+      },
+      "title": "CompanyProfile",
+      "type": "object"
+    },
+    "Comparison": {
+      "additionalProperties": false,
+      "properties": {
+        "comparison_id": {
+          "title": "Comparison Id",
+          "type": "string"
+        },
+        "dimension": {
+          "$ref": "#/$defs/ComparisonDimension"
+        },
+        "prospect_id": {
+          "title": "Prospect Id",
+          "type": "string"
+        },
+        "competitor_id": {
+          "title": "Competitor Id",
+          "type": "string"
+        },
+        "prospect_observed": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Prospect Observed"
+        },
+        "competitor_observed": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Competitor Observed"
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "topic": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Topic scope (e.g. 'wedding cakes') for topic-scoped dimensions.",
+          "title": "Topic"
+        },
+        "window": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Window"
+        },
+        "interpretation": {
+          "$ref": "#/$defs/ComparisonInterpretation"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Note"
+        }
+      },
+      "required": [
+        "comparison_id",
+        "dimension",
+        "prospect_id",
+        "competitor_id",
+        "prospect_observed",
+        "competitor_observed",
+        "unit",
+        "interpretation",
+        "confidence"
+      ],
+      "title": "Comparison",
+      "type": "object"
+    },
+    "ComparisonDimension": {
+      "enum": [
+        "meta_creative_activity",
+        "google_ad_activity",
+        "content_production_60d",
+        "commercial_content",
+        "landing_page_activity",
+        "offers",
+        "hiring",
+        "social_activity_30d",
+        "seo_content_coverage",
+        "expansion",
+        "relevant_content_60d",
+        "relevant_ad_creatives"
+      ],
+      "title": "ComparisonDimension",
+      "type": "string"
+    },
+    "ComparisonInterpretation": {
+      "enum": [
+        "competitor_more_active",
+        "prospect_more_active",
+        "parity",
+        "insufficient_evidence"
+      ],
+      "title": "ComparisonInterpretation",
+      "type": "string"
+    },
+    "Competitor": {
+      "additionalProperties": false,
+      "properties": {
+        "entity_id": {
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "entity_key": {
+          "title": "Entity Key",
+          "type": "string"
+        },
+        "kind": {
+          "const": "competitor",
+          "default": "competitor",
+          "title": "Kind",
+          "type": "string"
+        },
+        "company_name": {
+          "title": "Company Name",
+          "type": "string"
+        },
+        "domain": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Domain"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "industry": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Industry"
+        },
+        "relationship_type": {
+          "$ref": "#/$defs/RelationshipType"
+        },
+        "relationship_confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Relationship Confidence",
+          "type": "number"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "evidence_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        },
+        "discovered_via": {
+          "enum": [
+            "user",
+            "search",
+            "search+llm"
+          ],
+          "title": "Discovered Via",
+          "type": "string"
+        },
+        "profile": {
+          "$ref": "#/$defs/CompanyProfile"
+        }
+      },
+      "required": [
+        "entity_id",
+        "entity_key",
+        "company_name",
+        "relationship_type",
+        "relationship_confidence",
+        "reason",
+        "discovered_via"
+      ],
+      "title": "Competitor",
+      "type": "object"
+    },
+    "CompetitorHint": {
+      "additionalProperties": false,
+      "properties": {
+        "company_name": {
+          "maxLength": 120,
+          "minLength": 1,
+          "title": "Company Name",
+          "type": "string"
+        },
+        "domain": {
+          "anyOf": [
+            {
+              "maxLength": 253,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Domain"
+        }
+      },
+      "required": [
+        "company_name"
+      ],
+      "title": "CompetitorHint",
+      "type": "object"
+    },
+    "ErrorCode": {
+      "enum": [
+        "VALIDATION_ERROR",
+        "SOURCE_UNAVAILABLE",
+        "PROVIDER_NOT_CONFIGURED",
+        "UNSUPPORTED_SOURCE",
+        "RATE_LIMITED",
+        "TIMEOUT",
+        "INVALID_DOMAIN",
+        "INVALID_URL",
+        "SSRF_BLOCKED",
+        "RESPONSE_TOO_LARGE",
+        "MALFORMED_RESPONSE",
+        "COMPANY_NOT_FOUND",
+        "INSUFFICIENT_EVIDENCE",
+        "PROVIDER_FAILED",
+        "PARTIAL_RESEARCH",
+        "NOT_FOUND",
+        "INTERNAL_ERROR"
+      ],
+      "title": "ErrorCode",
+      "type": "string"
+    },
+    "EstimateRange": {
+      "additionalProperties": false,
+      "properties": {
+        "low": {
+          "title": "Low",
+          "type": "number"
+        },
+        "high": {
+          "title": "High",
+          "type": "number"
+        },
+        "unit": {
+          "title": "Unit",
+          "type": "string"
+        },
+        "method": {
+          "title": "Method",
+          "type": "string"
+        },
+        "source": {
+          "title": "Source",
+          "type": "string"
+        }
+      },
+      "required": [
+        "low",
+        "high",
+        "unit",
+        "method",
+        "source"
+      ],
+      "title": "EstimateRange",
+      "type": "object"
+    },
+    "Evidence": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "entity_id": {
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "provider": {
+          "title": "Provider",
+          "type": "string"
+        },
+        "source_type": {
+          "title": "Source Type",
+          "type": "string"
+        },
+        "source_url": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Url"
+        },
+        "observation_type": {
+          "$ref": "#/$defs/ObservationType"
+        },
+        "observed_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "When the underlying thing happened/was published at the source, if known.",
+          "title": "Observed At"
+        },
+        "captured_at": {
+          "title": "Captured At",
+          "type": "string"
+        },
+        "expires_at": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expires At"
+        },
+        "freshness": {
+          "$ref": "#/$defs/FreshnessState",
+          "default": "fresh"
+        },
+        "claim_kind": {
+          "$ref": "#/$defs/ClaimKind"
+        },
+        "claim": {
+          "maxLength": 600,
+          "title": "Claim",
+          "type": "string"
+        },
+        "metric": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Structured metric key this evidence supports.",
+          "title": "Metric"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "estimate": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EstimateRange"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "raw_reference": {
+          "additionalProperties": true,
+          "title": "Raw Reference",
+          "type": "object"
+        },
+        "content_hash": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Content Hash"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "conflicts_with": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Conflicts With",
+          "type": "array"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "entity_id",
+        "provider",
+        "source_type",
+        "observation_type",
+        "captured_at",
+        "claim_kind",
+        "claim",
+        "confidence"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "EvidenceConflict": {
+      "additionalProperties": false,
+      "properties": {
+        "entity_id": {
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "metric": {
+          "title": "Metric",
+          "type": "string"
+        },
+        "evidence_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        },
+        "values": {
+          "items": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Values",
+          "type": "array"
+        },
+        "resolution": {
+          "title": "Resolution",
+          "type": "string"
+        }
+      },
+      "required": [
+        "entity_id",
+        "metric",
+        "evidence_refs",
+        "values",
+        "resolution"
+      ],
+      "title": "EvidenceConflict",
+      "type": "object"
+    },
+    "FreshnessState": {
+      "enum": [
+        "fresh",
+        "stale",
+        "expired",
+        "unknown"
+      ],
+      "title": "FreshnessState",
+      "type": "string"
+    },
+    "ICPCriteria": {
+      "additionalProperties": false,
+      "description": "Optional ideal-customer-profile used only for the icp_fit score component.",
+      "properties": {
+        "industries": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Industries",
+          "type": "array"
+        },
+        "locations": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 20,
+          "title": "Locations",
+          "type": "array"
+        },
+        "keywords": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 30,
+          "title": "Keywords",
+          "type": "array"
+        }
+      },
+      "title": "ICPCriteria",
+      "type": "object"
+    },
+    "Observation": {
+      "additionalProperties": false,
+      "properties": {
+        "observation_id": {
+          "title": "Observation Id",
+          "type": "string"
+        },
+        "entity_id": {
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "provider": {
+          "title": "Provider",
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/ObservationType"
+        },
+        "captured_at": {
+          "title": "Captured At",
+          "type": "string"
+        },
+        "claim_kind": {
+          "$ref": "#/$defs/ClaimKind",
+          "default": "fact"
+        },
+        "metrics": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "title": "Metrics",
+          "type": "object"
+        },
+        "items": {
+          "items": {
+            "additionalProperties": true,
+            "type": "object"
+          },
+          "title": "Items",
+          "type": "array"
+        },
+        "evidence_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "observation_id",
+        "entity_id",
+        "provider",
+        "type",
+        "captured_at"
+      ],
+      "title": "Observation",
+      "type": "object"
+    },
+    "ObservationType": {
+      "description": "Structured observation kinds. Engines read these, never free-text claims.",
+      "enum": [
+        "website.homepage",
+        "website.page_inventory",
+        "website.company_profile",
+        "content.inventory",
+        "content.topics",
+        "ads.meta",
+        "ads.google",
+        "social.twitter",
+        "social.linkedin",
+        "competitors.candidates"
+      ],
+      "title": "ObservationType",
+      "type": "string"
+    },
+    "Opportunity": {
+      "additionalProperties": false,
+      "properties": {
+        "opportunity_id": {
+          "title": "Opportunity Id",
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/OpportunityType"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "severity": {
+          "$ref": "#/$defs/Severity"
+        },
+        "claim_kind": {
+          "const": "inference",
+          "default": "inference",
+          "title": "Claim Kind",
+          "type": "string"
+        },
+        "what_was_observed": {
+          "title": "What Was Observed",
+          "type": "string"
+        },
+        "who": {
+          "description": "Competitor names driving the opportunity.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Who",
+          "type": "array"
+        },
+        "prospect_state": {
+          "title": "Prospect State",
+          "type": "string"
+        },
+        "why_it_matters": {
+          "title": "Why It Matters",
+          "type": "string"
+        },
+        "reasoning_summary": {
+          "title": "Reasoning Summary",
+          "type": "string"
+        },
+        "evidence_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        },
+        "signal_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Signal Refs",
+          "type": "array"
+        },
+        "comparison_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Comparison Refs",
+          "type": "array"
+        },
+        "change_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Change Refs",
+          "type": "array"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        }
+      },
+      "required": [
+        "opportunity_id",
+        "type",
+        "title",
+        "confidence",
+        "severity",
+        "what_was_observed",
+        "prospect_state",
+        "why_it_matters",
+        "reasoning_summary"
+      ],
+      "title": "Opportunity",
+      "type": "object"
+    },
+    "OpportunityScore": {
+      "additionalProperties": false,
+      "properties": {
+        "score": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Score",
+          "type": "integer"
+        },
+        "model_version": {
+          "title": "Model Version",
+          "type": "string"
+        },
+        "components": {
+          "items": {
+            "$ref": "#/$defs/ScoreComponent"
+          },
+          "title": "Components",
+          "type": "array"
+        },
+        "explanation": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Explanation",
+          "type": "array"
+        },
+        "previous_score": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Previous Score"
+        }
+      },
+      "required": [
+        "score",
+        "model_version",
+        "components",
+        "explanation"
+      ],
+      "title": "OpportunityScore",
+      "type": "object"
+    },
+    "OpportunityType": {
+      "enum": [
+        "ADVERTISING_GAP",
+        "CONTENT_GAP",
+        "COMPETITIVE_VISIBILITY_GAP",
+        "LANDING_PAGE_GAP",
+        "OFFER_GAP",
+        "SOCIAL_GAP",
+        "COMPETITOR_MOMENTUM",
+        "TIMING_WINDOW"
+      ],
+      "title": "OpportunityType",
+      "type": "string"
+    },
+    "Prospect": {
+      "additionalProperties": false,
+      "properties": {
+        "entity_id": {
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "entity_key": {
+          "title": "Entity Key",
+          "type": "string"
+        },
+        "kind": {
+          "const": "prospect",
+          "default": "prospect",
+          "title": "Kind",
+          "type": "string"
+        },
+        "company_name": {
+          "title": "Company Name",
+          "type": "string"
+        },
+        "domain": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Domain"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "industry": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Industry"
+        },
+        "input": {
+          "$ref": "#/$defs/ProspectInput"
+        },
+        "profile": {
+          "$ref": "#/$defs/CompanyProfile"
+        }
+      },
+      "required": [
+        "entity_id",
+        "entity_key",
+        "company_name",
+        "input"
+      ],
+      "title": "Prospect",
+      "type": "object"
+    },
+    "ProspectInput": {
+      "additionalProperties": false,
+      "properties": {
+        "company_name": {
+          "maxLength": 120,
+          "minLength": 1,
+          "title": "Company Name",
+          "type": "string"
+        },
+        "domain": {
+          "anyOf": [
+            {
+              "maxLength": 253,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Domain"
+        },
+        "location": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Location"
+        },
+        "industry": {
+          "anyOf": [
+            {
+              "maxLength": 120,
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Industry"
+        },
+        "products_services": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 10,
+          "title": "Products Services",
+          "type": "array"
+        },
+        "known_competitors": {
+          "items": {
+            "$ref": "#/$defs/CompetitorHint"
+          },
+          "maxItems": 10,
+          "title": "Known Competitors",
+          "type": "array"
+        },
+        "icp": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ICPCriteria"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        }
+      },
+      "required": [
+        "company_name"
+      ],
+      "title": "ProspectInput",
+      "type": "object"
+    },
+    "ProviderErrorInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "$ref": "#/$defs/ErrorCode"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message"
+      ],
+      "title": "ProviderErrorInfo",
+      "type": "object"
+    },
+    "ProviderStatus": {
+      "enum": [
+        "success",
+        "partial",
+        "unavailable",
+        "unsupported",
+        "failed",
+        "rate_limited"
+      ],
+      "title": "ProviderStatus",
+      "type": "string"
+    },
+    "ProviderTelemetry": {
+      "additionalProperties": false,
+      "properties": {
+        "research_id": {
+          "title": "Research Id",
+          "type": "string"
+        },
+        "provider": {
+          "title": "Provider",
+          "type": "string"
+        },
+        "entity_id": {
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "started_at": {
+          "title": "Started At",
+          "type": "string"
+        },
+        "completed_at": {
+          "title": "Completed At",
+          "type": "string"
+        },
+        "duration_ms": {
+          "title": "Duration Ms",
+          "type": "integer"
+        },
+        "status": {
+          "$ref": "#/$defs/ProviderStatus"
+        },
+        "items_observed": {
+          "default": 0,
+          "title": "Items Observed",
+          "type": "integer"
+        },
+        "evidence_created": {
+          "default": 0,
+          "title": "Evidence Created",
+          "type": "integer"
+        },
+        "error_code": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ErrorCode"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "retry_count": {
+          "default": 0,
+          "title": "Retry Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "research_id",
+        "provider",
+        "entity_id",
+        "started_at",
+        "completed_at",
+        "duration_ms",
+        "status"
+      ],
+      "title": "ProviderTelemetry",
+      "type": "object"
+    },
+    "RelationshipType": {
+      "enum": [
+        "user_provided",
+        "direct_competitor",
+        "likely_competitor",
+        "adjacent_player",
+        "candidate"
+      ],
+      "title": "RelationshipType",
+      "type": "string"
+    },
+    "ReportTelemetry": {
+      "additionalProperties": false,
+      "properties": {
+        "started_at": {
+          "title": "Started At",
+          "type": "string"
+        },
+        "completed_at": {
+          "title": "Completed At",
+          "type": "string"
+        },
+        "duration_ms": {
+          "title": "Duration Ms",
+          "type": "integer"
+        },
+        "providers": {
+          "items": {
+            "$ref": "#/$defs/ProviderTelemetry"
+          },
+          "title": "Providers",
+          "type": "array"
+        }
+      },
+      "required": [
+        "started_at",
+        "completed_at",
+        "duration_ms",
+        "providers"
+      ],
+      "title": "ReportTelemetry",
+      "type": "object"
+    },
+    "ResearchStatus": {
+      "enum": [
+        "running",
+        "completed",
+        "partial",
+        "failed"
+      ],
+      "title": "ResearchStatus",
+      "type": "string"
+    },
+    "SalesAngle": {
+      "additionalProperties": false,
+      "properties": {
+        "angle_id": {
+          "title": "Angle Id",
+          "type": "string"
+        },
+        "angle": {
+          "title": "Angle",
+          "type": "string"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "evidence_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        },
+        "opportunity_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Opportunity Refs",
+          "type": "array"
+        },
+        "limitations": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Limitations",
+          "type": "array"
+        },
+        "do_not_claim": {
+          "description": "Statements the evidence does NOT support; never put these in a pitch.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Do Not Claim",
+          "type": "array"
+        }
+      },
+      "required": [
+        "angle_id",
+        "angle",
+        "summary",
+        "confidence"
+      ],
+      "title": "SalesAngle",
+      "type": "object"
+    },
+    "ScoreComponent": {
+      "additionalProperties": false,
+      "properties": {
+        "key": {
+          "title": "Key",
+          "type": "string"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "maximum": 100,
+              "minimum": 0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "weight": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Weight",
+          "type": "number"
+        },
+        "effective_weight": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Effective Weight",
+          "type": "number"
+        },
+        "computed": {
+          "title": "Computed",
+          "type": "boolean"
+        },
+        "rationale": {
+          "title": "Rationale",
+          "type": "string"
+        },
+        "inputs": {
+          "additionalProperties": true,
+          "title": "Inputs",
+          "type": "object"
+        }
+      },
+      "required": [
+        "key",
+        "weight",
+        "effective_weight",
+        "computed",
+        "rationale"
+      ],
+      "title": "ScoreComponent",
+      "type": "object"
+    },
+    "Severity": {
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "title": "Severity",
+      "type": "string"
+    },
+    "Signal": {
+      "additionalProperties": false,
+      "properties": {
+        "signal_id": {
+          "title": "Signal Id",
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/$defs/SignalType"
+        },
+        "subject_id": {
+          "title": "Subject Id",
+          "type": "string"
+        },
+        "observed_at": {
+          "title": "Observed At",
+          "type": "string"
+        },
+        "strength": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Strength",
+          "type": "number"
+        },
+        "confidence": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Confidence",
+          "type": "number"
+        },
+        "claim_kind": {
+          "$ref": "#/$defs/ClaimKind",
+          "default": "inference"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        },
+        "evidence_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        },
+        "comparison_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Comparison Refs",
+          "type": "array"
+        },
+        "change_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Change Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "signal_id",
+        "type",
+        "subject_id",
+        "observed_at",
+        "strength",
+        "confidence",
+        "summary"
+      ],
+      "title": "Signal",
+      "type": "object"
+    },
+    "SignalType": {
+      "enum": [
+        "AD_ACTIVITY_OBSERVED",
+        "AD_ACTIVITY_INCREASE",
+        "AD_ACTIVITY_DECREASE",
+        "NEW_AD_CREATIVE",
+        "CONTENT_ACTIVITY_OBSERVED",
+        "CONTENT_ACTIVITY_INCREASE",
+        "NEW_ARTICLE",
+        "NEW_LANDING_PAGE",
+        "REMOVED_PAGE",
+        "NEW_OFFER",
+        "COMMERCIAL_INTENT",
+        "PRODUCT_LAUNCH",
+        "HIRING",
+        "EXPANSION",
+        "SOCIAL_ACTIVITY",
+        "SOCIAL_ACTIVITY_INCREASE",
+        "MESSAGING_CHANGE",
+        "COMPETITOR_PRESSURE",
+        "CONTENT_GAP",
+        "ADVERTISING_GAP",
+        "MARKET_CHANGE"
+      ],
+      "title": "SignalType",
+      "type": "string"
+    },
+    "TimelineEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "event_id": {
+          "title": "Event Id",
+          "type": "string"
+        },
+        "event_type": {
+          "$ref": "#/$defs/TimelineEventType"
+        },
+        "entity_id": {
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "occurred_at": {
+          "title": "Occurred At",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "summary": {
+          "title": "Summary",
+          "type": "string"
+        },
+        "claim_kind": {
+          "$ref": "#/$defs/ClaimKind",
+          "default": "fact"
+        },
+        "research_id": {
+          "title": "Research Id",
+          "type": "string"
+        },
+        "evidence_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "event_id",
+        "event_type",
+        "entity_id",
+        "occurred_at",
+        "title",
+        "summary",
+        "research_id"
+      ],
+      "title": "TimelineEvent",
+      "type": "object"
+    },
+    "TimelineEventType": {
+      "enum": [
+        "RESEARCH_STARTED",
+        "COMPANY_RESOLVED",
+        "COMPETITOR_DISCOVERED",
+        "PROVIDER_UNAVAILABLE",
+        "ARTICLE_PUBLISHED",
+        "META_AD_STARTED",
+        "GOOGLE_AD_FIRST_SHOWN",
+        "SIGNAL_DETECTED",
+        "CHANGE_DETECTED",
+        "COMPETITOR_ACTIVITY_INCREASE",
+        "CONTENT_GAP_DETECTED",
+        "ADVERTISING_GAP_DETECTED",
+        "OPPORTUNITY_IDENTIFIED",
+        "OPPORTUNITY_SCORE_CHANGED",
+        "SNAPSHOT_CAPTURED",
+        "RESEARCH_COMPLETED",
+        "RESEARCH_PARTIAL"
+      ],
+      "title": "TimelineEventType",
+      "type": "string"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0",
+      "default": "1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "research_id": {
+      "title": "Research Id",
+      "type": "string"
+    },
+    "status": {
+      "$ref": "#/$defs/ResearchStatus"
+    },
+    "generated_at": {
+      "title": "Generated At",
+      "type": "string"
+    },
+    "snapshot_id": {
+      "title": "Snapshot Id",
+      "type": "string"
+    },
+    "previous_snapshot_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Previous Snapshot Id"
+    },
+    "prospect": {
+      "$ref": "#/$defs/Prospect"
+    },
+    "competitors": {
+      "items": {
+        "$ref": "#/$defs/Competitor"
+      },
+      "title": "Competitors",
+      "type": "array"
+    },
+    "evidence": {
+      "items": {
+        "$ref": "#/$defs/Evidence"
+      },
+      "title": "Evidence",
+      "type": "array"
+    },
+    "observations": {
+      "items": {
+        "$ref": "#/$defs/Observation"
+      },
+      "title": "Observations",
+      "type": "array"
+    },
+    "signals": {
+      "items": {
+        "$ref": "#/$defs/Signal"
+      },
+      "title": "Signals",
+      "type": "array"
+    },
+    "advertising_intelligence": {
+      "additionalProperties": {
+        "items": {
+          "$ref": "#/$defs/ChannelSummary"
+        },
+        "type": "array"
+      },
+      "title": "Advertising Intelligence",
+      "type": "object"
+    },
+    "content_intelligence": {
+      "additionalProperties": {
+        "items": {
+          "$ref": "#/$defs/ChannelSummary"
+        },
+        "type": "array"
+      },
+      "title": "Content Intelligence",
+      "type": "object"
+    },
+    "social_intelligence": {
+      "additionalProperties": {
+        "items": {
+          "$ref": "#/$defs/ChannelSummary"
+        },
+        "type": "array"
+      },
+      "title": "Social Intelligence",
+      "type": "object"
+    },
+    "comparisons": {
+      "items": {
+        "$ref": "#/$defs/Comparison"
+      },
+      "title": "Comparisons",
+      "type": "array"
+    },
+    "changes": {
+      "items": {
+        "$ref": "#/$defs/Change"
+      },
+      "title": "Changes",
+      "type": "array"
+    },
+    "opportunities": {
+      "items": {
+        "$ref": "#/$defs/Opportunity"
+      },
+      "title": "Opportunities",
+      "type": "array"
+    },
+    "opportunity_score": {
+      "$ref": "#/$defs/OpportunityScore"
+    },
+    "sales_angles": {
+      "items": {
+        "$ref": "#/$defs/SalesAngle"
+      },
+      "title": "Sales Angles",
+      "type": "array"
+    },
+    "timeline": {
+      "items": {
+        "$ref": "#/$defs/TimelineEvent"
+      },
+      "title": "Timeline",
+      "type": "array"
+    },
+    "conflicts": {
+      "items": {
+        "$ref": "#/$defs/EvidenceConflict"
+      },
+      "title": "Conflicts",
+      "type": "array"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    },
+    "provider_status": {
+      "additionalProperties": {
+        "additionalProperties": {
+          "$ref": "#/$defs/ProviderStatus"
+        },
+        "type": "object"
+      },
+      "title": "Provider Status",
+      "type": "object"
+    },
+    "telemetry": {
+      "$ref": "#/$defs/ReportTelemetry"
+    }
+  },
+  "required": [
+    "research_id",
+    "status",
+    "generated_at",
+    "snapshot_id",
+    "prospect",
+    "competitors",
+    "evidence",
+    "observations",
+    "signals",
+    "advertising_intelligence",
+    "content_intelligence",
+    "social_intelligence",
+    "comparisons",
+    "changes",
+    "opportunities",
+    "opportunity_score",
+    "sales_angles",
+    "timeline",
+    "conflicts",
+    "limitations",
+    "provider_status",
+    "telemetry"
+  ],
+  "title": "IntelligenceReport",
+  "type": "object"
+}
