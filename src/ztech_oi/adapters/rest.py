@@ -7,6 +7,8 @@ Thin adapter: validation is done by the domain models / service; no business log
 
 from __future__ import annotations
 
+import hmac
+import os
 from contextlib import asynccontextmanager
 from typing import Any
 
@@ -24,9 +26,41 @@ except ImportError as e:  # pragma: no cover
 
 STATUS = {ErrorCode.VALIDATION_ERROR: 400, ErrorCode.INVALID_DOMAIN: 400, ErrorCode.NOT_FOUND: 404, ErrorCode.RATE_LIMITED: 429}
 
+# Local-service protection (ZTech I3/I4).
+#
+# AUTH_TOKEN_ENV   optional. When set, every route except GET /v1/health requires
+#                  `Authorization: Bearer <token>`. Unset = the previous behaviour, so a
+#                  manually started development service keeps working unchanged.
+# INSTANCE_ID_ENV  optional. Echoed by /v1/health so a supervisor can tell ITS child from
+#                  any other process that happens to hold the port.
+# Host check       always on. Only loopback Host headers are served, which is what stops a
+#                  web page from reaching this service through DNS rebinding.
+# Neither value is ever logged, serialised into a report, describe() or an error body.
+AUTH_TOKEN_ENV = "ZTECH_OI_AUTH_TOKEN"
+INSTANCE_ID_ENV = "ZTECH_OI_INSTANCE_ID"
+LOOPBACK_HOSTS = frozenset({"127.0.0.1", "localhost", "::1"})
+_UNSET = object()
 
-def create_app(engine_factory=None) -> FastAPI:
+
+def _host_name(host_header: str | None) -> str:
+    """The host part of a Host header, lower-cased, port and IPv6 brackets removed."""
+    h = (host_header or "").strip().lower()
+    if h.startswith("["):
+        end = h.find("]")
+        return h[1:end] if end != -1 else ""
+    return h.rsplit(":", 1)[0] if h.count(":") == 1 else h
+
+
+def _env_or_none(name: str) -> str | None:
+    v = os.environ.get(name)
+    return v if v else None
+
+
+def create_app(engine_factory=None, *, auth_token: Any = _UNSET, instance_id: Any = _UNSET) -> FastAPI:
     state: dict[str, Engine] = {}
+    token = _env_or_none(AUTH_TOKEN_ENV) if auth_token is _UNSET else (auth_token or None)
+    instance = _env_or_none(INSTANCE_ID_ENV) if instance_id is _UNSET else (instance_id or None)
+    token_bytes = token.encode("utf-8") if token else None
 
     @asynccontextmanager
     async def lifespan(_app: FastAPI):
@@ -36,13 +70,27 @@ def create_app(engine_factory=None) -> FastAPI:
 
     app = FastAPI(title="ZTech Opportunity Intelligence", version="1.0.0", lifespan=lifespan)
 
+    @app.middleware("http")
+    async def _local_guard(request, call_next):
+        if _host_name(request.headers.get("host")) not in LOOPBACK_HOSTS:
+            return JSONResponse({"error": "MISDIRECTED_REQUEST", "message": "only loopback hosts are served"},
+                                status_code=421)
+        if token_bytes is not None and not (request.method == "GET" and request.url.path == "/v1/health"):
+            header = request.headers.get("authorization") or ""
+            scheme, _, presented = header.partition(" ")
+            ok = scheme.lower() == "bearer" and hmac.compare_digest(presented.strip().encode("utf-8"), token_bytes)
+            if not ok:
+                return JSONResponse({"error": "UNAUTHORIZED", "message": "a valid bearer token is required"},
+                                    status_code=401)
+        return await call_next(request)
+
     @app.exception_handler(EngineError)
     async def _engine_error(_req, exc: EngineError):
         return JSONResponse(exc.to_dict(), status_code=STATUS.get(exc.code, 500))
 
     @app.get("/v1/health")
     async def health() -> dict[str, Any]:
-        return {"status": "ok", "schema_version": "1.0"}
+        return {"status": "ok", "schema_version": "1.0", "instance_id": instance}
 
     @app.get("/v1/engine")
     async def info() -> dict[str, Any]:

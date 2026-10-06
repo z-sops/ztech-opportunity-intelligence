@@ -83,6 +83,15 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--log-level", default="info", choices=["critical", "error", "warning", "info", "debug"])
     args = ap.parse_args(argv)
 
+    # Line-buffered output, so a supervising parent (ZTech) sees each log line as it is
+    # written instead of in 4 KB blocks when stdout is a pipe.
+    os.environ.setdefault("PYTHONUNBUFFERED", "1")
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(line_buffering=True)
+        except (AttributeError, ValueError):
+            pass
+
     host = assert_loopback(args.host)
     if not (1 <= args.port <= 65535):
         raise SystemExit(f"invalid port {args.port}")
@@ -114,6 +123,8 @@ def main(argv: list[str] | None = None) -> int:
           f"{'' if configured else ' (all unavailable; service still starts)'}")
     if not configured:
         print("  note        no provider credentials set - expect honest per-provider 'unavailable'.")
+    # Whether local auth is on is reported; the token itself is never printed.
+    print(f"  local auth  {'required (bearer token)' if os.environ.get('ZTECH_OI_AUTH_TOKEN') else 'off (development)'}")
 
     uvicorn.run("ztech_oi.adapters.rest:app", host=host, port=args.port,
                 log_level=args.log_level, access_log=False)

@@ -30,7 +30,7 @@ def test_rest_adapter(market, search_market):
     from ztech_oi.adapters.rest import create_app
 
     app = create_app(lambda: make_engine(market, search=search_market))
-    with TestClient(app) as client:
+    with TestClient(app, base_url="http://127.0.0.1") as client:
         assert client.get("/v1/health").json()["status"] == "ok"
         r = client.post("/v1/research?response=summary", json={"prospect": PROSPECT})
         assert r.status_code == 200 and r.json()["opportunities"]
