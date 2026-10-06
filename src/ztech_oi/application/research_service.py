@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import asyncio
 import logging
+from datetime import timedelta
 from typing import Any
 
 from pydantic import ValidationError
@@ -57,6 +58,9 @@ from ..persistence.repository import Repository
 from ..providers.base import IntelligenceProvider, ResearchRequest, run_provider
 from .competitor_service import CompetitorService
 from .opportunity_service import Analysis, OpportunityService
+
+# A RUNNING job older than this at startup belonged to a process that is gone.
+INTERRUPTED_AFTER_S = 15 * 60
 
 log = logging.getLogger("ztech_oi.service")
 
@@ -227,6 +231,16 @@ class ResearchService:
                 raise ValidationFailed(f"unknown providers: {sorted(unknown)}")
         return pinput, opts
 
+    def recover_interrupted_jobs(self, older_than_s: int = INTERRUPTED_AFTER_S) -> int:
+        """At startup: a job still RUNNING from a previous process can never finish. Mark it
+        FAILED ('interrupted') so a repeated idempotency key gets a terminal answer instead of
+        IN_PROGRESS forever. Reports are untouched; jobs newer than the window are left alone."""
+        now = utcnow()
+        n = self.repo.fail_interrupted_jobs(iso(now - timedelta(seconds=older_than_s)), iso(now))
+        if n:
+            log.info("interrupted research jobs closed", extra={"count": n})
+        return n
+
     def _prospect(self, pinput: ProspectInput) -> Prospect:
         key = entity_key(domain=pinput.domain, company_name=pinput.company_name, location=pinput.location)
         return Prospect(
@@ -261,16 +275,47 @@ class ResearchService:
             results += await asyncio.gather(*(run_provider(self.entity_providers[n], req, self.provider_timeout_s) for n in rest))
             return results
 
+    def _idempotent_outcome(self, key: str, prospect_key: str) -> IntelligenceReport | None:
+        """The stored outcome of one caller intent, or None when the key is unseen.
+
+        A repeated key NEVER runs providers again. RUNNING -> IN_PROGRESS (retryable),
+        FAILED -> the stored failure (terminal), finished -> the stored report, and a key
+        reused for another prospect -> IDEMPOTENCY_CONFLICT.
+        """
+        job = self.repo.find_job_by_idempotency_key(key)
+        if job is None:
+            return None
+        ref = {"research_id": job.research_id, "idempotent_replay": True}
+        if job.prospect_entity_key != prospect_key:
+            raise EngineError(
+                ErrorCode.IDEMPOTENCY_CONFLICT, "this idempotency_key was already used for a different prospect"
+            )
+        if job.status is ResearchStatus.RUNNING:
+            raise EngineError(
+                ErrorCode.IN_PROGRESS, "research for this idempotency_key is still running", retryable=True, details=ref
+            )
+        if job.status is ResearchStatus.FAILED:
+            err = job.error or {}
+            try:
+                code = ErrorCode(err.get("error"))
+            except ValueError:
+                code = ErrorCode.INTERNAL_ERROR
+            if code in (ErrorCode.IN_PROGRESS, ErrorCode.IDEMPOTENCY_CONFLICT):
+                code = ErrorCode.INTERNAL_ERROR
+            raise EngineError(code, str(err.get("message") or "research failed"), retryable=False, details=ref)
+        existing = self.repo.get_report(job.research_id)
+        if existing is None:
+            raise EngineError(ErrorCode.NOT_FOUND, "the report for this idempotency_key is no longer stored", details=ref)
+        return _refresh_freshness(existing)
+
     async def _run(self, pinput: ProspectInput, opts: ResearchOptions) -> IntelligenceReport:
+        prospect = self._prospect(pinput)
         if opts.idempotency_key:
-            job = self.repo.find_job_by_idempotency_key(opts.idempotency_key)
-            if job is not None:
-                existing = self.repo.get_report(job.research_id)
-                if existing is not None:
-                    return _refresh_freshness(existing)
+            replay = self._idempotent_outcome(opts.idempotency_key, prospect.entity_key)
+            if replay is not None:
+                return replay
         started = utcnow()
         rid = run_id("res")
-        prospect = self._prospect(pinput)
         job = ResearchJob(
             research_id=rid,
             prospect_entity_key=prospect.entity_key,
@@ -279,7 +324,12 @@ class ResearchService:
             idempotency_key=opts.idempotency_key,
             created_at=iso(started),
         )
-        self.repo.save_job(job)
+        if not self.repo.claim_job(job):
+            # Another request claimed this key between the lookup and here.
+            replay = self._idempotent_outcome(opts.idempotency_key, prospect.entity_key) if opts.idempotency_key else None
+            if replay is not None:
+                return replay
+            raise EngineError(ErrorCode.IN_PROGRESS, "research for this idempotency_key is still running", retryable=True)
         log.info("research started", extra={"research_id": rid, "prospect": prospect.entity_key})
         try:
             report = await self._pipeline(rid, started, prospect, pinput, opts)

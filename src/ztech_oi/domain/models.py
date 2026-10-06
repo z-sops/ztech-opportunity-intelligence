@@ -57,7 +57,13 @@ class ResearchOptions(_Model):
     max_competitors: int = Field(default=3, ge=0, le=5)
     discover_competitors: bool = True
     providers: list[str] | None = Field(default=None, description="Optional allow-list of provider names to run (default: all).")
-    idempotency_key: str | None = Field(default=None, max_length=128)
+    idempotency_key: str | None = Field(
+        default=None,
+        min_length=1,
+        max_length=128,
+        pattern=r"^[A-Za-z0-9._:-]+$",
+        description="One caller intent. A repeat returns the stored outcome and never re-runs providers.",
+    )
 
 
 class ProspectInput(_Model):

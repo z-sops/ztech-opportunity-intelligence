@@ -23,7 +23,7 @@ Dependencies point downward only. The engine never imports providers, adapters o
 ## 2. Research pipeline (`ResearchService._pipeline`)
 
 1. **Validate** `ProspectInput` / `ResearchOptions`. Domains are normalised; private, invalid and IP-literal hosts are rejected with `INVALID_DOMAIN`.
-2. **Idempotency.** If `options.idempotency_key` is already known, return the stored report without any network calls.
+2. **Idempotency.** If `options.idempotency_key` is already known, answer from the stored job without any network call: the stored report, `IN_PROGRESS` while it runs, its stored failure, or `IDEMPOTENCY_CONFLICT` for another prospect. A new job claims its key atomically. At startup, `RUNNING` jobs older than 15 minutes are closed as `FAILED` (`interrupted`); reports are never touched.
 3. **Prospect collection and competitor discovery** run concurrently.
    - Per-entity order: `website` → `content` (needs the sitemap and feeds from `website`) → `meta_ads`, `google_ads`, `twitter`, `linkedin` in parallel.
    - Providers share facts through `ResearchRequest.context` (sitemap entries, feeds, social handles). The X handle is never guessed.

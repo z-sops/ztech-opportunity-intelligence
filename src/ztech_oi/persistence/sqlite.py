@@ -12,6 +12,7 @@ from collections.abc import Iterator
 from contextlib import contextmanager
 from pathlib import Path
 
+from ..domain.taxonomy import ResearchStatus
 from ..domain.models import (
     Competitor,
     Entity,
@@ -148,6 +149,37 @@ class SQLiteRepository:
                     job.model_dump_json(),
                 ),
             )
+
+    def claim_job(self, job: ResearchJob) -> bool:
+        with self._tx() as c:
+            cur = c.execute(
+                "INSERT OR IGNORE INTO research_jobs(research_id,prospect_entity_key,status,idempotency_key,created_at,completed_at,data)"
+                " VALUES (?,?,?,?,?,?,?)",
+                (
+                    job.research_id,
+                    job.prospect_entity_key,
+                    job.status.value,
+                    job.idempotency_key,
+                    job.created_at,
+                    job.completed_at,
+                    job.model_dump_json(),
+                ),
+            )
+            return cur.rowcount == 1
+
+    def fail_interrupted_jobs(self, started_before: str, completed_at: str) -> int:
+        rows = self._q(
+            "SELECT data FROM research_jobs WHERE status=? AND created_at < ?",
+            (ResearchStatus.RUNNING.value, started_before),
+        )
+        n = 0
+        for (data,) in rows:
+            job = ResearchJob.model_validate_json(data)
+            job.status, job.completed_at = ResearchStatus.FAILED, completed_at
+            job.error = {"error": "INTERNAL_ERROR", "message": "interrupted", "retryable": False}
+            self.save_job(job)
+            n += 1
+        return n
 
     def get_job(self, research_id: str) -> ResearchJob | None:
         rows = self._q("SELECT data FROM research_jobs WHERE research_id=?", (research_id,))

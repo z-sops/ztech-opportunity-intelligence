@@ -24,7 +24,14 @@ try:
 except ImportError as e:  # pragma: no cover
     raise ImportError("REST adapter requires the 'rest' extra: pip install ztech-opportunity-intelligence[rest]") from e
 
-STATUS = {ErrorCode.VALIDATION_ERROR: 400, ErrorCode.INVALID_DOMAIN: 400, ErrorCode.NOT_FOUND: 404, ErrorCode.RATE_LIMITED: 429}
+STATUS = {
+    ErrorCode.VALIDATION_ERROR: 400,
+    ErrorCode.INVALID_DOMAIN: 400,
+    ErrorCode.NOT_FOUND: 404,
+    ErrorCode.IN_PROGRESS: 409,
+    ErrorCode.IDEMPOTENCY_CONFLICT: 409,
+    ErrorCode.RATE_LIMITED: 429,
+}
 
 # Local-service protection (ZTech I3/I4).
 #

@@ -113,4 +113,5 @@ def build_engine(
         entity_concurrency=lim.entity_concurrency,
         config_description=desc,
     )
+    service.recover_interrupted_jobs()
     return Engine(service=service, http=http, repo=repo, settings=s)

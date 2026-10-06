@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import threading
 
+from ..domain.taxonomy import ResearchStatus
 from ..domain.models import (
     Competitor,
     Entity,
@@ -14,6 +15,9 @@ from ..domain.models import (
     Signal,
     Snapshot,
 )
+
+
+_INTERRUPTED = {"error": "INTERNAL_ERROR", "message": "interrupted", "retryable": False}
 
 
 class InMemoryRepository:
@@ -37,6 +41,25 @@ class InMemoryRepository:
 
     def find_job_by_idempotency_key(self, key: str) -> ResearchJob | None:
         return next((j for j in self.jobs.values() if j.idempotency_key == key), None)
+
+    def claim_job(self, job: ResearchJob) -> bool:
+        with self._lock:
+            if job.research_id in self.jobs:
+                return False
+            if job.idempotency_key and self.find_job_by_idempotency_key(job.idempotency_key) is not None:
+                return False
+            self.jobs[job.research_id] = job.model_copy(deep=True)
+            return True
+
+    def fail_interrupted_jobs(self, started_before: str, completed_at: str) -> int:
+        with self._lock:
+            n = 0
+            for j in self.jobs.values():
+                if j.status is ResearchStatus.RUNNING and j.created_at < started_before:
+                    j.status, j.completed_at = ResearchStatus.FAILED, completed_at
+                    j.error = _INTERRUPTED
+                    n += 1
+            return n
 
     def upsert_entity(self, entity: Entity) -> None:
         with self._lock:

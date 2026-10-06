@@ -65,14 +65,14 @@ await client.connect(transport);
 const res = await client.callTool({
   name: "analyze_prospect_opportunity",
   arguments: { prospect: { company_name: lead.name, domain: lead.domain, location: lead.city },
-               options: { idempotency_key: `lead-${lead.id}` } },
+               options: { idempotency_key: `lead-${lead.id}-${intentId}` } },
 });
 if (res.isError) throw new Error(res.content[0].text);
 const summary = res.structuredContent;           // schema_version "1.0"
 // later: getOpportunityReport → map into ZTech EvidencePacket / Opportunity Timeline / Pitch context
 ```
 
-Use `idempotency_key = lead id` so ZTech retries are safe. ZTech owns the mapping into its own models, and the engine never writes ZTech tables (spec §8).
+Use one `idempotency_key` per user intent (not per lead: a lead id as key would make every later refresh replay the first report). Retries of that intent reuse the key, so they never pay twice. ZTech owns the mapping into its own models, and the engine never writes ZTech tables (spec §8).
 
 ## Claude Desktop / other MCP clients
 

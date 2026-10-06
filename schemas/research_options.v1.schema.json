@@ -33,6 +33,8 @@
       "anyOf": [
         {
           "maxLength": 128,
+          "minLength": 1,
+          "pattern": "^[A-Za-z0-9._:-]+$",
           "type": "string"
         },
         {
@@ -40,6 +42,7 @@
         }
       ],
       "default": null,
+      "description": "One caller intent. A repeat returns the stored outcome and never re-runs providers.",
       "title": "Idempotency Key"
     }
   },

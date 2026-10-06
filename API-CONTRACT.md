@@ -36,7 +36,7 @@ Inputs can be dicts or the Pydantic models. All outputs are JSON-serialisable (`
 Unknown fields are rejected (`extra="forbid"`).
 
 ### `ResearchOptions`
-`max_competitors` 0-5 (default 3) · `discover_competitors` bool (false = only `known_competitors`) · `providers` allow-list of provider names · `idempotency_key` ≤128 chars.
+`max_competitors` 0-5 (default 3) · `discover_competitors` bool (false = only `known_competitors`) · `providers` allow-list of provider names · `idempotency_key` 1-128 chars of `A-Z a-z 0-9 . _ : -`, one key per caller intent. A repeated key never runs providers again: a finished run returns its stored report, a running one answers `409 IN_PROGRESS` (retryable), a failed one returns its stored failure with `details.idempotent_replay: true` (terminal), and a key reused for a different prospect answers `409 IDEMPOTENCY_CONFLICT`.
 
 ## 2. Error model
 

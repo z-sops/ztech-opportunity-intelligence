@@ -587,6 +587,8 @@
         "PROVIDER_FAILED",
         "PARTIAL_RESEARCH",
         "NOT_FOUND",
+        "IN_PROGRESS",
+        "IDEMPOTENCY_CONFLICT",
         "INTERNAL_ERROR"
       ],
       "title": "ErrorCode",
