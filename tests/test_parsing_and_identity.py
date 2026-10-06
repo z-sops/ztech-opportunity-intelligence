@@ -161,3 +161,50 @@ def test_html_extraction():
     assert {"$49/month", "Rs 5,000"} <= set(extract_prices(p.text))
     assert detect_technologies(html) == ["Shopify"]
     assert "script" not in p.text.lower() or "shopify" not in p.text.lower()
+
+
+# ------------------------------------------------------------------ I5: DOCTYPE handling
+PUBLIC_DTD = b'<!DOCTYPE urlset PUBLIC "-//Google//DTD Sitemap 0.84//EN" "http://www.google.com/schemas/sitemap/0.84/sitemap.dtd">'
+
+
+def test_sitemap_with_plain_doctype_parses():
+    data = b'<?xml version="1.0"?>' + PUBLIC_DTD + sitemap([("https://a.com/x", days_ago(3))]).encode().split(b"?>", 1)[1]
+    entries, children = parse_sitemap(data)
+    assert [e.url for e in entries] == ["https://a.com/x"] and not children
+
+
+def test_sitemap_index_with_plain_doctype_lists_children():
+    idx = (
+        b'<?xml version="1.0"?><!DOCTYPE sitemapindex>'
+        b'<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><sitemap><loc>https://a.com/s1.xml</loc></sitemap></sitemapindex>'
+    )
+    assert parse_sitemap(idx) == ([], ["https://a.com/s1.xml"])
+
+
+UNSAFE = [
+    b'<?xml version="1.0"?><!DOCTYPE x [<!ELEMENT x ANY>]><urlset/>',  # internal subset, no entity
+    b'<?xml version="1.0"?><!DOCTYPE x [<!ENTITY a "aaaa">]><urlset><url><loc>&a;</loc></url></urlset>',
+    b'<?xml version="1.0"?><!DOCTYPE lolz [<!ENTITY lol "lol"><!ENTITY lol2 "&lol;&lol;&lol;&lol;">]><urlset>&lol2;</urlset>',
+    b'<?xml version="1.0"?><!DOCTYPE x [<!ENTITY xxe SYSTEM "file:///etc/passwd">]><urlset>&xxe;</urlset>',
+    b'<?xml version="1.0"?><!DOCTYPE x\n  [\n<!ENTITY a "b">]><urlset/>',  # whitespace/newlines before the subset
+    b'<?xml version="1.0"?><urlset>&undefined;</urlset>',  # undeclared entity reference
+]
+
+
+@pytest.mark.parametrize("bad", UNSAFE)
+def test_sitemap_entities_subsets_and_external_refs_refused(bad):
+    with pytest.raises(ValueError):
+        parse_sitemap(bad)
+
+
+@pytest.mark.parametrize("bad", UNSAFE)
+def test_feed_entities_subsets_and_external_refs_refused(bad):
+    with pytest.raises(ValueError):
+        parse_feed(bad.replace(b"urlset", b"rss"))
+
+
+def test_feed_with_plain_doctype_parses():
+    body = rss([("T1", "https://a.com/blog/t1", days_ago(2))]).encode()
+    head, rest = body.split(b"?>", 1) if body.startswith(b"<?xml") else (None, body)
+    data = (head + b"?>" if head else b"") + b"<!DOCTYPE rss>" + rest
+    assert parse_feed(data)[0].title == "T1"

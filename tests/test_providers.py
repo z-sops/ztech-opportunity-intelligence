@@ -447,3 +447,43 @@ async def test_run_provider_timeout_and_crash_never_raise():
     assert c.status is ProviderStatus.FAILED and c.errors[0].code is ErrorCode.PROVIDER_FAILED
     check_envelope(t)
     check_envelope(c)
+
+
+# ------------------------------------------------------------------ I5: DOCTYPE sitemaps
+async def test_website_doctype_sitemap_index_fetches_children_and_keeps_confidence(web):
+    build_site(web, "sweetcrumb.com", name="SweetCrumb Bakery", articles_days=[3], careers=True)
+    child = web.routes["sweetcrumb.com/sitemap.xml"].body.decode().replace(
+        '<?xml version="1.0"?>',
+        '<?xml version="1.0"?><!DOCTYPE urlset PUBLIC "-//Google//DTD Sitemap 0.84//EN" "http://www.google.com/schemas/sitemap/0.84/sitemap.dtd">',
+    )
+    web.add("https://sweetcrumb.com/sitemap-pages.xml", child, ctype="application/xml")
+    web.add(
+        "https://sweetcrumb.com/sitemap.xml",
+        '<?xml version="1.0"?><!DOCTYPE sitemapindex>'
+        '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+        "<sitemap><loc>https://sweetcrumb.com/sitemap-pages.xml</loc></sitemap></sitemapindex>",
+        ctype="application/xml",
+    )
+    r = req()
+    res = await WebsiteProvider(http(web)).collect(r)
+    check_envelope(res)
+    assert web.called("sweetcrumb.com/sitemap-pages.xml") == 1, "the child sitemap of a DOCTYPE index is fetched"
+    inv = next(o for o in res.observations if o.type is ObservationType.WEBSITE_PAGE_INVENTORY)
+    assert inv.metrics["inventory_from_sitemap"] == 1 and inv.metrics["careers_page_count"] == 1
+    inv_ev = next(e for e in res.evidence if e.observation_type is ObservationType.WEBSITE_PAGE_INVENTORY and e.metric == "page_count")
+    assert inv_ev.confidence == 0.9 and "via sitemap" in inv_ev.claim
+    assert not any("Sitemap unavailable" in x for x in res.limitations)
+
+
+async def test_website_entity_sitemap_still_falls_back_with_limitation(web):
+    build_site(web, "sweetcrumb.com", name="S", articles_days=[])
+    web.add(
+        "https://sweetcrumb.com/sitemap.xml",
+        '<?xml version="1.0"?><!DOCTYPE x [<!ENTITY a "b">]><urlset><url><loc>&a;</loc></url></urlset>',
+        ctype="application/xml",
+    )
+    res = await WebsiteProvider(http(web)).collect(req())
+    inv = next(o for o in res.observations if o.type is ObservationType.WEBSITE_PAGE_INVENTORY)
+    inv_ev = next(e for e in res.evidence if e.observation_type is ObservationType.WEBSITE_PAGE_INVENTORY and e.metric == "page_count")
+    assert inv.metrics["inventory_from_sitemap"] == 0 and inv_ev.confidence == 0.7
+    assert any("Sitemap unavailable" in x for x in res.limitations)

@@ -371,6 +371,24 @@ class SitemapEntry:
     lastmod: str | None = None
 
 
+# A plain DOCTYPE (for example the PUBLIC sitemap DTD many CMSs still emit) is harmless:
+# expat never fetches it. What makes XML dangerous is an entity declaration, an internal
+# DTD subset (where entities are declared) or an external entity reference. Those are
+# refused twice: by this cheap prolog check and by defusedxml itself.
+_INTERNAL_SUBSET_RE = re.compile(rb"<!DOCTYPE[^>]*\[")
+_PROLOG_SCAN = 8192
+
+
+def _refuse_unsafe_xml(data: bytes, what: str) -> None:
+    head = data[:_PROLOG_SCAN]
+    if b"<!ENTITY" in head.upper() or _INTERNAL_SUBSET_RE.search(head):
+        raise ValueError(f"entities and internal DTD subsets are not allowed in {what}")
+
+
+def _safe_parse(data: bytes):
+    return safe_fromstring(data, forbid_dtd=False, forbid_entities=True, forbid_external=True)
+
+
 def maybe_gunzip(content: bytes, max_bytes: int = 10_000_000) -> bytes:
     if content[:2] == b"\x1f\x8b":
         with gzip.GzipFile(fileobj=io.BytesIO(content)) as gz:
@@ -384,10 +402,9 @@ def maybe_gunzip(content: bytes, max_bytes: int = 10_000_000) -> bytes:
 def parse_sitemap(content: bytes) -> tuple[list[SitemapEntry], list[str]]:
     """Return (url entries, child sitemap urls). Raises ValueError on malformed XML."""
     data = maybe_gunzip(content)
-    if b"<!DOCTYPE" in data[:2000] or b"<!ENTITY" in data[:5000]:
-        raise ValueError("DTD/entities are not allowed in sitemaps")
+    _refuse_unsafe_xml(data, "sitemaps")
     try:
-        root = safe_fromstring(data, forbid_dtd=True)
+        root = _safe_parse(data)
     except (ET.ParseError, DefusedXmlException) as e:
         raise ValueError(f"malformed or unsafe sitemap XML: {e}") from e
     tag = root.tag.split("}")[-1]
@@ -420,10 +437,9 @@ class FeedItem:
 
 
 def parse_feed(content: bytes) -> list[FeedItem]:
-    if b"<!ENTITY" in content[:5000]:
-        raise ValueError("entities are not allowed in feeds")
+    _refuse_unsafe_xml(content, "feeds")
     try:
-        root = safe_fromstring(content, forbid_dtd=True)
+        root = _safe_parse(content)
     except (ET.ParseError, DefusedXmlException) as e:
         raise ValueError(f"malformed or unsafe feed XML: {e}") from e
     items: list[FeedItem] = []

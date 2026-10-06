@@ -62,7 +62,7 @@ There is no global mutable state. Each research builds its own evidence set, and
 ## 6. Security boundary (spec §36)
 
 - `UrlGuard` checks scheme, port, credentials, IP literals and internal suffixes, then resolves DNS and requires **every** address to be globally routable. This runs on **every redirect hop**.
-- Responses are streamed and cut at `max_bytes`. XML is parsed with `defusedxml` (DTD forbidden). Gzip sitemaps are bounded after decompression.
+- Responses are streamed and cut at `max_bytes`. XML is parsed with `defusedxml`: entity declarations, internal DTD subsets and external references are forbidden; a plain DOCTYPE (for example the public sitemap DTD) is allowed and never fetched. Gzip sitemaps are bounded after decompression.
 - Crawling is bounded: ≤5 sitemap files, ≤2000 URLs, ≤8 page fetches per entity, ≤6 article fetches, ≤50 ads/posts.
 - robots.txt is respected for page fetches.
 - Secrets live only in `Settings` private fields. They never appear in reports, MCP responses or logs: tokens are stripped from stored URLs, the logger redacts them, and httpx/httpcore URL logging is forced to WARNING.

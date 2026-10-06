@@ -18,7 +18,7 @@ No network is needed. `tests/fakes.py` provides a fake internet (`httpx.MockTran
 | File | Type | Covers |
 |---|---|---|
 | `test_security_and_http.py` | unit | URL sanitising, private/CGNAT/IPv6/metadata IPs, DNS→private, redirect→private, redirect loops, huge bodies, declared content-length, 429 retry/recover, timeouts, malformed JSON, log redaction, gzip bombs |
-| `test_parsing_and_identity.py` | unit | domain/name normalisation, stable ids, evidence capture window, freshness, URL classification, robots, sitemaps (malformed/DTD), RSS/Atom, HTML extraction |
+| `test_parsing_and_identity.py` | unit | domain/name normalisation, stable ids, evidence capture window, freshness, URL classification, robots, sitemaps and feeds (malformed, plain DOCTYPE allowed, entities/internal subsets/external refs refused), RSS/Atom, HTML extraction |
 | `test_providers.py` | provider contract | every provider × success / not-configured / unavailable / rate-limited / malformed / huge; envelope invariants; robots respected; LLM grounding; token stripping; timeout & crash wrapping |
 | `test_engine.py` | unit | comparison null-rules, min-delta, reliable vs unreliable zeros, expired evidence, conflicts, diff rules (no-history, identical, new/removed, provider-failure ≠ removal), scoring redistribution & determinism |
 | `test_service_integration.py` | integration | happy path, repeated research + change detection + evidence dedup, idempotency key, known competitors, partial research, company not found, invalid inputs, allow-list, Meta end-to-end, offline re-analysis, concurrency isolation |
