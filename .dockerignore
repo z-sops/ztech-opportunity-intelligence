@@ -1,0 +1,37 @@
+# Version control and CI
+.git
+.github
+.gitignore
+
+# Python build and cache artifacts
+__pycache__
+*.py[cod]
+*.egg-info
+build
+dist
+.venv
+venv
+.pytest_cache
+.ruff_cache
+.mypy_cache
+.coverage
+htmlcov
+coverage.xml
+
+# Runtime data - the SQLite store must never be baked into an image
+data
+*.sqlite3
+*.sqlite3-*
+*.sqlite
+*.db
+.env
+.env.*
+
+# Node contract-test client
+clients/node/node_modules
+
+# IDE / OS
+.idea
+.vscode
+.DS_Store
+Thumbs.db

@@ -12,7 +12,6 @@ from collections.abc import Iterator
 from contextlib import contextmanager
 from pathlib import Path
 
-from ..domain.taxonomy import ResearchStatus
 from ..domain.models import (
     Competitor,
     Entity,
@@ -23,6 +22,7 @@ from ..domain.models import (
     Signal,
     Snapshot,
 )
+from ..domain.taxonomy import ResearchStatus
 
 SCHEMA_VERSION = 1
 

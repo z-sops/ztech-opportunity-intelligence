@@ -7,7 +7,6 @@ and offline: nothing here starts uvicorn or opens a socket.
 from __future__ import annotations
 
 import importlib.util
-import os
 import sys
 from pathlib import Path
 

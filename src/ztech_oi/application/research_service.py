@@ -297,7 +297,7 @@ class ResearchService:
         if job.status is ResearchStatus.FAILED:
             err = job.error or {}
             try:
-                code = ErrorCode(err.get("error"))
+                code = ErrorCode(str(err.get("error")))
             except ValueError:
                 code = ErrorCode.INTERNAL_ERROR
             if code in (ErrorCode.IN_PROGRESS, ErrorCode.IDEMPOTENCY_CONFLICT):
