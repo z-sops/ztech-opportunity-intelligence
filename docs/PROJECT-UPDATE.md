@@ -90,21 +90,37 @@ https://github.com/z-sops/ztech-opportunity-intelligence/pull/1
 (the head of the review branch -> base `main`).
 Nothing is merged, deployed or released.
 
-**CI HAS NOT RUN — 0 check runs on the PR.** The reason is a credential
-scope, not a defect: creating a GitHub Actions workflow file needs a token
-with the **`workflow`** scope, and the token the environment can obtain has
-only **`repo`**. GitHub refused the first push with *"refusing to allow a
-Personal Access Token to create or update workflow `.github/workflows/ci.yml`
-without `workflow` scope"*. A `git push --dry-run` does not detect this.
+**CI IS GREEN:** https://github.com/z-sops/ztech-opportunity-intelligence/actions/runs/39399534884
+— 6/6 jobs: ubuntu + windows on Python 3.11 + 3.13, the **Node MCP contract
+test**, and the **container image build**.
 
-The workflow file is the **tip commit of the local branch** and is the only
-thing not pushed; the local branch is exactly one commit ahead of the pushed
-branch, so `git push origin feat/cloud-saas-f0-foundation` with a
-workflow-scoped token is a plain fast-forward.
+The first push was refused with *"refusing to allow a Personal Access Token to
+create or update workflow `.github/workflows/ci.yml` without `workflow`
+scope"* — the available token had only `repo`. A `git push --dry-run` does
+**not** detect this; it passed, and only the real push was refused.
 
-Everything the CI would run has been run locally: `pytest` 265 passed / 1
-skipped, `ruff` clean, `mypy` clean on 48 files, and the exported JSON schema
-unchanged.
+**The CI found two real defects in this service**, both invisible to the
+Windows-only local environment:
+
+1. The ZTech-database guard in the launcher compared `Path().name`, which is
+   the whole string for a Windows path read on Linux, so the guard never fired
+   there. It is now on the last path component, split on **both** separators, so
+   it refuses ZTech's database on every platform.
+2. A completed run that observed nothing could not be replayed. A report whose
+   status is `failed` is a **completed** run — the research finished and
+   honestly reported that nothing could be observed — but the idempotency path
+   treated it as a terminal failure and raised, so a repeated key lost the
+   report **and** the research_id. A run that produced a report now always
+   replays that report; only a run that produced **no** report raises its
+   stored failure.
+
+   The Node MCP contract test found this. It is the first time that test had
+   ever run — it had always been skipped, because the Node client was never
+   installed.
+
+Local verification: `pytest` 269 passed / 0 skipped, `ruff` clean, `mypy` clean
+on 48 files, the exported JSON schema unchanged, and the Node MCP contract test
+passing end to end.
 
 ### The one skipped test
 
@@ -113,16 +129,16 @@ unchanged.
 ```
 SKIPPED [1] tests/test_spec_gaps.py:364: node or @modelcontextprotocol/sdk
             not installed (cd clients/node && npm install)
-265 passed, 1 skipped
+269 passed, 1 skipped
 ```
 
 It is the **Node MCP contract test** - the proof that ZTech (a Node/Electron
 main process) can talk to this engine over MCP stdio. It skips when
 `clients/node/node_modules` is not present, which is the case in a plain
 Python-only checkout. The CI `contract` job installs the client and runs it,
-so the contract is covered in CI. It is a genuine skip, not a hidden failure:
-the test reports itself through pytest's skip mechanism and the count is
-printed above.
+so the contract is covered in CI - and that job is what found the idempotency
+defect described above. It is a genuine skip, not a hidden failure: the test
+reports itself through pytest's skip mechanism and the count is printed above.
 
 ### The pending cloud work
 
