@@ -112,6 +112,38 @@ def create_app(engine_factory=None, *, auth_token: Any = _UNSET, instance_id: An
         report = await state["e"].service.analyze_prospect(body.get("prospect", body), body.get("options"))
         return summarize(report) if response == "summary" else report.model_dump(mode="json")
 
+    # ---- asynchronous job lifecycle (additive; /v1/research is unchanged) ----
+    #
+    # A full research takes roughly 20-90 s. A caller with a short timeout
+    # could never finish one, and the work was lost when the caller gave up.
+    # These three routes let a caller start a run, poll it, and collect the
+    # result whenever it is ready. They use the same `research_jobs` table and
+    # the same idempotency rules as the synchronous route.
+
+    @app.post("/v1/research/jobs")
+    async def start_job(body: dict[str, Any] = Body(...)):
+        started = await state["e"].service.start_job(body.get("prospect", body), body.get("options"))
+        # 202 for a run that was just started, 200 for a replay of a finished one.
+        return JSONResponse(started, status_code=200 if started.get("replayed") else 202)
+
+    @app.get("/v1/research/jobs/{research_id}")
+    async def job_status(research_id: str = Path(..., pattern=RESEARCH_ID_PATTERN, min_length=4, max_length=80)):
+        return state["e"].service.job_status(research_id)
+
+    @app.get("/v1/research/jobs/{research_id}/result")
+    async def job_result(research_id: str = Path(..., pattern=RESEARCH_ID_PATTERN, min_length=4, max_length=80)):
+        try:
+            report = state["e"].service.job_result(research_id)
+        except EngineError as e:
+            # A job that finished badly is a TERMINAL state, not a server
+            # fault. The client has to be able to tell "still running" from
+            # "failed", and `retryable` says which: 409 for both, with the
+            # original cause kept in the body.
+            if e.code in (ErrorCode.IN_PROGRESS, ErrorCode.NOT_FOUND):
+                raise
+            return JSONResponse(e.to_dict(), status_code=409)
+        return report.model_dump(mode="json")
+
     @app.post("/v1/competitors/discover")
     async def discover(body: dict[str, Any] = Body(...)):
         return await state["e"].service.discover_competitors(body.get("prospect", body), int(body.get("max_competitors", 5)))

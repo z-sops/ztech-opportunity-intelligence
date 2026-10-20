@@ -92,6 +92,9 @@ class ResearchService:
         self.provider_timeout_s = provider_timeout_s
         self._entity_sem = asyncio.Semaphore(entity_concurrency)
         self.config_description = config_description or {}
+        # Strong references to the background research tasks, so a task is not
+        # garbage collected while it is still running.
+        self._background_tasks: set[asyncio.Task] = set()
 
     # ================================================================ public
     async def analyze_prospect(
@@ -138,6 +141,129 @@ class ResearchService:
         if report is None:
             raise NotFound(f"no report with research_id '{research_id}'")
         return _refresh_freshness(report)
+
+    # ============================================== asynchronous job lifecycle
+    #
+    # The synchronous path above is unchanged. These methods add a job
+    # lifecycle on top of the SAME repository contract and the SAME
+    # `research_jobs` table, so nothing about the stored data changes:
+    #
+    #   start_job()  claims the job row (atomically, by idempotency key) and
+    #                runs the pipeline in the background. It returns
+    #                immediately with the research id.
+    #   job_status() reports the job's state, its timestamps and its error.
+    #   job_result() returns the report once the job is done, and refuses
+    #                while it is still running.
+    #
+    # Why: a full research takes roughly 20-90 s. A caller with a 30 s
+    # timeout could never complete one, and the work was lost when the caller
+    # gave up. With a job lifecycle the caller polls, the run survives the
+    # caller, and an interrupted run is closed at startup by
+    # recover_interrupted_jobs() instead of hanging in "running" forever.
+
+    async def start_job(
+        self, payload: dict[str, Any] | ProspectInput, options: dict[str, Any] | ResearchOptions | None = None
+    ) -> dict[str, Any]:
+        """Claim a job and run it in the background.
+
+        Returns a job descriptor. `replayed` is true when the idempotency key
+        already refers to a finished run, in which case no work is repeated.
+        """
+        pinput, opts = self._validate(payload, options)
+        prepared = self._prepare(pinput, opts)
+        if isinstance(prepared, IntelligenceReport):
+            return {
+                "research_id": prepared.research_id,
+                "status": prepared.status.value,
+                "replayed": True,
+                "report_available": True,
+                "created_at": prepared.generated_at,
+                "completed_at": prepared.generated_at,
+            }
+        rid, started, prospect, job = prepared
+        task = asyncio.create_task(self._execute_background(rid, started, prospect, pinput, opts, job))
+        # Keep a reference so the task is not garbage collected mid-flight.
+        self._background_tasks.add(task)
+        task.add_done_callback(self._background_tasks.discard)
+        return {
+            "research_id": rid,
+            "status": ResearchStatus.RUNNING.value,
+            "replayed": False,
+            "report_available": False,
+            "created_at": job.created_at,
+            "completed_at": None,
+        }
+
+    def job_status(self, research_id: str) -> dict[str, Any]:
+        """The state of one job. Never raises for a job that is merely running."""
+        job = self.repo.get_job(research_id)
+        if job is None:
+            raise NotFound(f"no job with research_id '{research_id}'")
+        return {
+            "research_id": job.research_id,
+            "status": job.status.value,
+            "created_at": job.created_at,
+            "completed_at": job.completed_at,
+            "error": job.error,
+            "report_available": job.status is not ResearchStatus.RUNNING
+            and self.repo.get_report(job.research_id) is not None,
+        }
+
+    def job_result(self, research_id: str) -> IntelligenceReport:
+        """The report of a finished job.
+
+        While the job is still running this raises IN_PROGRESS (retryable), so
+        a caller knows to poll rather than to treat it as a failure. A job that
+        failed raises its stored failure, so the cause is never lost.
+        """
+        job = self.repo.get_job(research_id)
+        if job is None:
+            raise NotFound(f"no job with research_id '{research_id}'")
+        if job.status is ResearchStatus.RUNNING:
+            raise EngineError(
+                ErrorCode.IN_PROGRESS,
+                "research for this research_id is still running",
+                retryable=True,
+                details={"research_id": job.research_id},
+            )
+        if job.status is ResearchStatus.FAILED:
+            err = job.error or {}
+            try:
+                code = ErrorCode(str(err.get("error")))
+            except ValueError:
+                code = ErrorCode.INTERNAL_ERROR
+            if code in (ErrorCode.IN_PROGRESS, ErrorCode.IDEMPOTENCY_CONFLICT):
+                code = ErrorCode.INTERNAL_ERROR
+            raise EngineError(
+                code,
+                str(err.get("message") or "research failed"),
+                retryable=False,
+                details={"research_id": job.research_id},
+            )
+        return self.get_report(research_id)
+
+    async def _execute_background(
+        self,
+        rid: str,
+        started,
+        prospect: Prospect,
+        pinput: ProspectInput,
+        opts: ResearchOptions,
+        job: ResearchJob,
+    ) -> IntelligenceReport:
+        """Run the pipeline for a background job and record the outcome.
+
+        The job row is always brought to a terminal state, including when the
+        pipeline raises, so a poller never waits forever.
+        """
+        try:
+            return await self._execute(rid, started, prospect, pinput, opts, job)
+        except Exception:
+            # `_execute` already recorded the failure on the job row. The
+            # exception is swallowed here because nobody awaits this task; the
+            # failure is reported through the job status instead.
+            log.exception("background research failed", extra={"research_id": rid})
+            return None  # type: ignore[return-value]
 
     def analyze_opportunity(self, research_id: str) -> dict[str, Any]:
         """Re-derive analysis from stored observations (no network), with current freshness."""
@@ -309,6 +435,22 @@ class ResearchService:
         return _refresh_freshness(existing)
 
     async def _run(self, pinput: ProspectInput, opts: ResearchOptions) -> IntelligenceReport:
+        prepared = self._prepare(pinput, opts)
+        if isinstance(prepared, IntelligenceReport):
+            return prepared
+        rid, started, prospect, job = prepared
+        return await self._execute(rid, started, prospect, pinput, opts, job)
+
+    def _prepare(
+        self, pinput: ProspectInput, opts: ResearchOptions
+    ) -> IntelligenceReport | tuple[str, Any, Prospect, ResearchJob]:
+        """Validate, honour the idempotency key and claim the job row.
+
+        Returns the stored report when the idempotency key already refers to a
+        finished run (a replay - no work is repeated), otherwise the tuple that
+        `_execute` needs. The job row is claimed atomically here, so two
+        concurrent callers with the same key cannot both start a run.
+        """
         prospect = self._prospect(pinput)
         if opts.idempotency_key:
             replay = self._idempotent_outcome(opts.idempotency_key, prospect.entity_key)
@@ -331,6 +473,18 @@ class ResearchService:
                 return replay
             raise EngineError(ErrorCode.IN_PROGRESS, "research for this idempotency_key is still running", retryable=True)
         log.info("research started", extra={"research_id": rid, "prospect": prospect.entity_key})
+        return (rid, started, prospect, job)
+
+    async def _execute(
+        self,
+        rid: str,
+        started,
+        prospect: Prospect,
+        pinput: ProspectInput,
+        opts: ResearchOptions,
+        job: ResearchJob,
+    ) -> IntelligenceReport:
+        """Run the pipeline and bring the job row to its terminal state."""
         try:
             report = await self._pipeline(rid, started, prospect, pinput, opts)
         except Exception as e:
