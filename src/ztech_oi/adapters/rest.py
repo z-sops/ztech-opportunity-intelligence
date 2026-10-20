@@ -19,7 +19,7 @@ from ..domain.errors import EngineError
 from ..domain.taxonomy import ErrorCode
 
 try:
-    from fastapi import Body, FastAPI, Query
+    from fastapi import Body, FastAPI, Path, Query
     from fastapi.responses import JSONResponse
 except ImportError as e:  # pragma: no cover
     raise ImportError("REST adapter requires the 'rest' extra: pip install ztech-opportunity-intelligence[rest]") from e
@@ -43,9 +43,13 @@ STATUS = {
 # Host check       always on. Only loopback Host headers are served, which is what stops a
 #                  web page from reaching this service through DNS rebinding.
 # Neither value is ever logged, serialised into a report, describe() or an error body.
-AUTH_TOKEN_ENV = "ZTECH_OI_AUTH_TOKEN"
+AUTH_TOKEN_ENV = "ZTECH_OI_AUTH_TOKEN"  # noqa: S105 - this is an environment VARIABLE NAME, not a secret
 INSTANCE_ID_ENV = "ZTECH_OI_INSTANCE_ID"
 LOOPBACK_HOSTS = frozenset({"127.0.0.1", "localhost", "::1"})
+# The research id shape. The MCP adapter already enforces this pattern
+# (adapters/mcp_server.py); the REST routes previously accepted anything, so a
+# malformed id reached the database instead of being rejected at the edge.
+RESEARCH_ID_PATTERN = r"^[a-z]+_[A-Za-z0-9_]+$"
 _UNSET = object()
 
 
@@ -108,19 +112,52 @@ def create_app(engine_factory=None, *, auth_token: Any = _UNSET, instance_id: An
         report = await state["e"].service.analyze_prospect(body.get("prospect", body), body.get("options"))
         return summarize(report) if response == "summary" else report.model_dump(mode="json")
 
+    # ---- asynchronous job lifecycle (additive; /v1/research is unchanged) ----
+    #
+    # A full research takes roughly 20-90 s. A caller with a short timeout
+    # could never finish one, and the work was lost when the caller gave up.
+    # These three routes let a caller start a run, poll it, and collect the
+    # result whenever it is ready. They use the same `research_jobs` table and
+    # the same idempotency rules as the synchronous route.
+
+    @app.post("/v1/research/jobs")
+    async def start_job(body: dict[str, Any] = Body(...)):
+        started = await state["e"].service.start_job(body.get("prospect", body), body.get("options"))
+        # 202 for a run that was just started, 200 for a replay of a finished one.
+        return JSONResponse(started, status_code=200 if started.get("replayed") else 202)
+
+    @app.get("/v1/research/jobs/{research_id}")
+    async def job_status(research_id: str = Path(..., pattern=RESEARCH_ID_PATTERN, min_length=4, max_length=80)):
+        return state["e"].service.job_status(research_id)
+
+    @app.get("/v1/research/jobs/{research_id}/result")
+    async def job_result(research_id: str = Path(..., pattern=RESEARCH_ID_PATTERN, min_length=4, max_length=80)):
+        try:
+            report = state["e"].service.job_result(research_id)
+        except EngineError as e:
+            # A job that finished badly is a TERMINAL state, not a server
+            # fault. The client has to be able to tell "still running" from
+            # "failed", and `retryable` says which: 409 for both, with the
+            # original cause kept in the body.
+            if e.code in (ErrorCode.IN_PROGRESS, ErrorCode.NOT_FOUND):
+                raise
+            return JSONResponse(e.to_dict(), status_code=409)
+        return report.model_dump(mode="json")
+
     @app.post("/v1/competitors/discover")
     async def discover(body: dict[str, Any] = Body(...)):
         return await state["e"].service.discover_competitors(body.get("prospect", body), int(body.get("max_competitors", 5)))
 
     @app.get("/v1/reports/{research_id}")
-    async def report(research_id: str, sections: str | None = None):
+    async def report(research_id: str = Path(..., pattern=RESEARCH_ID_PATTERN, min_length=4, max_length=80),
+                     sections: str | None = None):
         try:
             return select_sections(state["e"].service.get_report(research_id), sections.split(",") if sections else None)
         except ValueError as e:
             return JSONResponse({"error": "VALIDATION_ERROR", "message": str(e)}, status_code=400)
 
     @app.post("/v1/reports/{research_id}/analyze")
-    async def analyze(research_id: str):
+    async def analyze(research_id: str = Path(..., pattern=RESEARCH_ID_PATTERN, min_length=4, max_length=80)):
         return state["e"].service.analyze_opportunity(research_id)
 
     @app.get("/v1/timeline")

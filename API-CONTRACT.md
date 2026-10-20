@@ -71,6 +71,31 @@ Report-level `status`:
 | `POST /v1/reports/{research_id}/analyze` | — | re-derived analysis |
 | `GET /v1/timeline?research_id=…\|domain=…\|company_name=…` | — | merged timeline |
 
+### 3.1 Asynchronous research jobs
+
+A full research takes roughly 20-90 s, so a caller may not hold a single
+request open for it. These routes start a run, report its state and hand back
+the report when it is ready. They use the same `research_jobs` table, the same
+idempotency rules and the same stored report as the synchronous route; nothing
+about the persisted data changes.
+
+| Method & path | Body | Response |
+|---|---|---|
+| `POST /v1/research/jobs` | `{"prospect": ProspectInput, "options"?: ResearchOptions}` | `202` `{"research_id","status":"running","replayed":false,"report_available":false,"created_at"}` — or `200` when `options.idempotency_key` already refers to a finished run (`replayed:true`, `report_available:true`) |
+| `GET /v1/research/jobs/{research_id}` | — | `{"research_id","status","created_at","completed_at","error","report_available"}` |
+| `GET /v1/research/jobs/{research_id}/result` | — | the report, or `409` while the job is running (`retryable:true`) or after it failed (`retryable:false`, with the original cause in the body) |
+
+`status` is one of `running`, `completed`, `partial`, `failed`.
+
+The idempotency rules are the same as for the synchronous route: a repeated
+`options.idempotency_key` never runs the pipeline twice, a key already running
+answers `409 IN_PROGRESS` (retryable), a key that failed answers with the
+stored failure, and the same key for a different prospect answers
+`409 IDEMPOTENCY_CONFLICT`. A run whose process died is closed at startup by
+`recover_interrupted_jobs()` and is reported as `failed` with the message
+`interrupted`, so a poller never waits forever.
+
+
 ## 4. CLI
 
 ```

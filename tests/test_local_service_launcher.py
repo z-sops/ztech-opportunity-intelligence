@@ -7,7 +7,6 @@ and offline: nothing here starts uvicorn or opens a socket.
 from __future__ import annotations
 
 import importlib.util
-import os
 import sys
 from pathlib import Path
 
@@ -67,6 +66,31 @@ def test_ztech_database_is_explicitly_refused(monkeypatch):
     with pytest.raises(SystemExit) as e:
         launcher.resolve_db_path()
     assert "whatsapp.db" in str(e.value)
+
+
+def test_the_ztech_database_guard_works_on_every_platform(monkeypatch):
+    """The guard is on the FILE NAME, so it must not depend on the separator.
+
+    A Windows path read on Linux keeps its backslashes, so Path().name is the
+    whole string there. The guard therefore splits on both separators. The
+    first CI run found this: the guard only fired on Windows.
+    """
+    for candidate in (
+        r"C:\Users\EC\Downloads\ZTech\whatsapp.db",
+        "/home/someone/ZTech/whatsapp.db",
+        "whatsapp.db",
+    ):
+        monkeypatch.setenv("ZTECH_OI_DB_PATH", candidate)
+        with pytest.raises(SystemExit) as e:
+            launcher.resolve_db_path()
+        assert "whatsapp.db" in str(e.value), candidate
+
+
+def test_a_similar_but_different_file_name_is_allowed(monkeypatch, tmp_path):
+    """Only ZTech's own database name is refused."""
+    target = tmp_path / "whatsapp.db.backup"
+    monkeypatch.setenv("ZTECH_OI_DB_PATH", str(target))
+    assert launcher.resolve_db_path() == target.resolve()
 
 
 def test_explicit_override_elsewhere_is_honoured(monkeypatch, tmp_path):

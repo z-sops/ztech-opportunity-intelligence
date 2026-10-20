@@ -1,0 +1,117 @@
+name: CI
+
+# ZTech Opportunity Intelligence - continuous integration.
+#
+# Added in F0 (audit gap G-48). Before this workflow existed there was no CI in
+# this repository: 247 tests, ruff and mypy were all run by hand, and there
+# was no container image.
+#
+# The suite is fully offline - tests/fakes.py provides a fake internet through
+# httpx.MockTransport and a fake DNS resolver. No job in this workflow
+# contacts a live search engine, a live LLM provider, a social network, an ad
+# library, or a prospect website.
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: test (${{ matrix.os }}, python ${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.11', '3.13']
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[rest,dev]" ruff mypy
+
+      - name: Tests
+        run: python -m pytest -q
+
+      - name: Lint (ruff)
+        run: python -m ruff check src tests scripts
+
+      - name: Types (mypy)
+        run: python -m mypy src
+
+      - name: The exported JSON schema is in sync with the code
+        run: |
+          python scripts/export_schema.py
+          # schemas/ is deterministic, so it can be diffed. examples/ is NOT:
+          # it carries a research id and a generation timestamp, so it changes
+          # on every run by design and must not be drift-checked.
+          git diff --exit-code -- schemas
+
+  contract:
+    name: node MCP contract test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install the engine
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[rest,dev]"
+
+      # This is the integration proof that ZTech (Node/Electron main process)
+      # can talk to this engine over MCP stdio.
+      - name: Run the MCP contract test
+        working-directory: clients/node
+        env:
+          PYTHON: python
+        run: |
+          npm ci
+          npm test
+
+  image:
+    name: container image builds
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build the image
+        run: docker build -t ztech-opportunity-intelligence:ci .
+      - name: The image starts and answers /v1/health
+        run: |
+          docker run -d --name oi -p 8099:8099 ztech-opportunity-intelligence:ci
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:8099/v1/health; then
+              echo
+              echo "health OK"
+              docker rm -f oi
+              exit 0
+            fi
+            sleep 1
+          done
+          echo "the service did not become healthy in time"
+          docker logs oi || true
+          docker rm -f oi || true
+          exit 1
