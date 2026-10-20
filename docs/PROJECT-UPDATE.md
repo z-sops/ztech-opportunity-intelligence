@@ -83,6 +83,29 @@ be changed and tested as one unit.
 | G-49 — ~~unvalidated `research_id` on the REST routes~~ | — | **done in F0** |
 | SQLite is single-writer; many concurrent writers need a Postgres `Repository` (`LIMITATIONS.md:36`) | Medium | F2 |
 
+### Review state (2026-10-20)
+
+The review branch is **pushed** and the review PR is **open as a draft**:
+https://github.com/z-sops/ztech-opportunity-intelligence/pull/1
+(head `f79f0598b61a660db8742b77871229745f8f0388` -> base `main`).
+Nothing is merged, deployed or released.
+
+**CI HAS NOT RUN — 0 check runs on the PR.** The reason is a credential
+scope, not a defect: creating a GitHub Actions workflow file needs a token
+with the **`workflow`** scope, and the token the environment can obtain has
+only **`repo`**. GitHub refused the first push with *"refusing to allow a
+Personal Access Token to create or update workflow `.github/workflows/ci.yml`
+without `workflow` scope"*. A `git push --dry-run` does not detect this.
+
+The workflow file is the **tip commit of the local branch** and is the only
+thing not pushed; the local branch is exactly one commit ahead of the pushed
+branch, so `git push origin feat/cloud-saas-f0-foundation` with a
+workflow-scoped token is a plain fast-forward.
+
+Everything the CI would run has been run locally: `pytest` 265 passed / 1
+skipped, `ruff` clean, `mypy` clean on 48 files, and the exported JSON schema
+unchanged.
+
 ### The one skipped test
 
 `pytest -q -rs` reports:
