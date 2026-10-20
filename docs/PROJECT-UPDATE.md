@@ -175,10 +175,46 @@ The ZTech cloud architecture is in the ZTech Lead Generation repository,
 | **Per-workspace credentials** | The single shared bearer token is replaced by a per-workspace credential, so a job can only spend the workspace's own credits. |
 | **Reuse** | The **engine** is reused unchanged: the providers, the scoring, the comparisons, the signals, the opportunities, the sales angles, the deterministic analysis. Only the edges change. |
 
-**The recommended isolation model for this service is one instance per tenant
-first** (the strongest available boundary, at the cost of scale), moving to a
-shared instance with tenant-scoped storage once the isolation tests exist. See
-question Q7 in the F2 plan.
+**The isolation model for this service is APPROVED (2026-10-20): one instance
+per tenant first** — the strongest available boundary, at the cost of scale —
+moving to a shared instance with tenant-scoped storage only once the
+cross-tenant isolation and security tests pass.
+
+The F2 plan (ZTech Lead Generation, `docs/F2-CLOUD-SAAS-ARCHITECTURE.md`
+section 8.8) specifies what that means here:
+
+| Layer | Isolation for this service |
+|---|---|
+| **Process** | One OI instance and worker pool per tenant, on a private port. |
+| **Storage** | A dedicated database (or schema with a dedicated role) per tenant. The instance's role owns only its own tenant's data. |
+| **Credentials** | Each instance holds its own provider credentials (Brave, Serper, the LLM, Meta). No credential is shared between tenants. |
+| **Execution** | A job is routed to the OI instance of the workspace that owns it. No shared queue, worker or cache between tenants. |
+| **Network** | An instance is reachable only by the platform worker of that tenant; it is not publicly addressable. |
+
+**The activation gate for a shared instance is five tests**, and shared
+processing must not be switched on before they pass: (1) tenant scoping in
+this service's storage layer with the same RLS discipline and the same startup
+role assertions; (2) the cross-tenant denial suite extended to this
+service's reports, entities, evidence, snapshots and jobs; (3) credential
+separation — a request never uses another workspace's credential;
+(4) job routing — the workspace that owns the job executes it, and a tampered
+payload cannot redirect it; (5) a tested data migration from the per-tenant
+instances to the shared one.
+
+**Provisioning** is asynchronous and idempotent, with a readiness probe. A
+workspace whose instance is not ready is blocked with `OI_NOT_PROVISIONED` — it
+never silently shares another tenant's instance.
+
+**Operational cost is a real cost and is measured**: instance count times the
+baseline footprint (memory, connection pools, cold start), with a per-tenant
+upgrade and health gate, and a tenant-count ceiling that triggers the
+migration to a shared instance. The decision is made on evidence.
+
+**Lifecycle**: suspended workspaces keep their instance and data; closing a
+workspace exports the data, then decommissions the instance after the
+retention period; a failing instance is restarted with a backoff and then
+marked `OI_DEGRADED`; a cost anomaly **pauses** the instance rather than
+killing it.
 
 **This repository is not modified in the F0/F1 state.** The changes above land
 in their own milestones, each with its own acceptance criteria, so the
