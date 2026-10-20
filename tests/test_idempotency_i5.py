@@ -80,6 +80,26 @@ async def test_failed_key_replays_the_terminal_failure_and_runs_nothing(market, 
     await eng.aclose()
 
 
+async def test_a_completed_run_that_found_nothing_replays_its_report(market, search_market):
+    """A report with status "failed" is a COMPLETED run, not a broken one.
+
+    It means the research finished and honestly reported that nothing could be
+    observed. The report IS the answer - it carries the research_id the caller
+    needs - so a repeated key must return it, not raise. The Node MCP contract
+    test found this: it is the first time that test had ever run.
+    """
+    eng = make_engine(market, search=search_market)
+    key = "completed-but-failed"
+    prospect = {"company_name": "Nowhere", "domain": "nowhere.invalid"}
+    first = await eng.service.analyze_prospect(prospect, {"idempotency_key": key})
+    assert first.status.value == "failed", "the research finished and observed nothing"
+
+    second = await eng.service.analyze_prospect(prospect, {"idempotency_key": key})
+    assert second.research_id == first.research_id, "the replay returns the same research"
+    assert second.status.value == "failed", "the replay returns the same honest status"
+    await eng.aclose()
+
+
 async def test_key_reused_for_another_prospect_is_a_conflict(market, search_market):
     eng = make_engine(market, search=search_market)
     await eng.service.analyze_prospect(PROSPECT, {"idempotency_key": KEY})

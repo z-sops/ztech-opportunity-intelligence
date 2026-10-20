@@ -29,6 +29,7 @@ from __future__ import annotations
 import argparse
 import ipaddress
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -50,7 +51,13 @@ def resolve_db_path() -> Path:
     override = os.environ.get("ZTECH_OI_DB_PATH")
     if override:
         p = Path(override).expanduser().resolve()
-        if p.name == "whatsapp.db":
+        # The guard is on the FILE NAME, and it must work on every platform: a
+        # Windows path read on Linux keeps its backslashes, so Path().name is
+        # the whole string there. The last component is therefore taken from a
+        # split on BOTH separators. (The first CI run found this: the guard
+        # only fired on Windows.)
+        name = re.split(r"[\\/]", str(p))[-1]
+        if name.lower() == "whatsapp.db":
             raise SystemExit(
                 "refusing to run: ZTECH_OI_DB_PATH points at ZTech's whatsapp.db. "
                 "Opportunity Intelligence owns its own database."

@@ -213,8 +213,13 @@ class ResearchService:
         """The report of a finished job.
 
         While the job is still running this raises IN_PROGRESS (retryable), so
-        a caller knows to poll rather than to treat it as a failure. A job that
-        failed raises its stored failure, so the cause is never lost.
+        a caller knows to poll rather than to treat it as a failure.
+
+        A job that PRODUCED a report returns it, whatever the report's status
+        is: a report with status "failed" means the research finished and
+        honestly reported that nothing could be observed, and it IS the answer.
+        A job that produced NO report raised, and its stored failure is
+        returned instead, so the cause is never lost.
         """
         job = self.repo.get_job(research_id)
         if job is None:
@@ -226,6 +231,9 @@ class ResearchService:
                 retryable=True,
                 details={"research_id": job.research_id},
             )
+        report = self.repo.get_report(research_id)
+        if report is not None:
+            return _refresh_freshness(report)
         if job.status is ResearchStatus.FAILED:
             err = job.error or {}
             try:
@@ -405,8 +413,15 @@ class ResearchService:
         """The stored outcome of one caller intent, or None when the key is unseen.
 
         A repeated key NEVER runs providers again. RUNNING -> IN_PROGRESS (retryable),
-        FAILED -> the stored failure (terminal), finished -> the stored report, and a key
-        reused for another prospect -> IDEMPOTENCY_CONFLICT.
+        a run that produced no report -> the stored failure (terminal), a run that DID
+        produce a report -> that report, and a key reused for another prospect ->
+        IDEMPOTENCY_CONFLICT.
+
+        A report whose status is "failed" is still a COMPLETED run: it means the
+        research finished and honestly reported that nothing could be observed
+        (the report carries COMPANY_NOT_FOUND in its limitations). Replaying such
+        a run must return that report, not raise - the report IS the answer, and
+        it carries the research_id the caller needs.
         """
         job = self.repo.find_job_by_idempotency_key(key)
         if job is None:
@@ -420,6 +435,12 @@ class ResearchService:
             raise EngineError(
                 ErrorCode.IN_PROGRESS, "research for this idempotency_key is still running", retryable=True, details=ref
             )
+        # A stored report means the run COMPLETED, whatever its status. It is
+        # replayed as it is.
+        existing = self.repo.get_report(job.research_id)
+        if existing is not None:
+            return _refresh_freshness(existing)
+        # No report: the run broke. Its stored failure is the answer.
         if job.status is ResearchStatus.FAILED:
             err = job.error or {}
             try:
@@ -429,10 +450,7 @@ class ResearchService:
             if code in (ErrorCode.IN_PROGRESS, ErrorCode.IDEMPOTENCY_CONFLICT):
                 code = ErrorCode.INTERNAL_ERROR
             raise EngineError(code, str(err.get("message") or "research failed"), retryable=False, details=ref)
-        existing = self.repo.get_report(job.research_id)
-        if existing is None:
-            raise EngineError(ErrorCode.NOT_FOUND, "the report for this idempotency_key is no longer stored", details=ref)
-        return _refresh_freshness(existing)
+        raise EngineError(ErrorCode.NOT_FOUND, "the report for this idempotency_key is no longer stored", details=ref)
 
     async def _run(self, pinput: ProspectInput, opts: ResearchOptions) -> IntelligenceReport:
         prepared = self._prepare(pinput, opts)
