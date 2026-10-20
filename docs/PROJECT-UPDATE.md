@@ -87,7 +87,7 @@ be changed and tested as one unit.
 
 The review branch is **pushed** and the review PR is **open as a draft**:
 https://github.com/z-sops/ztech-opportunity-intelligence/pull/1
-(head `f79f0598b61a660db8742b77871229745f8f0388` -> base `main`).
+(the head of the review branch -> base `main`).
 Nothing is merged, deployed or released.
 
 **CI HAS NOT RUN — 0 check runs on the PR.** The reason is a credential
