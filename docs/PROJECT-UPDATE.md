@@ -83,6 +83,35 @@ be changed and tested as one unit.
 | G-49 — ~~unvalidated `research_id` on the REST routes~~ | — | **done in F0** |
 | SQLite is single-writer; many concurrent writers need a Postgres `Repository` (`LIMITATIONS.md:36`) | Medium | F2 |
 
+### The one skipped test
+
+`pytest -q -rs` reports:
+
+```
+SKIPPED [1] tests/test_spec_gaps.py:364: node or @modelcontextprotocol/sdk
+            not installed (cd clients/node && npm install)
+265 passed, 1 skipped
+```
+
+It is the **Node MCP contract test** - the proof that ZTech (a Node/Electron
+main process) can talk to this engine over MCP stdio. It skips when
+`clients/node/node_modules` is not present, which is the case in a plain
+Python-only checkout. The CI `contract` job installs the client and runs it,
+so the contract is covered in CI. It is a genuine skip, not a hidden failure:
+the test reports itself through pytest's skip mechanism and the count is
+printed above.
+
+### The pending cloud work
+
+The job lifecycle (G-44) is **durable inside the service**: a run survives
+the caller, an interrupted run is closed at startup by
+`recover_interrupted_jobs()`, and the idempotency key makes a retry safe. What
+is **not** implemented yet is the browser-independent, cloud-side job
+recovery: there is no per-workspace scoping (G-46), no queue, no resumable
+result store and no authenticated caller identity, so the job routes inherit
+the service's single shared bearer token. Those are F2/F4 work and are
+tracked in the audit.
+
 ### Note on a dependency lock
 
 The resolved versions are recorded in the CI output, but a committed
